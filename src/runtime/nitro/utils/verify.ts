@@ -8,7 +8,7 @@ export const verifyTurnstileToken = async (token: string): Promise<TurnstileVali
     method: 'POST',
     body: `secret=${secretKey}&response=${token}`,
     headers: {
-      'content-type': 'application/x-www-form-urlencoded'
-    }
+      'content-type': 'application/x-www-form-urlencoded',
+    },
   })
 }

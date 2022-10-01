@@ -38,19 +38,19 @@ export interface TurnstileRenderOptions {
 
 export type TurnstileValidationErrorCode =
   /** 	The secret parameter was not passed. */
-  'missing-input-secret' |
+  | 'missing-input-secret'
   /** 	The secret parameter was invalid or did not exist. */
-  'invalid-input-secret' |
+  | 'invalid-input-secret'
   /** 	The response parameter was not passed. */
-  'missing-input-response' |
+  | 'missing-input-response'
   /** 	The response parameter is invalid or has expired. */
-  'invalid-input-response' |
+  | 'invalid-input-response'
   /** 	The request was rejected because it was malformed. */
-  'bad-request' |
+  | 'bad-request'
   /** 	The response parameter has already been validated before. */
-  'timeout-or-duplicate' |
+  | 'timeout-or-duplicate'
   /** 	An internal error happened while validating the response. The request can be retried. */
-  'internal-error'
+  | 'internal-error'
 
 export interface TurnstileValidationResponse {
   success: boolean

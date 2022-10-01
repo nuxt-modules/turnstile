@@ -9,7 +9,9 @@ const configure = [
   '    delete window.loadTurnstile;',
   '  }',
   '})',
-].map(l => l.trim()).join(' ')
+]
+  .map(l => l.trim())
+  .join(' ')
 
 export default defineNuxtPlugin(() => {
   const addTurnstileScript = ref(false)
@@ -19,9 +21,9 @@ export default defineNuxtPlugin(() => {
     loadTurnstile: async () => {
       addTurnstileScript.value = true
       if (process.server) return
-      await (window as any).loadTurnstile as Promise<void>
+      ;(await (window as any).loadTurnstile) as Promise<void>
     },
-    async render (element: string | HTMLElement, options: TurnstileRenderOptions) {
+    async render(element: string | HTMLElement, options: TurnstileRenderOptions) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.render(element, {
@@ -29,11 +31,11 @@ export default defineNuxtPlugin(() => {
         ...options,
       })
     },
-    async reset (element: string | HTMLElement) {
+    async reset(element: string | HTMLElement) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
-    }
+    },
   }
 
   useHead(() => ({
@@ -43,13 +45,13 @@ export default defineNuxtPlugin(() => {
         src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
         async: true,
         defer: true,
-      }
-    ].filter(Boolean)
+      },
+    ].filter(Boolean),
   }))
 
   return {
     provide: {
-      turnstile
-    }
+      turnstile,
+    },
   }
 })

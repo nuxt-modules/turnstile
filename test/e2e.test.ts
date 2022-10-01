@@ -31,6 +31,10 @@ describe('turnstile', async () => {
     await page.click('button')
     await page.waitForLoadState('networkidle')
 
-    expect(resources.includes('https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback'))
+    expect(
+      resources.includes(
+        'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback'
+      )
+    )
   })
 })
