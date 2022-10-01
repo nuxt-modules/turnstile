@@ -25,7 +25,7 @@ export interface TurnstileRenderOptions {
   /**
    * A JavaScript callback that is invoked upon success of the challenge. The callback is passed a token that can be validated.
    */
-  callback?: () => void
+  callback?: (token: string) => void
   /**
    * A JavaScript callback that is invoked when a challenge expires.
    */

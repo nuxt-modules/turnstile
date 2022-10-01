@@ -25,14 +25,15 @@ export default defineNuxtModule<ModuleOptions>({
     siteKey: nuxt.options.dev ? '1x00000000000000000000AA' : undefined,
     addValidateEndpoint: false,
   }),
-  async setup(options, nuxt) {
-    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-
+  async setup (options, nuxt) {
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
       console.warn('`nuxt-turnstile` is disabled as no site key was provided.')
       return
     }
+
+    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    nuxt.options.build.transpile.push(runtimeDir)
 
     // Set up configuration
     nuxt.options.runtimeConfig = defu(nuxt.options.runtimeConfig, {
@@ -63,6 +64,9 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Add nitro composable for verifying token in server routes
     nuxt.hook('nitro:config', config => {
+      config.externals = defu(config.externals, {
+        inline: [runtimeDir]
+      })
       config.imports = defu(config.imports, {
         presets: [
           {

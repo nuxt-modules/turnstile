@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRuntimeConfig, useNuxtApp, ref, onMounted, nextTick } from '#imports'
+import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount, nextTick } from '#imports'
 import type { TurnstileRenderOptions } from '../types'
 
 const props = defineProps({
@@ -21,7 +21,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits<{
-  (name: 'update:modelValue', token: string)
+  (name: 'update:modelValue', token: string): void
 }>()
 
 const config = useRuntimeConfig().public.turnstile
@@ -29,7 +29,7 @@ const nuxtApp = useNuxtApp()
 
 const el = ref()
 
-let interval
+let interval: NodeJS.Timer
 
 onMounted(async () => {
   await nextTick()
