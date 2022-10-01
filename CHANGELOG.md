@@ -1,5 +1,12 @@
 
 
+## [0.0.5](https://github.com/danielroe/nuxt-turnstile/compare/0.0.4...0.0.5) (2022-10-01)
+
+
+### Bug Fixes
+
+* more imports ([c76c298](https://github.com/danielroe/nuxt-turnstile/commit/c76c2989c3b14844c24f54e30e3493c778b29464))
+
 ## [0.0.4](https://github.com/danielroe/nuxt-turnstile/compare/0.0.3...0.0.4) (2022-10-01)
 
 
