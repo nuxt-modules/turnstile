@@ -1,4 +1,4 @@
-import { useRuntimeConfig } from '#imports'
+import { useRuntimeConfig } from '#internal/nitro'
 import type { TurnstileValidationResponse } from '../../types'
 
 const secretKey = useRuntimeConfig().turnstile.secretKey
