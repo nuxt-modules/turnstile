@@ -1,3 +1,4 @@
+import { useRuntimeConfig } from '#imports'
 import type { TurnstileValidationResponse } from '../../types'
 
 const secretKey = useRuntimeConfig().turnstile.secretKey
