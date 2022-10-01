@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "nuxt-turnstile-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "nuxt": "latest",
+    "nuxt-turnstile": "latest"
+  }
+}
