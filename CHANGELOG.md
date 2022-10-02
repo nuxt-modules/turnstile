@@ -1,5 +1,12 @@
 
 
+## [0.0.7](https://github.com/danielroe/nuxt-turnstile/compare/0.0.6...0.0.7) (2022-10-02)
+
+
+### Bug Fixes
+
+* encode body of verify request ([51422d9](https://github.com/danielroe/nuxt-turnstile/commit/51422d99cc7aeb25375ad40fe56155e2d3ad759c))
+
 ## [0.0.6](https://github.com/danielroe/nuxt-turnstile/compare/0.0.5...0.0.6) (2022-10-02)
 
 
