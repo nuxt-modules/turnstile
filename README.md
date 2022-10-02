@@ -8,7 +8,7 @@
 > [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) integration for [Nuxt 3](https://v3.nuxtjs.org)
 
 - [✨ &nbsp;Changelog](https://github.com/danielroe/nuxt-turnstile/blob/main/CHANGELOG.md)
-- [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/nuxt-turnstile/tree/main/playground)
+<!-- - [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/nuxt-turnstile/tree/main/playground) -->
 
 ## Features
 
