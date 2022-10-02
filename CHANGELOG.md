@@ -1,5 +1,12 @@
 
 
+## [0.0.6](https://github.com/danielroe/nuxt-turnstile/compare/0.0.5...0.0.6) (2022-10-02)
+
+
+### Bug Fixes
+
+* **bridge:** correctly add cf script to head with `vue-meta` ([9b3fab3](https://github.com/danielroe/nuxt-turnstile/commit/9b3fab3cfcc0564e8322f452c27a1382308ad5d3))
+
 ## [0.0.5](https://github.com/danielroe/nuxt-turnstile/compare/0.0.4...0.0.5) (2022-10-01)
 
 
