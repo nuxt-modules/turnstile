@@ -73,6 +73,10 @@ You can access the validation token by setting a `v-model` on the component. The
 - Stub module with `pnpm dev:prepare`
 - Run `pnpm dev` to start [playground](./playground) in development mode
 
+## Credits
+
+- inspired by [laravel-cloudflare-turnstile](https://github.com/ryangjchandler/laravel-cloudflare-turnstile)
+
 ## License
 
 Made with ❤️
