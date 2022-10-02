@@ -43,6 +43,8 @@
      },
    })
    ```
+   
+   **Tip**: At runtime you can override site and secret keys with the `NUXT_TURNSTILE_SECRET_KEY` and `NUXT_PUBLIC_TURNSTILE_SITE_KEY` environment variables.
 
 ## Usage
 
