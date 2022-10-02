@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, useRuntimeConfig, useHead, ref } from '#imports'
+import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2 } from '#imports'
 import type { TurnstileRenderOptions } from '../types'
 
 const configure = [
@@ -13,7 +13,7 @@ const configure = [
   .map(l => l.trim())
   .join(' ')
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
   const addTurnstileScript = ref(false)
   const config = useRuntimeConfig()
 
@@ -21,9 +21,9 @@ export default defineNuxtPlugin(() => {
     loadTurnstile: async () => {
       addTurnstileScript.value = true
       if (process.server) return
-      ;(await (window as any).loadTurnstile) as Promise<void>
+        ; (await (window as any).loadTurnstile) as Promise<void>
     },
-    async render(element: string | HTMLElement, options: TurnstileRenderOptions) {
+    async render (element: string | HTMLElement, options: TurnstileRenderOptions) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.render(element, {
@@ -31,23 +31,46 @@ export default defineNuxtPlugin(() => {
         ...options,
       })
     },
-    async reset(element: string | HTMLElement) {
+    async reset (element: string | HTMLElement) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
     },
   }
 
-  useHead(() => ({
-    script: [
-      { children: configure },
-      addTurnstileScript.value && {
-        src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
-        async: true,
-        defer: true,
-      },
-    ].filter(Boolean),
-  }))
+  if (isVue2) {
+    const app = nuxtApp.nuxt2Context.app
+    const originalHead = app.head
+    app.head = function () {
+      const head = (typeof originalHead === 'function' ? originalHead.call(this) : originalHead) || {}
+
+      head.__dangerouslyDisableSanitizersByTagID = head.__dangerouslyDisableSanitizersByTagID || {}
+      head.__dangerouslyDisableSanitizersByTagID['cf-configure'] = ['innerHTML']
+
+      head.script = head.script || []
+      head.script.push(...[
+        { hid: 'cf-configure', innerHTML: configure },
+        addTurnstileScript.value && {
+          src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
+          async: true,
+          defer: true,
+        },
+      ].filter(Boolean))
+      return head
+    }
+  } else {
+    useHead(() => ({
+      script: [
+        { children: configure },
+        addTurnstileScript.value && {
+          src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
+          async: true,
+          defer: true,
+        },
+      ].filter(Boolean),
+    }))
+  }
+
 
   return {
     provide: {
