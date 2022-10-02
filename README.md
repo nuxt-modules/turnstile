@@ -12,9 +12,10 @@
 
 ## Features
 
-- 💪 Smart CAPTCHA
-- 🕵️‍♀️ Privacy-focused
-- ✨ Server validation
+- 💪 smart verification with minimal user interaction
+- 🕵️‍♀️ privacy-focused approach
+- ✨ server validation helper for your nitro endpoints
+- ⚡️ lightweight - script only loaded when required
 
 ## Installation
 
