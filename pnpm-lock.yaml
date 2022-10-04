@@ -29,7 +29,7 @@ importers:
       pinst: ^3.0.0
       playwright: ^1.26.1
       prettier: ^2.7.1
-      release-it: ^15.4.3
+      release-it: ^15.5.0
       typescript: ^4.8.4
       vitest: ^0.23.4
       vue: ^3.2.40
@@ -42,7 +42,7 @@ importers:
       '@nuxt/schema': /@nuxt/schema-edge/3.0.0-rc.12-27746784.92ff066
       '@nuxt/test-utils': 3.0.0-rc.11_vue@3.2.40
       '@nuxtjs/eslint-config-typescript': 11.0.0_ypn2ylkkyfa5i233caldtndbqa
-      '@release-it/conventional-changelog': 5.1.0_release-it@15.4.3
+      '@release-it/conventional-changelog': 5.1.0_release-it@15.5.0
       '@types/node': 18.7.14
       '@vitest/coverage-c8': 0.23.4
       conventional-changelog-conventionalcommits: 5.0.0
@@ -57,7 +57,7 @@ importers:
       pinst: 3.0.0
       playwright: 1.26.1
       prettier: 2.7.1
-      release-it: 15.4.3
+      release-it: 15.5.0
       typescript: 4.8.4
       vitest: 0.23.4
       vue: 3.2.40
@@ -984,7 +984,7 @@ packages:
       config-chain: 1.1.13
     dev: true
 
-  /@release-it/conventional-changelog/5.1.0_release-it@15.4.3:
+  /@release-it/conventional-changelog/5.1.0_release-it@15.5.0:
     resolution: {integrity: sha512-o55D822tVIoldUDj1Fp1KvenVREcEEjYOyuVNwRVnTcExFN6nWUPrH05q7Y8opT23N5snuCwPJ5bzLPEcpBvRg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -993,7 +993,7 @@ packages:
       concat-stream: 2.0.0
       conventional-changelog: 3.1.25
       conventional-recommended-bump: 6.1.0
-      release-it: 15.4.3
+      release-it: 15.5.0
       semver: 7.3.7
     dev: true
 
@@ -7084,8 +7084,8 @@ packages:
       rc: 1.2.8
     dev: true
 
-  /release-it/15.4.3:
-    resolution: {integrity: sha512-+GPciiCLhb9AUNlRNmajHtGAr6ud8uu2qHLRQRPJgqO3KE5RnVXjRgmJPn5MIupaAavrEltklMC4vpnl8pydsA==}
+  /release-it/15.5.0:
+    resolution: {integrity: sha512-/pQo/PwEXAWRBgVGLE+3IQ3hUoeiDZMGAo/Egin1envCyLyjzrU7+0P2w4iZ1Xv5OxhC2AcaPaN5eY1ql47cBA==}
     engines: {node: '>=14.9'}
     hasBin: true
     dependencies:
