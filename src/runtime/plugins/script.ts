@@ -13,7 +13,7 @@ const configure = [
   .map(l => l.trim())
   .join(' ')
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(nuxtApp => {
   const addTurnstileScript = ref(false)
   const config = useRuntimeConfig()
 
@@ -42,20 +42,23 @@ export default defineNuxtPlugin((nuxtApp) => {
     const app = nuxtApp.nuxt2Context.app
     const originalHead = app.head
     app.head = function () {
-      const head = (typeof originalHead === 'function' ? originalHead.call(this) : originalHead) || {}
+      const head =
+        (typeof originalHead === 'function' ? originalHead.call(this) : originalHead) || {}
 
       head.__dangerouslyDisableSanitizersByTagID = head.__dangerouslyDisableSanitizersByTagID || {}
       head.__dangerouslyDisableSanitizersByTagID['cf-configure'] = ['innerHTML']
 
       head.script = head.script || []
-      head.script.push(...[
-        { hid: 'cf-configure', innerHTML: configure },
-        addTurnstileScript.value && {
-          src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
-          async: true,
-          defer: true,
-        },
-      ].filter(Boolean))
+      head.script.push(
+        ...[
+          { hid: 'cf-configure', innerHTML: configure },
+          addTurnstileScript.value && {
+            src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
+            async: true,
+            defer: true,
+          },
+        ].filter(Boolean)
+      )
       return head
     }
   } else {
@@ -70,7 +73,6 @@ export default defineNuxtPlugin((nuxtApp) => {
       ].filter(Boolean),
     }))
   }
-
 
   return {
     provide: {

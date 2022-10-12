@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import { defineNuxtModule, addComponentsDir, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, addPlugin, addServerHandler } from '@nuxt/kit'
 import { join } from 'pathe'
 import defu from 'defu'
 
@@ -55,8 +55,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (options.addValidateEndpoint) {
       // Add nitro route for verifying cloudflare token
-      nuxt.options.nitro.handlers ||= []
-      nuxt.options.nitro.handlers.push({
+      addServerHandler({
         route: '/_turnstile/validate',
         handler: join(runtimeDir, 'nitro/validate.post'),
       })
@@ -65,7 +64,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Add nitro composable for verifying token in server routes
     nuxt.hook('nitro:config', config => {
       config.externals = defu(config.externals, {
-        inline: [runtimeDir]
+        inline: [runtimeDir],
       })
       config.imports = defu(config.imports, {
         presets: [
