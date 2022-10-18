@@ -62,16 +62,16 @@ export default defineNuxtPlugin(nuxtApp => {
       return head
     }
   } else {
-    useHead(() => ({
+    useHead({
       script: [
         { children: configure },
-        addTurnstileScript.value && {
+        () => addTurnstileScript.value && {
           src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
           async: true,
           defer: true,
         },
-      ].filter(Boolean),
-    }))
+      ],
+    })
   }
 
   return {
