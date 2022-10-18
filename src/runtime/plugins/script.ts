@@ -13,6 +13,12 @@ const configure = [
   .map(l => l.trim())
   .join(' ')
 
+const turnstileScript = {
+  src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
+  async: true,
+  defer: true,
+}
+
 export default defineNuxtPlugin(nuxtApp => {
   const addTurnstileScript = ref(false)
   const config = useRuntimeConfig()
@@ -52,26 +58,18 @@ export default defineNuxtPlugin(nuxtApp => {
       head.script.push(
         ...[
           { hid: 'cf-configure', innerHTML: configure },
-          addTurnstileScript.value && {
-            src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
-            async: true,
-            defer: true,
-          },
+          addTurnstileScript.value && turnstileScript,
         ].filter(Boolean)
       )
       return head
     }
   } else {
-    useHead(() => ({
-      script: [
+    useHead({
+      script: () => [
         { children: configure },
-        addTurnstileScript.value && {
-          src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
-          async: true,
-          defer: true,
-        },
-      ].filter(Boolean),
-    }))
+        addTurnstileScript.value && turnstileScript,
+      ].filter((s): s is typeof turnstileScript => !!s),
+    })
   }
 
   return {
