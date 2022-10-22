@@ -63,10 +63,10 @@
     "@types/node": "^18.7.14",
     "@vitest/coverage-c8": "^0.24.3",
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "expect-type": "^0.14.2",
+    "expect-type": "^0.15.0",
     "get-port-please": "^2.6.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
@@ -82,7 +82,7 @@
   "resolutions": {
     "nuxt-turnstile": "link:."
   },
-  "packageManager": "pnpm@7.13.5",
+  "packageManager": "pnpm@7.14.0",
   "volta": {
     "node": "16.18.0"
   }
