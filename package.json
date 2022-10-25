@@ -70,7 +70,7 @@
     "get-port-please": "^2.6.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "nuxt": "npm:nuxt3@3.0.0-rc.13-27778352.91eab1b",
+    "nuxt": "npm:nuxt3@3.0.0-rc.13-27778536.1d795f0",
     "pinst": "^3.0.0",
     "playwright": "^1.27.1",
     "prettier": "^2.7.1",
