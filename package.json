@@ -84,6 +84,6 @@
   },
   "packageManager": "pnpm@7.14.1",
   "volta": {
-    "node": "16.18.0"
+    "node": "18.12.0"
   }
 }
