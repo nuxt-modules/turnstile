@@ -17,9 +17,9 @@ importers:
       '@vitest/coverage-c8': 0.25.1
       conventional-changelog-conventionalcommits: 5.0.0
       defu: ^6.1.0
-      eslint: ^8.27.0
-      eslint-config-prettier: ^8.5.0
-      eslint-plugin-prettier: ^4.2.1
+      eslint: 8.27.0
+      eslint-config-prettier: 8.5.0
+      eslint-plugin-prettier: 4.2.1
       expect-type: 0.15.0
       get-port-please: 2.6.1
       husky: 8.0.2
@@ -1650,12 +1650,6 @@ packages:
       magic-string: 0.25.9
     dev: true
 
-  /@vue/reactivity/3.2.44:
-    resolution: {integrity: sha512-Fe0s52fTsPl+RSdvoqUZ3HRKlaVsKhIh1mea5EWOedFvZCjnymzlj3YC1wZMxi89qXRFSdEASVA/BWUGypk0Ig==}
-    dependencies:
-      '@vue/shared': 3.2.44
-    dev: true
-
   /@vue/reactivity/3.2.45:
     resolution: {integrity: sha512-PRvhCcQcyEVohW0P8iQ7HDcIOXRjZfAsOds3N99X/Dzewy8TVhTCT4uXpAHfoKjVTJRA0O0K+6QNkDIZAxNi3A==}
     dependencies:
@@ -1685,10 +1679,6 @@ packages:
       '@vue/compiler-ssr': 3.2.45
       '@vue/shared': 3.2.45
       vue: 3.2.45
-    dev: true
-
-  /@vue/shared/3.2.44:
-    resolution: {integrity: sha512-mGZ44bnn0zpZ36nXtxbrBPno43yr96wjQE1dBEKS1Sieugt27HS4OGZVBRIgsdGzosB7vqZAvu0ttu1FDVdolA==}
     dev: true
 
   /@vue/shared/3.2.45:
@@ -6142,7 +6132,7 @@ packages:
       '@nuxt/telemetry': 2.1.6
       '@nuxt/ui-templates': 0.4.0
       '@nuxt/vite-builder': 3.0.0-rc.13_vue@3.2.45
-      '@vue/reactivity': 3.2.44
+      '@vue/reactivity': 3.2.45
       '@vue/shared': 3.2.45
       '@vueuse/head': 1.0.0-rc.14_vue@3.2.45
       chokidar: 3.5.3
@@ -6209,8 +6199,8 @@ packages:
       '@nuxt/telemetry': 2.1.6
       '@nuxt/ui-templates': 0.4.0
       '@nuxt/vite-builder': /@nuxt/vite-builder-edge/3.0.0-rc.14-27801479.e635134_xjjpigh3tujrozeqelynrczgia
-      '@vue/reactivity': 3.2.44
-      '@vue/shared': 3.2.44
+      '@vue/reactivity': 3.2.45
+      '@vue/shared': 3.2.45
       '@vueuse/head': 1.0.0-rc.14_vue@3.2.45
       chokidar: 3.5.3
       cookie-es: 0.5.0
