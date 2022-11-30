@@ -1,5 +1,17 @@
 
 
+## [0.1.0](https://github.com/danielroe/nuxt-turnstile/compare/0.0.7...0.1.0) (2022-11-30)
+
+
+### Features
+
+* expose `reset` function to allow regenerating tokens manually ([0808524](https://github.com/danielroe/nuxt-turnstile/commit/08085242aeb9a58335646e8c83e48605d502a78c)), closes [#74](https://github.com/danielroe/nuxt-turnstile/issues/74)
+
+
+### Bug Fixes
+
+* call `head.patch` manually for reactivity in plugins ([#80](https://github.com/danielroe/nuxt-turnstile/issues/80)) ([8f2cf0c](https://github.com/danielroe/nuxt-turnstile/commit/8f2cf0c550c343129db0b3ec5f7041a04183e278))
+
 ## [0.0.7](https://github.com/danielroe/nuxt-turnstile/compare/0.0.6...0.0.7) (2022-10-02)
 
 
