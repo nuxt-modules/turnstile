@@ -8,7 +8,7 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "nuxt": "rc",
+    "nuxt": "3.0.0",
     "nuxt-turnstile": "latest"
   }
 }
