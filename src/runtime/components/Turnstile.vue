@@ -31,6 +31,12 @@ const el = ref()
 
 let interval: NodeJS.Timer
 
+async function reset() {
+  return nuxtApp.$turnstile.reset(el.value)
+}
+
+defineExpose({ reset })
+
 onMounted(async () => {
   await nextTick()
   nuxtApp.$turnstile.render(el.value, {
@@ -38,7 +44,7 @@ onMounted(async () => {
     ...props.options,
     callback: token => emit('update:modelValue', token),
   })
-  interval = setInterval(() => nuxtApp.$turnstile.reset(el.value), 1000 * 250)
+  interval = setInterval(reset, 1000 * 250)
 })
 
 // This means we will have CF script server-rendered in our HTML

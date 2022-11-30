@@ -10,9 +10,10 @@
     <hr />
     <form @submit.prevent="onNativeSubmit">
       <h2>Using native form</h2>
-      <Turnstile v-if="toggle" :options="{ action: 'native' }" />
+      <Turnstile v-if="toggle" ref="turnstile" :options="{ action: 'native' }" />
       <input type="submit" />
     </form>
+    <button @click="turnstile.reset()">Reset</button>
     <pre>{{ response2 }}</pre>
   </div>
 </template>
@@ -20,6 +21,8 @@
 <script setup lang="ts">
 const toggle = ref(false)
 const token = ref()
+
+const turnstile = ref()
 
 const response1 = ref('')
 async function onSubmit() {
