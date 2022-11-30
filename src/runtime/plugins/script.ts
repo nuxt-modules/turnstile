@@ -64,12 +64,18 @@ export default defineNuxtPlugin(nuxtApp => {
       return head
     }
   } else {
-    useHead({
-      script: () => [
-        { children: configure },
-        addTurnstileScript.value && turnstileScript,
-      ].filter((s): s is typeof turnstileScript => !!s),
-    })
+    const script = () => [
+      { children: configure },
+      addTurnstileScript.value && turnstileScript,
+    ].filter((s): s is typeof turnstileScript => !!s)
+
+    const head = useHead({ script: script() })
+    if (!addTurnstileScript.value && head) {
+      const unsubscribe = watch(addTurnstileScript, () => {
+        unsubscribe()
+        head.patch({ script: script() })
+      })
+    }
   }
 
   return {
