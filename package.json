@@ -50,7 +50,7 @@
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.13",
+    "@nuxt/kit": "^3.0.0",
     "defu": "^6.1.0",
     "pathe": "^0.3.9"
   },
@@ -70,7 +70,7 @@
     "get-port-please": "2.6.1",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
-    "nuxt": "npm:nuxt3@3.0.0-rc.9-27703329.537338f",
+    "nuxt": "npm:nuxt3@3.0.1-rc.0-27828744.aa9aec1",
     "pinst": "3.0.0",
     "playwright": "1.27.1",
     "prettier": "2.7.1",
