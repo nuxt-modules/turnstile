@@ -25,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
     siteKey: nuxt.options.dev ? '1x00000000000000000000AA' : undefined,
     addValidateEndpoint: false,
   }),
-  async setup (options, nuxt) {
+  async setup(options, nuxt) {
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
       console.warn('`nuxt-turnstile` is disabled as no site key was provided.')
