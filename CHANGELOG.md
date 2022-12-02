@@ -1,5 +1,12 @@
 
 
+## [0.1.1](https://github.com/danielroe/nuxt-turnstile/compare/0.1.0...0.1.1) (2022-12-02)
+
+
+### Bug Fixes
+
+* missing watch import in script ([#82](https://github.com/danielroe/nuxt-turnstile/issues/82)) ([c26a474](https://github.com/danielroe/nuxt-turnstile/commit/c26a474332158ba171101ad06f173c179a2cfd37))
+
 ## [0.1.0](https://github.com/danielroe/nuxt-turnstile/compare/0.0.7...0.1.0) (2022-11-30)
 
 
