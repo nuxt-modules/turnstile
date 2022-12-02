@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2 } from '#imports'
+import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2, watch } from '#imports'
 import type { TurnstileRenderOptions } from '../types'
 
 const configure = [
