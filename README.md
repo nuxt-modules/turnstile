@@ -67,6 +67,14 @@ When in the page, it will automatically load the Turnstile script and validate y
 
 You can access the validation token by setting a `v-model` on the component. Then, send the token along with your form responses, either explicitly or automatically (Cloudflare adds a hidden form element with the name `cf-turnstile-response` to your form). To validate the token on server-side, you can use the auto-imported `verifyTurnstileToken` utility in your Nitro server routes.
 
+The turnstile token is no longer valid after being processed with CloudFlare via `verifyTurnstileToken`. If you are using nuxt-turnstile with a component that might need to be validated multiple times, such as a submission form, you will need to regenerate the token for each submission. To manually regenerate the token, nuxt-turnstile exposes the `reset` function. This function can be accessed either through the component itself, i.e:
+
+```
+<button @click="token.reset()">Reset Token</button>
+```
+
+Or, you can call the function programmatically. Remember that if you are using the Vue3 reactivity API for the token model that you will need to call `token.value.reset()`.
+
 ## 💻 Development
 
 - Clone this repository
