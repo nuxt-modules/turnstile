@@ -73,7 +73,7 @@ The turnstile token is no longer valid after being processed with CloudFlare via
 <button @click="token.reset()">Reset Token</button>
 ```
 
-Or, you can call the function programmatically. Remember that if you are using the Vue3 reactivity API for the token model that you will need to call `token.value.reset()`.
+Or, you can call the function programmatically. Remember that if you are using the Vue3 reactivity API for the token model that you will need to call `token.value.reset()` when using it programmatically.
 
 ## 💻 Development
 
