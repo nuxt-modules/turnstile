@@ -43,7 +43,7 @@
      },
    })
    ```
-   
+
    **Tip**: At runtime you can override site and secret keys with the `NUXT_TURNSTILE_SECRET_KEY` and `NUXT_PUBLIC_TURNSTILE_SITE_KEY` environment variables.
 
 ## Usage
@@ -67,13 +67,26 @@ When in the page, it will automatically load the Turnstile script and validate y
 
 You can access the validation token by setting a `v-model` on the component. Then, send the token along with your form responses, either explicitly or automatically (Cloudflare adds a hidden form element with the name `cf-turnstile-response` to your form). To validate the token on server-side, you can use the auto-imported `verifyTurnstileToken` utility in your Nitro server routes.
 
-The turnstile token is no longer valid after being processed with CloudFlare via `verifyTurnstileToken`. If you are using nuxt-turnstile with a component that might need to be validated multiple times, such as a submission form, you will need to regenerate the token for each submission. To manually regenerate the token, nuxt-turnstile exposes the `reset` function. This function can be accessed either through the component itself, i.e:
+The turnstile token is no longer valid after being processed with CloudFlare via `verifyTurnstileToken`. If you are using nuxt-turnstile with a component that might need to be validated multiple times, such as a submission form, you will need to regenerate the token for each submission. To manually regenerate the token, nuxt-turnstile exposes the `reset` function directly via a [template ref](https://vuejs.org/guide/essentials/template-refs.html).
 
-```
-<button @click="token.reset()">Reset Token</button>
-```
+**Example**:
 
-Or, you can call the function programmatically. Remember that if you are using the Vue3 reactivity API for the token model that you will need to specify `token.value.reset()` when calling it programmatically.
+```html
+<template>
+  <Turnstile ref="turnstile" />
+  <button @click="turnstile.reset()">Reset token in template</button>
+  <button @click="reset()">Reset token from handler</button>
+</template>
+
+<script setup>
+  // you can call this template ref anything
+  const turnstile = ref()
+
+  function reset() {
+    turnstile.value?.reset()
+  }
+</script>
+```
 
 ## 💻 Development
 
