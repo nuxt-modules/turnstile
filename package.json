@@ -82,7 +82,7 @@
   "resolutions": {
     "nuxt-turnstile": "link:."
   },
-  "packageManager": "pnpm@7.18.2",
+  "packageManager": "pnpm@7.19.0",
   "volta": {
     "node": "18.12.1"
   }
