@@ -1,5 +1,7 @@
 
 
+## [0.1.2](https://github.com/nuxt-modules/turnstile/compare/0.1.1...0.1.2) (2023-01-09)
+
 ## [0.1.1](https://github.com/nuxt-modules/turnstile/compare/0.1.0...0.1.1) (2022-12-02)
 
 
