@@ -18,17 +18,17 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     configKey: 'turnstile',
-    name: 'nuxt-turnstile',
+    name: '@nuxtjs/turnstile',
   },
   defaults: nuxt => ({
     secretKey: nuxt.options.dev ? '1x0000000000000000000000000000000AA' : undefined,
     siteKey: nuxt.options.dev ? '1x00000000000000000000AA' : undefined,
     addValidateEndpoint: false,
   }),
-  async setup(options, nuxt) {
+  async setup (options, nuxt) {
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
-      console.warn('`nuxt-turnstile` is disabled as no site key was provided.')
+      console.warn('`@nuxtjs/turnstile` is disabled as no site key was provided.')
       return
     }
 

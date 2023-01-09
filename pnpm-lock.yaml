@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 overrides:
-  nuxt-turnstile: link:.
+  '@nuxtjs/turnstile': link:.
 
 importers:
 
@@ -64,11 +64,11 @@ importers:
 
   playground:
     specifiers:
+      '@nuxtjs/turnstile': link:..
       nuxt: 3.0.0
-      nuxt-turnstile: link:..
     devDependencies:
+      '@nuxtjs/turnstile': link:..
       nuxt: 3.0.0
-      nuxt-turnstile: link:..
 
 packages:
 
@@ -1488,7 +1488,7 @@ packages:
       '@babel/core': 7.20.2
       '@babel/plugin-transform-typescript': 7.20.0_@babel+core@7.20.2
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.2
-      vite: 3.2.4_@types+node@18.11.18
+      vite: 3.2.4
       vue: 3.2.45
     transitivePeerDependencies:
       - supports-color
@@ -1501,7 +1501,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.2.4_@types+node@18.11.18
+      vite: 3.2.4
       vue: 3.2.45
     dev: true
 

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "nuxt-turnstile-playground",
+  "name": "@nuxtjs/turnstile-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",
@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0",
-    "nuxt-turnstile": "latest"
+    "@nuxtjs/turnstile": "latest"
   }
 }

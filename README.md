@@ -7,8 +7,8 @@
 
 > [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) integration for [Nuxt 3](https://v3.nuxtjs.org)
 
-- [✨ &nbsp;Changelog](https://github.com/danielroe/nuxt-turnstile/blob/main/CHANGELOG.md)
-<!-- - [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/nuxt-turnstile/tree/main/playground) -->
+- [✨ &nbsp;Changelog](https://github.com/nuxt-modules/turnstile/blob/main/CHANGELOG.md)
+<!-- - [▶️ &nbsp;Online playground](https://stackblitz.com/github/nuxt-modules/turnstile/tree/main/playground) -->
 
 ## Features
 
@@ -21,18 +21,18 @@
 
 1. First, [follow these steps](https://developers.cloudflare.com/turnstile/get-started/) to obtain a free sitekey and secret key from Cloudflare.
 
-2. Install and add `nuxt-turnstile` to your `nuxt.config`.
+2. Install and add `@nuxtjs/turnstile` to your `nuxt.config`.
 
    ```bash
    # Whichever matches your package manager
-   pnpm add -D nuxt-turnstile
-   npm install -D nuxt-turnstile
-   yarn add -D nuxt-turnstile
+   pnpm add -D @nuxtjs/turnstile
+   npm install -D @nuxtjs/turnstile
+   yarn add -D @nuxtjs/turnstile
    ```
 
    ```js
    export default defineNuxtConfig({
-     modules: ['nuxt-turnstile'],
+     modules: ['@nuxtjs/turnstile'],
      runtimeConfig: {
        turnstile: {
          secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY || '',
@@ -63,11 +63,11 @@ To use Turnstile, add the auto-imported Vue component in whatever component need
 
 `<Turnstile>` can take a number of options via the `options` argument. [See all options](./src/runtime/types.ts). It renders the Turnstile `<iframe>` within a `<div>` wrapper by default, but you can configure this by setting the `element` prop.
 
-When in the page, it will automatically load the Turnstile script and validate your user. Each validation lasts for 300s, and `nuxt-turnstile` will automatically revalidate this token after 250s.
+When in the page, it will automatically load the Turnstile script and validate your user. Each validation lasts for 300s, and `@nuxtjs/turnstile` will automatically revalidate this token after 250s.
 
 You can access the validation token by setting a `v-model` on the component. Then, send the token along with your form responses, either explicitly or automatically (Cloudflare adds a hidden form element with the name `cf-turnstile-response` to your form). To validate the token on server-side, you can use the auto-imported `verifyTurnstileToken` utility in your Nitro server routes.
 
-The turnstile token is no longer valid after being processed with CloudFlare via `verifyTurnstileToken`. If you are using nuxt-turnstile with a component that might need to be validated multiple times, such as a submission form, you will need to regenerate the token for each submission. To manually regenerate the token, nuxt-turnstile exposes the `reset` function directly via a [template ref](https://vuejs.org/guide/essentials/template-refs.html).
+The turnstile token is no longer valid after being processed with CloudFlare via `verifyTurnstileToken`. If you are using @nuxtjs/turnstile with a component that might need to be validated multiple times, such as a submission form, you will need to regenerate the token for each submission. To manually regenerate the token, @nuxtjs/turnstile exposes the `reset` function directly via a [template ref](https://vuejs.org/guide/essentials/template-refs.html).
 
 **Example**:
 
@@ -108,11 +108,11 @@ Published under the [MIT License](./LICENCE).
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-turnstile?style=flat-square
-[npm-version-href]: https://npmjs.com/package/nuxt-turnstile
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-turnstile?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/nuxt-turnstile
-[github-actions-src]: https://img.shields.io/github/workflow/status/danielroe/nuxt-turnstile/ci/main?style=flat-square
-[github-actions-href]: https://github.com/danielroe/nuxt-turnstile/actions?query=workflow%3Aci
-[codecov-src]: https://img.shields.io/codecov/c/gh/danielroe/nuxt-turnstile/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/danielroe/nuxt-turnstile
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/turnstile?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/turnstile
+[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/turnstile?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/turnstile
+[github-actions-src]: https://img.shields.io/github/workflow/status/nuxt-modules/turnstile/ci/main?style=flat-square
+[github-actions-href]: https://github.com/nuxt-modules/turnstile/actions?query=workflow%3Aci
+[codecov-src]: https://img.shields.io/codecov/c/gh/nuxt-modules/turnstile/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-modules/turnstile
