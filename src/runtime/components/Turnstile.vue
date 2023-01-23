@@ -42,7 +42,7 @@ onMounted(async () => {
   nuxtApp.$turnstile.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
-    callback: token => emit('update:modelValue', token),
+    callback: (token: string) => emit('update:modelValue', token),
   })
   interval = setInterval(reset, 1000 * 250)
 })
