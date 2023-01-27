@@ -51,8 +51,8 @@
 ## Usage
 
 To verify, you need to
-- Include turnstile in your client, for example to build a contact form
-- Verify the token you get from the client on the server, before sending the email out
+- Include turnstile in your client (for example to build a contact form)
+- Verify the token, you get from the client, on the server (before sending the email out)
 
 ### Client
 
@@ -98,9 +98,11 @@ The turnstile token is no longer valid after being processed with CloudFlare via
 
 ### Server
 
-On your server endpoint, you can use the server validation endpoint, or use the automatically imported helper method, which is automatically imported:
+You can either use the a generated validation endpoint, or use the imported helper method:
 
 **Example with endpoint**:
+
+Turn on the generation of the endpoint first:
 
 ```js
 export default defineNuxtConfig({
@@ -112,9 +114,9 @@ export default defineNuxtConfig({
 })
 ```
 
-Cou can now call the endpoint at `/_turnstile/validate` to validate tokens.
+You can now call the endpoint at `/_turnstile/validate` from the client to validate tokens.
 
-**Example with custom endpoint and helper meethod**
+**Example with custom endpoint and helper method**
 
 ```js
 // server/api/validateTurnstile.ts
