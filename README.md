@@ -53,7 +53,7 @@
 To use Turnstile, you will likely want to:
 
 - Use the `<Turnstile>` component in your app (for example to build a contact form)
-- On your server when you are processing an API request or a form submission, you will want to verify the token (for example, before sending the email out)
+-  Verify the token on your server, when you are processing an API request or a form submission (for example, before sending the email out)
 
 ### Client
 
