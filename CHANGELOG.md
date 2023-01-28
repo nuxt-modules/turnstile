@@ -1,5 +1,13 @@
 
 
+## [0.1.3](https://github.com/nuxt-modules/turnstile/compare/0.1.2...0.1.3) (2023-01-28)
+
+
+### Bug Fixes
+
+* **types:** add callback argument string type ([#128](https://github.com/nuxt-modules/turnstile/issues/128)) ([1976076](https://github.com/nuxt-modules/turnstile/commit/197607650297c2dcbbd0df745d8a340e91fe4c02))
+* **types:** add typing for turnstile callback ([864c268](https://github.com/nuxt-modules/turnstile/commit/864c268b25add4d29774029675e0b868800b3a19)), closes [#127](https://github.com/nuxt-modules/turnstile/issues/127)
+
 ## [0.1.2](https://github.com/nuxt-modules/turnstile/compare/0.1.1...0.1.2) (2023-01-09)
 
 ## [0.1.1](https://github.com/nuxt-modules/turnstile/compare/0.1.0...0.1.1) (2022-12-02)
