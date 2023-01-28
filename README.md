@@ -33,13 +33,15 @@
    ```js
    export default defineNuxtConfig({
      modules: ['@nuxtjs/turnstile'],
+     
+     turnstile: {
+       siteKey: '<your-site-key>',
+     },
+     
      runtimeConfig: {
        turnstile: {
          secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY || '',
        },
-     },
-     turnstile: {
-       siteKey: '<your-site-key>',
      },
    })
    ```
@@ -47,6 +49,13 @@
    **Tip**: At runtime you can override site and secret keys with the `NUXT_TURNSTILE_SECRET_KEY` and `NUXT_PUBLIC_TURNSTILE_SITE_KEY` environment variables.
 
 ## Usage
+
+To use Turnstile, you will likely want to:
+
+- Use the `<Turnstile>` component in your app (for example to build a contact form)
+- Verify the token on your server, when you are processing an API request or a form submission (for example, before sending the email out)
+
+### Client
 
 To use Turnstile, add the auto-imported Vue component in whatever component needs it:
 
@@ -86,6 +95,45 @@ The turnstile token is no longer valid after being processed with CloudFlare via
     turnstile.value?.reset()
   }
 </script>
+```
+
+### Server
+
+You can either use the a generated validation endpoint, or use the imported helper method:
+
+**Example with endpoint**:
+
+Turn on the generation of the endpoint first:
+
+```js
+export default defineNuxtConfig({
+  // ...
+  turnstile: {
+    siteKey: '<your-site-key>',
+    addValidateEndpoint: true
+  },
+})
+```
+
+You can now call the endpoint at `/_turnstile/validate` from the client to validate tokens.
+
+**Example with custom endpoint and helper method**:
+
+```js
+// server/api/validateTurnstile.ts
+
+export default defineEventHandler((event) => {
+  const { token } = await readBody(event)
+
+  if (!token) {
+    throw createError({
+      statusCode: 422,
+      statusMessage: 'Token not provided.',
+    })
+  }
+
+  return await verifyTurnstileToken(token)
+})
 ```
 
 ## 💻 Development
