@@ -50,9 +50,9 @@
 
 ## Usage
 
-To verify, you need to
-- Include turnstile in your client (for example to build a contact form)
-- Verify the token, you get from the client, on the server (before sending the email out)
+To use Turnstile, you will likely want to:
+- Use the `<Turnstile>` component in your app (for example to build a contact form)
+- On your server when you are processing an API request or a form submission, you will want to verify the token (for example, before sending the email out)
 
 ### Client
 
@@ -116,7 +116,7 @@ export default defineNuxtConfig({
 
 You can now call the endpoint at `/_turnstile/validate` from the client to validate tokens.
 
-**Example with custom endpoint and helper method**
+**Example with custom endpoint and helper method**:
 
 ```js
 // server/api/validateTurnstile.ts
