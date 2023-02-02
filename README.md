@@ -122,7 +122,7 @@ You can now call the endpoint at `/_turnstile/validate` from the client to valid
 ```js
 // server/api/validateTurnstile.ts
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
   const { token } = await readBody(event)
 
   if (!token) {
