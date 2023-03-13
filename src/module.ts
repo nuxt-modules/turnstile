@@ -7,10 +7,10 @@ import fs from 'fs'
 export interface ModuleOptions {
   /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRETKEY */
   secretKey?: string
-  /** Your Turnstile site key */
-  siteKey?: string
   /** Path to the secret key */
   secretKeyPath?: string
+  /** Your Turnstile site key */
+  siteKey?: string
   /**
    * Add a nitro endpoint at `/_turnstile/validate` to validate tokens.
    * @default {false}
@@ -37,12 +37,12 @@ export default defineNuxtModule<ModuleOptions>({
 
     const secretKeyPath =
       options.secretKeyPath || nuxt.options.runtimeConfig.turnstile?.secretKeyPath
-    let secretKeyFromPath
-    if (secretKeyPath) {
-      secretKeyFromPath = fs.existsSync(secretKeyPath)
+
+    const secretKeyFromPath =
+      secretKeyPath && fs.existsSync(secretKeyPath)
         ? fs.readFileSync(secretKeyPath, 'utf-8')
         : undefined
-    }
+
     if (!secretKeyFromPath) {
       console.warn('The secret key from the path could not be found.')
     }
