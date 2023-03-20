@@ -33,6 +33,8 @@
    ```js
    export default defineNuxtConfig({
      modules: ['@nuxtjs/turnstile'],
+     // Pass a path to a file containing the secret key by passing it in the module options like in the line below
+     // modules: [['@nuxtjs/turnstile', { secretKeyPath: 'turnstile.secret' }]],
      
      turnstile: {
        siteKey: '<your-site-key>',
@@ -46,6 +48,9 @@
    })
    ```
 
+  You can pass the secret key either directly in the runtime config or via a environment variable, or you can pass the path to a file that contains the secret key in the inline options. This is helpful when using docker secrets where docker passes the secret key via a file.
+  Remember to remove the secret key property from the runtime config when using the path as the property from the runtime config will be used then.
+   
    **Tip**: At runtime you can override site and secret keys with the `NUXT_TURNSTILE_SECRET_KEY` and `NUXT_PUBLIC_TURNSTILE_SITE_KEY` environment variables.
 
 ## Usage
