@@ -35,10 +35,8 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    if ('secretKeyPath' in nuxt.options.runtimeConfig.turnstile && !('secretKey' in nuxt.options.runtimeConfig.turnstile)) {
-      const secretKeyPath =
-        options.secretKeyPath || nuxt.options.runtimeConfig.turnstile?.secretKeyPath
-
+    if (options.secretKeyPath) {
+      const secretKeyPath = options.secretKeyPath
       const secretKeyFromPath =
         secretKeyPath && fs.existsSync(secretKeyPath)
           ? fs.readFileSync(secretKeyPath, 'utf-8')
