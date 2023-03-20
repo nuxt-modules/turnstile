@@ -35,18 +35,20 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const secretKeyPath =
-      options.secretKeyPath || nuxt.options.runtimeConfig.turnstile?.secretKeyPath
+    if ('secretKeyPath' in nuxt.options.runtimeConfig.turnstile && !('secretKey' in nuxt.options.runtimeConfig.turnstile)) {
+      const secretKeyPath =
+        options.secretKeyPath || nuxt.options.runtimeConfig.turnstile?.secretKeyPath
 
-    const secretKeyFromPath =
-      secretKeyPath && fs.existsSync(secretKeyPath)
-        ? fs.readFileSync(secretKeyPath, 'utf-8')
-        : undefined
+      const secretKeyFromPath =
+        secretKeyPath && fs.existsSync(secretKeyPath)
+          ? fs.readFileSync(secretKeyPath, 'utf-8')
+          : undefined
 
-    if (!secretKeyFromPath) {
-      console.warn('The secret key from the path could not be found.')
+      if (!secretKeyFromPath) {
+        console.warn('The secret key from the path could not be found.')
+      }
+      options.secretKey = secretKeyFromPath
     }
-    options.secretKey = secretKeyFromPath
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
