@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     turnstile: {
       secretKey: '1x0000000000000000000000000000000AA',
-      // secretKeyPath: 'path/to/secret/key'
     },
   },
   turnstile: {
