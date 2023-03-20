@@ -45,7 +45,7 @@ export default defineNuxtModule<ModuleOptions>({
       if (!secretKeyFromPath) {
         console.warn('The secret key from the path could not be found.')
       }
-      options.secretKey = secretKeyFromPath
+      options.secretKey = secretKeyFromPath || options.secretKey
     }
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
