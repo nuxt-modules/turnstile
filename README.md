@@ -40,11 +40,15 @@
      
      runtimeConfig: {
        turnstile: {
-         secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY || '',
+         // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
+         // environment variable.
+         secretKey: '',
        },
      },
    })
    ```
+
+  Alternatively, you may set `turnstile.secretKeyPath` to a path to a file containing the secret key. This will be read at build-time and will override any other explicit `secretKey` you have set.
 
    **Tip**: At runtime you can override site and secret keys with the `NUXT_TURNSTILE_SECRET_KEY` and `NUXT_PUBLIC_TURNSTILE_SITE_KEY` environment variables.
 

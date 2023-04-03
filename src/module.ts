@@ -1,11 +1,14 @@
 import { fileURLToPath } from 'node:url'
+import fs from 'node:fs'
 import { defineNuxtModule, addComponentsDir, addPlugin, addServerHandler } from '@nuxt/kit'
-import { join } from 'pathe'
+import { join, resolve } from 'pathe'
 import defu from 'defu'
 
 export interface ModuleOptions {
   /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRETKEY */
   secretKey?: string
+  /** Path to a file containing the secret key. */
+  secretKeyPath?: string
   /** Your Turnstile site key */
   siteKey?: string
   /**
@@ -30,6 +33,16 @@ export default defineNuxtModule<ModuleOptions>({
     if (!siteKey) {
       console.warn('`@nuxtjs/turnstile` is disabled as no site key was provided.')
       return
+    }
+
+    if (options.secretKeyPath) {
+      try {
+        options.secretKey = fs.readFileSync(resolve(nuxt.options.rootDir, options.secretKeyPath), 'utf-8')
+      } catch {}
+
+      if (!options.secretKey) {
+        console.warn(`No secret key present in \`${options.secretKeyPath}\`.`)
+      }
     }
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
