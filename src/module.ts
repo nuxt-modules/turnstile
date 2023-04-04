@@ -8,8 +8,8 @@ import {
   addServerHandler,
   useLogger,
 } from '@nuxt/kit'
-import { defu } from 'defu'
 import { join, resolve } from 'pathe'
+import { defu } from 'defu'
 
 export interface ModuleOptions {
   /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRETKEY */
