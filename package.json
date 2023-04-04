@@ -41,12 +41,11 @@
     "lint:eslint": "eslint --fix",
     "lint:prettier": "prettier --write --loglevel warn",
     "prepack": "pnpm build",
-    "prepublishOnly": "pnpm lint && pnpm test && pinst --disable",
+    "prepare": "husky install",
+    "prepublishOnly": "pnpm lint && pnpm test",
     "release": "bumpp && npm publish",
     "test": "vitest run",
-    "test:types": "tsc --noEmit && nuxt typecheck",
-    "postinstall": "husky install",
-    "postpublish": "pinst --enable"
+    "test:types": "tsc --noEmit && nuxt typecheck"
   },
   "dependencies": {
     "@nuxt/kit": "^3.1.1",
@@ -70,7 +69,6 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.0",
     "nuxt": "3.3.2",
-    "pinst": "3.0.0",
     "playwright": "1.32.1",
     "prettier": "2.8.7",
     "typescript": "5.0.3",

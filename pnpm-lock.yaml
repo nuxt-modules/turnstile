@@ -65,9 +65,6 @@ importers:
       nuxt:
         specifier: 3.3.2
         version: 3.3.2(@types/node@18.15.11)(eslint@8.37.0)(rollup@3.20.2)(typescript@5.0.3)
-      pinst:
-        specifier: 3.0.0
-        version: 3.0.0
       playwright:
         specifier: 1.32.1
         version: 1.32.1
@@ -4542,12 +4539,6 @@ packages:
   /pify@2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /pinst@3.0.0:
-    resolution: {integrity: sha512-cengSmBxtCyaJqtRSvJorIIZXMXg+lJ3sIljGmtBGUVonMnMsVJbnzl6jGN1HkOWwxNuJynCJ2hXxxqCQrFDdw==}
-    engines: {node: '>=12.0.0'}
-    hasBin: true
     dev: true
 
   /pkg-types@1.0.2:
