@@ -74,7 +74,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Add plugin to load turnstile script
     addPlugin({ src: join(runtimeDir, 'plugins/script') })
 
-    // Add <Turnstile> component
+    // Add <NuxtTurnstile> component
     addComponentsDir({ path: join(runtimeDir, 'components') })
 
     if (options.addValidateEndpoint) {
