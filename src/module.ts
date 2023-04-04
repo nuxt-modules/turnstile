@@ -1,8 +1,13 @@
 import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
-import { defineNuxtModule, addComponentsDir, addPlugin, addServerHandler } from '@nuxt/kit'
-import consola from 'consola'
+import {
+  defineNuxtModule,
+  addComponentsDir,
+  addPlugin,
+  addServerHandler,
+  useLogger,
+} from '@nuxt/kit'
 import { defu } from 'defu'
 import { join, resolve } from 'pathe'
 
@@ -30,10 +35,11 @@ export default defineNuxtModule<ModuleOptions>({
     siteKey: nuxt.options.dev ? '1x00000000000000000000AA' : undefined,
     addValidateEndpoint: false,
   }),
-  setup(options, nuxt) {
+  setup (options, nuxt) {
+    const logger = useLogger('turnstile')
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
-      consola.warn('`@nuxtjs/turnstile` is disabled as no site key was provided.')
+      logger.warn('`@nuxtjs/turnstile` is disabled as no site key was provided.')
       return
     }
 
@@ -46,7 +52,7 @@ export default defineNuxtModule<ModuleOptions>({
       } catch {}
 
       if (!options.secretKey) {
-        consola.warn(`No secret key present in \`${options.secretKeyPath}\`.`)
+        logger.warn(`No secret key present in \`${options.secretKeyPath}\`.`)
       }
     }
 
