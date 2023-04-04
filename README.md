@@ -33,11 +33,11 @@
    ```js
    export default defineNuxtConfig({
      modules: ['@nuxtjs/turnstile'],
-     
+
      turnstile: {
        siteKey: '<your-site-key>',
      },
-     
+
      runtimeConfig: {
        turnstile: {
          // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
@@ -56,7 +56,7 @@
 
 To use Turnstile, you will likely want to:
 
-- Use the `<Turnstile>` component in your app (for example to build a contact form)
+- Use the `<NuxtTurnstile>` component in your app (for example to build a contact form)
 - Verify the token on your server, when you are processing an API request or a form submission (for example, before sending the email out)
 
 ### Client
@@ -67,14 +67,14 @@ To use Turnstile, add the auto-imported Vue component in whatever component need
 <template>
   <div>
     <form @submit.prevent="onSubmit">
-      <Turnstile v-model="token" />
+      <NuxtTurnstile v-model="token" />
       <input type="submit" />
     </form>
   </div>
 </template>
 ```
 
-`<Turnstile>` can take a number of options via the `options` argument. [See all options](./src/runtime/types.ts). It renders the Turnstile `<iframe>` within a `<div>` wrapper by default, but you can configure this by setting the `element` prop.
+`<NuxtTurnstile>` can take a number of options via the `options` argument. [See all options](./src/runtime/types.ts). It renders the Turnstile `<iframe>` within a `<div>` wrapper by default, but you can configure this by setting the `element` prop.
 
 When in the page, it will automatically load the Turnstile script and validate your user. Each validation lasts for 300s, and `@nuxtjs/turnstile` will automatically revalidate this token after 250s.
 
@@ -86,7 +86,7 @@ The turnstile token is no longer valid after being processed with CloudFlare via
 
 ```html
 <template>
-  <Turnstile ref="turnstile" />
+  <NuxtTurnstile ref="turnstile" />
   <button @click="turnstile.reset()">Reset token in template</button>
   <button @click="reset()">Reset token from handler</button>
 </template>
