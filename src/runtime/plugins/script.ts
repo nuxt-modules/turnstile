@@ -19,6 +19,12 @@ const turnstileScript = {
   defer: true,
 }
 
+type $turnstile = {
+  loadTurnstile: () => Promise<void>
+  render(element: string | HTMLElement, options: TurnstileRenderOptions): Promise<any>
+  reset(element: string | HTMLElement): Promise<any>
+}
+
 export default defineNuxtPlugin(nuxtApp => {
   const addTurnstileScript = ref(false)
   const config = useRuntimeConfig()
@@ -42,7 +48,7 @@ export default defineNuxtPlugin(nuxtApp => {
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
     },
-  }
+  } satisfies $turnstile
 
   if (isVue2) {
     // @ts-expect-error untyped nuxt2Context - fix in bridge-schema
@@ -85,3 +91,9 @@ export default defineNuxtPlugin(nuxtApp => {
     },
   }
 })
+
+declare module '#app' {
+  interface NuxtApp {
+    $turnstile: $turnstile
+  }
+}
