@@ -41,11 +41,10 @@
     "lint:eslint": "eslint --fix",
     "lint:prettier": "prettier --write --loglevel warn",
     "prepack": "pnpm build",
-    "prepare": "husky install",
     "prepublishOnly": "pnpm lint && pnpm test && pinst --disable",
     "release": "bumpp && npm publish",
     "test": "vitest run",
-    "test:types": "tsc --noEmit",
+    "test:types": "tsc --noEmit && nuxt typecheck",
     "postinstall": "husky install",
     "postpublish": "pinst --enable"
   },
@@ -55,10 +54,10 @@
     "pathe": "^1.0.0"
   },
   "devDependencies": {
+    "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/module-builder": "0.2.1",
     "@nuxt/schema": "3.3.2",
     "@nuxt/test-utils": "3.3.2",
-    "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@types/node": "18.15.11",
     "@vitest/coverage-c8": "0.29.8",
     "bumpp": "^9.1.0",

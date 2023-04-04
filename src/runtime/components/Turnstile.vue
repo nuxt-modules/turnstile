@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount, nextTick } from '#imports'
 import type { TurnstileRenderOptions } from '../types'
 
+import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount, nextTick } from '#imports'
+
 const props = defineProps({
+  // eslint-disable-next-line vue/require-default-prop
   modelValue: {
     type: String,
+    required: false,
   },
   element: {
     type: String,
     default: 'div',
   },
+  // eslint-disable-next-line vue/require-default-prop
   siteKey: {
     type: String,
     required: false,
@@ -31,7 +35,7 @@ const el = ref()
 
 let interval: NodeJS.Timer
 
-async function reset() {
+function reset() {
   return nuxtApp.$turnstile.reset(el.value)
 }
 
