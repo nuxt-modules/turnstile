@@ -1,5 +1,5 @@
-import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2, watch } from '#imports'
 import type { TurnstileRenderOptions } from '../types'
+import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2, watch } from '#imports'
 
 const configure = [
   'window.loadTurnstile = new Promise(resolve => {',
@@ -27,9 +27,9 @@ export default defineNuxtPlugin(nuxtApp => {
     loadTurnstile: async () => {
       addTurnstileScript.value = true
       if (process.server) return
-        ; (await (window as any).loadTurnstile) as Promise<void>
+      ;(await (window as any).loadTurnstile) as Promise<void>
     },
-    async render (element: string | HTMLElement, options: TurnstileRenderOptions) {
+    async render(element: string | HTMLElement, options: TurnstileRenderOptions) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.render(element, {
@@ -37,7 +37,7 @@ export default defineNuxtPlugin(nuxtApp => {
         ...options,
       })
     },
-    async reset (element: string | HTMLElement) {
+    async reset(element: string | HTMLElement) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
