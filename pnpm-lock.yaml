@@ -10,6 +10,9 @@ importers:
       '@nuxt/kit':
         specifier: ^3.1.1
         version: 3.3.2(rollup@3.20.2)
+      consola:
+        specifier: ^2.15.3
+        version: 2.15.3
       defu:
         specifier: ^6.1.1
         version: 6.1.2
