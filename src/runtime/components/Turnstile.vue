@@ -12,9 +12,9 @@ const props = defineProps({
     type: String,
     default: 'div',
   },
+  // eslint-disable-next-line vue/require-default-prop
   siteKey: {
     type: String,
-    default: '1x00000000000000000000AA',
   },
   options: {
     type: Object as () => Omit<TurnstileRenderOptions, 'callback'>,
