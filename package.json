@@ -47,7 +47,6 @@
     "release": "bumpp && npm publish",
     "test": "vitest run",
     "test:types": "tsc --noEmit",
-    "postinstall": "husky install",
     "postpublish": "pinst --enable"
   },
   "dependencies": {
