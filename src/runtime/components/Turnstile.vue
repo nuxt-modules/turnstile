@@ -7,6 +7,7 @@ const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
   modelValue: {
     type: String,
+    required: false,
   },
   element: {
     type: String,
