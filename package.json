@@ -42,11 +42,11 @@
     "lint:prettier": "prettier --write --loglevel warn",
     "lint:typecheck": "nuxt typecheck",
     "prepack": "pnpm build",
-    "prepare": "husky install",
     "prepublishOnly": "pnpm lint && pnpm test && pinst --disable",
     "release": "bumpp && npm publish",
     "test": "vitest run",
     "test:types": "tsc --noEmit",
+    "postinstall": "husky install",
     "postpublish": "pinst --enable"
   },
   "dependencies": {
