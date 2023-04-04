@@ -3,14 +3,14 @@
     <button @click="toggle = !toggle">Load Turnstiles</button>
     <form @submit.prevent="onSubmit">
       <h2>Using vue model</h2>
-      <Turnstile v-if="toggle" v-model="token" :options="{ action: 'vue' }" />
+      <NuxtTurnstile v-if="toggle" v-model="token" :options="{ action: 'vue' }" />
       <input type="submit" />
     </form>
     <pre>{{ response1 }}</pre>
     <hr />
     <form @submit.prevent="onNativeSubmit">
       <h2>Using native form</h2>
-      <Turnstile v-if="toggle" ref="turnstile" :options="{ action: 'native' }" />
+      <NuxtTurnstile v-if="toggle" ref="turnstile" :options="{ action: 'native' }" />
       <input type="submit" />
     </form>
     <button @click="turnstile.reset()">Reset</button>
