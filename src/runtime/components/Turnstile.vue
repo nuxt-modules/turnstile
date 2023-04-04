@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount, nextTick } from '#imports'
 import type { TurnstileRenderOptions } from '../types'
+
+import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount, nextTick } from '#imports'
 
 const props = defineProps({
   modelValue: {
     type: String,
+    default: undefined,
   },
   element: {
     type: String,
@@ -12,7 +14,7 @@ const props = defineProps({
   },
   siteKey: {
     type: String,
-    required: false,
+    default: '1x00000000000000000000AA',
   },
   options: {
     type: Object as () => Omit<TurnstileRenderOptions, 'callback'>,
@@ -31,7 +33,7 @@ const el = ref()
 
 let interval: NodeJS.Timer
 
-async function reset() {
+function reset() {
   return nuxtApp.$turnstile.reset(el.value)
 }
 
