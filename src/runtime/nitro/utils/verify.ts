@@ -1,6 +1,7 @@
+import type { TurnstileValidationResponse } from '../../types'
+
 // @ts-expect-error nitro aliases aren't registered
 import { useRuntimeConfig } from '#internal/nitro'
-import type { TurnstileValidationResponse } from '../../types'
 
 const secretKey = useRuntimeConfig().turnstile.secretKey
 const endpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'

@@ -1,5 +1,5 @@
-import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2, watch } from '#imports'
 import type { TurnstileRenderOptions } from '../types'
+import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2, watch } from '#imports'
 
 const configure = [
   'window.loadTurnstile = new Promise(resolve => {',
@@ -19,6 +19,12 @@ const turnstileScript = {
   defer: true,
 }
 
+type TurnstileInjection = {
+  loadTurnstile: () => Promise<void>
+  render(element: string | HTMLElement, options: TurnstileRenderOptions): Promise<any>
+  reset(element: string | HTMLElement): Promise<any>
+}
+
 export default defineNuxtPlugin(nuxtApp => {
   const addTurnstileScript = ref(false)
   const config = useRuntimeConfig()
@@ -27,9 +33,9 @@ export default defineNuxtPlugin(nuxtApp => {
     loadTurnstile: async () => {
       addTurnstileScript.value = true
       if (process.server) return
-        ; (await (window as any).loadTurnstile) as Promise<void>
+      ;(await (window as any).loadTurnstile) as Promise<void>
     },
-    async render (element: string | HTMLElement, options: TurnstileRenderOptions) {
+    async render(element: string | HTMLElement, options: TurnstileRenderOptions) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.render(element, {
@@ -37,12 +43,12 @@ export default defineNuxtPlugin(nuxtApp => {
         ...options,
       })
     },
-    async reset (element: string | HTMLElement) {
+    async reset(element: string | HTMLElement) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
     },
-  }
+  } satisfies TurnstileInjection
 
   if (isVue2) {
     // @ts-expect-error untyped nuxt2Context - fix in bridge-schema
@@ -85,3 +91,10 @@ export default defineNuxtPlugin(nuxtApp => {
     },
   }
 })
+
+// TODO: fix this issue upstream in nuxt/module-builder
+declare module '#app' {
+  interface NuxtApp {
+    $turnstile: TurnstileInjection
+  }
+}
