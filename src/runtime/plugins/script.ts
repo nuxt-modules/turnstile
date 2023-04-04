@@ -19,7 +19,7 @@ const turnstileScript = {
   defer: true,
 }
 
-type $turnstile = {
+type TurnstileInjection = {
   loadTurnstile: () => Promise<void>
   render(element: string | HTMLElement, options: TurnstileRenderOptions): Promise<any>
   reset(element: string | HTMLElement): Promise<any>
@@ -48,7 +48,7 @@ export default defineNuxtPlugin(nuxtApp => {
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
     },
-  } satisfies $turnstile
+  } satisfies TurnstileInjection
 
   if (isVue2) {
     // @ts-expect-error untyped nuxt2Context - fix in bridge-schema
@@ -92,8 +92,9 @@ export default defineNuxtPlugin(nuxtApp => {
   }
 })
 
+// TODO: fix this issue upstream in nuxt/module-builder
 declare module '#app' {
   interface NuxtApp {
-    $turnstile: $turnstile
+    $turnstile: TurnstileInjection
   }
 }
