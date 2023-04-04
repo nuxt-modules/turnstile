@@ -36,7 +36,7 @@ importers:
         specifier: 0.29.8
         version: 0.29.8(vitest@0.29.8)
       bumpp:
-        specifier: ^9.1.0
+        specifier: 9.1.0
         version: 9.1.0
       conventional-changelog-conventionalcommits:
         specifier: 5.0.0
