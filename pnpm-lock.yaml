@@ -21,8 +21,8 @@ importers:
         specifier: 0.1.1
         version: 0.1.1(eslint@8.39.0)
       '@nuxt/module-builder':
-        specifier: 0.3.0
-        version: 0.3.0
+        specifier: 0.3.1
+        version: 0.3.1
       '@nuxt/schema':
         specifier: 3.3.2
         version: 3.3.2(rollup@3.20.2)
@@ -826,8 +826,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/module-builder@0.3.0:
-    resolution: {integrity: sha512-ocXA3pY5T3YKBLNE/Epgnh5cIIrad6vGP31gT7RorpFa7mtIqMxIPX/Z7RSQ7xnTvZW9sA1AxadjfhwHMEBhKg==}
+  /@nuxt/module-builder@0.3.1:
+    resolution: {integrity: sha512-qH/F3SgIE4mobpAfJ6D9c6IqIrhEsiPM+aSdckyJgRGUbyU8urKqPR0d3DkGanN9mWy5Nk6Fwqon6jNKz97SRA==}
     hasBin: true
     dependencies:
       consola: 3.1.0
