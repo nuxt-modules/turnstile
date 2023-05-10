@@ -39,8 +39,9 @@ export default defineNuxtModule<ModuleOptions>({
     const logger = useLogger('turnstile')
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
-      logger.warn('`@nuxtjs/turnstile` is disabled as no site key was provided.')
-      return
+      logger.warn(
+        'No site key was provided. Make sure you pass one at runtime by setting NUXT_PUBLIC_TURNSTILE_SITE_KEY.'
+      )
     }
 
     if (options.secretKeyPath) {
