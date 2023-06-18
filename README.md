@@ -74,7 +74,7 @@ To use Turnstile, add the auto-imported Vue component in whatever component need
 </template>
 ```
 
-`<NuxtTurnstile>` can take a number of options via the `options` argument. [See all options](./src/runtime/types.ts). It renders the Turnstile `<iframe>` within a `<div>` wrapper by default, but you can configure this by setting the `element` prop.
+`<NuxtTurnstile>` can take a number of options via the `options` argument. [See all options](https://github.com/nuxt-modules/turnstile/blob/main/src/runtime/types.ts). It renders the Turnstile `<iframe>` within a `<div>` wrapper by default, but you can configure this by setting the `element` prop.
 
 When in the page, it will automatically load the Turnstile script and validate your user. Each validation lasts for 300s, and `@nuxtjs/turnstile` will automatically revalidate this token after 250s.
 
@@ -146,7 +146,7 @@ export default defineEventHandler(async (event) => {
 - Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
 - Install dependencies using `pnpm install`
 - Stub module with `pnpm dev:prepare`
-- Run `pnpm dev` to start [playground](./playground) in development mode
+- Run `pnpm dev` to start [playground](https://github.com/nuxt-modules/turnstile/tree/main/playground) in development mode
 
 ## Credits
 
@@ -156,7 +156,7 @@ export default defineEventHandler(async (event) => {
 
 Made with ❤️
 
-Published under the [MIT License](./LICENCE).
+Published under the [MIT License](https://github.com/nuxt-modules/turnstile/blob/main/LICENCE).
 
 <!-- Badges -->
 
