@@ -48,7 +48,7 @@
     "test:types": "tsc --noEmit && nuxt typecheck"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.6.0",
+    "@nuxt/kit": "^3.6.1",
     "defu": "^6.1.2",
     "pathe": "^1.1.1"
   },
