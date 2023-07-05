@@ -74,7 +74,7 @@
     "typescript": "5.1.6",
     "vitest": "0.32.4",
     "vue": "3.3.4",
-    "vue-tsc": "1.8.3"
+    "vue-tsc": "1.8.4"
   },
   "resolutions": {
     "@nuxtjs/turnstile": "link:."
