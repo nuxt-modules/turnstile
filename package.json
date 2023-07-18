@@ -80,5 +80,5 @@
     "@nuxtjs/turnstile": "link:.",
     "@nuxt/kit": "3.6.3"
   },
-  "packageManager": "pnpm@8.6.8"
+  "packageManager": "pnpm@8.6.9"
 }
