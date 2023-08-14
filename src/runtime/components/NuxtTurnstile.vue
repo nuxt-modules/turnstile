@@ -33,7 +33,7 @@ const nuxtApp = useNuxtApp()
 
 const el = ref()
 
-let interval: NodeJS.Timer
+let interval: NodeJS.Timeout
 
 function reset() {
   return nuxtApp.$turnstile.reset(el.value)
