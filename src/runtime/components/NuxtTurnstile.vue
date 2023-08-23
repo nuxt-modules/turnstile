@@ -40,10 +40,10 @@ function reset() {
 }
 
 defineExpose({ reset })
-
+let id: string|undefined;
 onMounted(async () => {
   await nextTick()
-  nuxtApp.$turnstile.render(el.value, {
+  id = await nuxtApp.$turnstile.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
     callback: (token: string) => emit('update:modelValue', token),
@@ -56,7 +56,12 @@ if (process.server) {
   nuxtApp.$turnstile.loadTurnstile()
 }
 
-onBeforeUnmount(() => clearInterval(interval))
+onBeforeUnmount(() => {
+  clearInterval(interval)
+  if (id) {
+    nuxtApp.$turnstile.remove(id)  
+  }
+})
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NuxtLink id="home-link" to="/home">to /home</NuxtLink>
     <button @click="toggle = !toggle">Load Turnstiles</button>
     <form @submit.prevent="onSubmit">
       <h2>Using vue model</h2>
