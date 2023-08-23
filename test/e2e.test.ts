@@ -37,4 +37,34 @@ describe('turnstile', async () => {
       )
     )
   })
+
+  it('expect no callback loop', async () => {
+    
+    const page = await createPage()
+    const resources: string[] = []
+    const logs: string[] = []
+
+    page.on('request', res => {
+      resources.push(res.url())
+    })
+    page.on('console', event => {
+      logs.push(event.text())
+    })
+
+    await page.goto(url('/'), { waitUntil: 'networkidle' })
+    expect(resources.every(r => !r.includes('challenges.cloudflare.com')))
+
+    await page.click('button')
+    await page.waitForLoadState('networkidle')
+
+    await page.click('#home-link')
+    await page.waitForLoadState('networkidle')
+    await page.click('#form-link')
+    await page.waitForLoadState('networkidle')
+
+    // ensure we wait for turnstile warn message about unfound widget
+    await page.waitForTimeout(1000)
+
+    expect(logs).toHaveLength(0)
+  })
 })
