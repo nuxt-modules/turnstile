@@ -55,7 +55,7 @@ export default defineNuxtPlugin(nuxtApp => {
       if (addTurnstileScript.value) {
         return (window as any).turnstile.remove(id)
       } else {
-        console.warn('cannot remove a turnstile widget without enabling Turnstile')
+        console.warn('cannot remove a Turnstile widget without enabling Turnstile')
       }
     }
   } satisfies TurnstileInjection
