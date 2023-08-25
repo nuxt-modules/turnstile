@@ -58,6 +58,7 @@ if (process.server) {
 
 onBeforeUnmount(() => {
   clearInterval(interval)
+
   if (id) {
     nuxtApp.$turnstile.remove(id)  
   }
