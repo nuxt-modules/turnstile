@@ -38,8 +38,7 @@ describe('turnstile', async () => {
     )
   })
 
-  it('expect no callback loop', async () => {
-    
+  it('expects no callback loop', async () => {
     const page = await createPage()
     const resources: string[] = []
     const logs: string[] = []
