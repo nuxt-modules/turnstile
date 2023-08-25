@@ -33,6 +33,7 @@ const nuxtApp = useNuxtApp()
 
 const el = ref()
 
+let id: string | undefined
 let interval: NodeJS.Timeout
 
 function reset() {
@@ -40,9 +41,9 @@ function reset() {
 }
 
 defineExpose({ reset })
-let id: string|undefined;
 onMounted(async () => {
   await nextTick()
+
   id = await nuxtApp.$turnstile.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
@@ -60,7 +61,7 @@ onBeforeUnmount(() => {
   clearInterval(interval)
 
   if (id) {
-    nuxtApp.$turnstile.remove(id)  
+    nuxtApp.$turnstile.remove(id)
   }
 })
 </script>
