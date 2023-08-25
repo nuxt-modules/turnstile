@@ -64,9 +64,8 @@ describe('turnstile', async () => {
     await page.waitForLoadState('networkidle')
     await page.click('#form-link')
     await page.waitForLoadState('networkidle')
-
     // ensure we wait for turnstile warn message about unfound widget
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(2500)
 
     expect(logs).toHaveLength(0)
   })
