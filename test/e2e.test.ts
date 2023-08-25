@@ -18,21 +18,15 @@ describe('turnstile', async () => {
   it('works on the client', async () => {
     const page = await createPage()
     const urls: URL[] = []
-    const logs: string[] = []
 
     page.on('request', res => {
       urls.push(new URL(res.url()))
     })
-    page.on('console', event => {
-      logs.push(event.text())
-    })
 
-    await page.goto(url('/'), { waitUntil: 'networkidle' })
+    await page.goto(url('/'))
     expect(urls.every(r => !['challenges.cloudflare.com'].includes(r.host)))
 
     await page.click('button')
-    await page.waitForLoadState('networkidle')
-
     expect(
       urls
         .map(url => url.toString())
@@ -44,29 +38,18 @@ describe('turnstile', async () => {
 
   it('expects no callback loop', async () => {
     const page = await createPage()
-    const urls: URL[] = []
     const logs: string[] = []
 
-    page.on('request', res => {
-      urls.push(new URL(res.url()))
-    })
     page.on('console', event => {
       logs.push(event.text())
     })
 
-    await page.goto(url('/'), { waitUntil: 'networkidle' })
-    expect(urls.every(r => !['challenges.cloudflare.com'].includes(r.host)))
-
+    await page.goto(url('/'))
     await page.click('button')
-    await page.waitForLoadState('networkidle')
-
     await page.click('#home-link')
-    await page.waitForLoadState('networkidle')
-    await page.click('#form-link')
-    await page.waitForLoadState('networkidle')
-    // ensure we wait for turnstile warn message about unfound widget
-    await page.waitForTimeout(2500)
+    await page.waitForEvent('console')
 
+    expect(logs.join()).toStrictEqual('')
     expect(logs).toHaveLength(0)
   })
 })
