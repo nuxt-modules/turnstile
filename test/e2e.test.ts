@@ -36,7 +36,7 @@ describe('turnstile', async () => {
     )
   })
 
-  it('expects no callback loop', async () => {
+  it.fails('to wait for error logs', async () => {
     const page = await createPage()
     const logs: string[] = []
 
@@ -48,8 +48,5 @@ describe('turnstile', async () => {
     await page.click('button')
     await page.click('#home-link')
     await page.waitForEvent('console')
-
-    expect(logs.join()).toStrictEqual('')
-    expect(logs).toHaveLength(0)
   })
 })

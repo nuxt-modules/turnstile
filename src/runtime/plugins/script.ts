@@ -23,7 +23,7 @@ type TurnstileInjection = {
   loadTurnstile: () => Promise<void>
   render(element: string | HTMLElement, options: TurnstileRenderOptions): Promise<string>
   reset(element: string | HTMLElement): Promise<any>
-  remove(id: string): Promise<any>
+  remove(element: string | HTMLElement): Promise<any>
 }
 
 export default defineNuxtPlugin(nuxtApp => {
@@ -49,11 +49,11 @@ export default defineNuxtPlugin(nuxtApp => {
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
     },
-    async remove(id: string) {
+    async remove(element: string | HTMLElement) {
       if (process.server) return
 
       if (addTurnstileScript.value) {
-        return (window as any).turnstile.remove(id)
+        return (window as any).turnstile.remove(element)
       } else {
         console.warn('Cannot remove a Turnstile widget without enabling Turnstile.')
       }

@@ -14,7 +14,7 @@
       <NuxtTurnstile v-if="toggle" ref="turnstile" :options="{ action: 'native' }" />
       <input type="submit" />
     </form>
-    <button @click="turnstile.reset()">Reset</button>
+    <button :disabled="!turnstile" @click="turnstile.reset()">Reset</button>
     <pre>{{ response2 }}</pre>
   </div>
 </template>
