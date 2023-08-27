@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/turnstile",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "license": "MIT",
   "description": "Cloudflare Turnstile integration for Nuxt",
   "repository": "nuxt-modules/turnstile",
