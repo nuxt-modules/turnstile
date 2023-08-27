@@ -1,5 +1,6 @@
 import type { TurnstileRenderOptions } from '../types'
-import { defineNuxtPlugin, useRuntimeConfig, useHead, ref, isVue2, watch } from '#imports'
+import { defineNuxtPlugin, useRuntimeConfig, ref, isVue2, watch } from '#imports'
+import { useHead } from "#app"
 
 const configure = [
   'window.loadTurnstile = new Promise(resolve => {',

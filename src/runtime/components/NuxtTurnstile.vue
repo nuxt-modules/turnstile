@@ -22,6 +22,10 @@ const props = defineProps({
     type: Object as () => Omit<TurnstileRenderOptions, 'callback'>,
     default: () => ({}),
   },
+  resetInterval: {
+    type: Number,
+    default: 1000 * 250,
+  },
 })
 
 const emit = defineEmits<{
@@ -56,7 +60,7 @@ onMounted(async () => {
     ...props.options,
     callback: (token: string) => emit('update:modelValue', token),
   })
-  interval = setInterval(reset, 1000 * 250)
+  interval = setInterval(reset, props.resetInterval)
 
   if (unmountStarted.value) {
     unmount()
