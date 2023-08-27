@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TurnstileRenderOptions } from '../types'
 
-import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount } from '#imports'
+import { nextTick, useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount } from '#imports'
 
 const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
