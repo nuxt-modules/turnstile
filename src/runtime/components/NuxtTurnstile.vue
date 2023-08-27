@@ -55,6 +55,8 @@ const unmount = () => {
 }
 
 onMounted(async () => {
+  await nextTick() // TODO: remove once upstream vue bug is fixed (https://github.com/vuejs/core/issues/5844, https://github.com/nuxt/nuxt/issues/13471)
+
   id = await nuxtApp.$turnstile.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
