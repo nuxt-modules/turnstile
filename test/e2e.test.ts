@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'node:url'
+import { URL, fileURLToPath } from 'node:url'
 import { describe, it, expect } from 'vitest'
 import { setup, $fetch, createPage, url } from '@nuxt/test-utils'
 
@@ -8,33 +8,45 @@ describe('turnstile', async () => {
     browser: true,
     rootDir: fileURLToPath(new URL('../playground', import.meta.url)),
   })
-  it('ssr', async () => {
+
+  it('works with ssr', async () => {
     const html = await $fetch('/')
     expect(html).toContain('window.loadTurnstile')
     expect(html).not.toContain('challenges.cloudflare.com')
   })
-  it('client', async () => {
+
+  it('works on the client', async () => {
     const page = await createPage()
-    const resources: string[] = []
-    const logs: string[] = []
+    const urls: URL[] = []
 
     page.on('request', res => {
-      resources.push(res.url())
+      urls.push(new URL(res.url()))
     })
+
+    await page.goto(url('/'))
+    expect(urls.every(r => !['challenges.cloudflare.com'].includes(r.host)))
+
+    await page.click('button')
+    expect(
+      urls
+        .map(url => url.toString())
+        .includes(
+          'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback'
+        )
+    )
+  })
+
+  it.fails('to wait for error logs', async () => {
+    const page = await createPage()
+    const logs: string[] = []
+
     page.on('console', event => {
       logs.push(event.text())
     })
 
-    await page.goto(url('/'), { waitUntil: 'networkidle' })
-    expect(resources.every(r => !r.includes('challenges.cloudflare.com')))
-
+    await page.goto(url('/'))
     await page.click('button')
-    await page.waitForLoadState('networkidle')
-
-    expect(
-      resources.includes(
-        'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback'
-      )
-    )
+    await page.click('#home-link')
+    await page.waitForEvent('console')
   })
 })

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TurnstileRenderOptions } from '../types'
 
-import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount, nextTick } from '#imports'
+import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount } from '#imports'
 
 const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
@@ -36,31 +36,47 @@ const config = useRuntimeConfig().public.turnstile
 const nuxtApp = useNuxtApp()
 
 const el = ref()
-
+const unmountStarted = ref(false)
+let id: string | undefined = undefined
 let interval: NodeJS.Timeout
 
-function reset() {
-  return nuxtApp.$turnstile.reset(el.value)
+const reset = () => {
+  if (id) {
+    nuxtApp.$turnstile.reset(id)
+  }
+}
+const unmount = () => {
+  unmountStarted.value = true
+  clearInterval(interval)
+
+  if (id) {
+    nuxtApp.$turnstile.remove(id)
+  }
 }
 
-defineExpose({ reset })
-
 onMounted(async () => {
-  await nextTick()
-  nuxtApp.$turnstile.render(el.value, {
+  await nextTick() // TODO: remove once upstream vue bug is fixed (https://github.com/vuejs/core/issues/5844, https://github.com/nuxt/nuxt/issues/13471)
+
+  id = await nuxtApp.$turnstile.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
     callback: (token: string) => emit('update:modelValue', token),
   })
   interval = setInterval(reset, props.resetInterval)
+
+  if (unmountStarted.value) {
+    unmount()
+  }
 })
+
+onBeforeUnmount(unmount)
 
 // This means we will have CF script server-rendered in our HTML
 if (process.server) {
   nuxtApp.$turnstile.loadTurnstile()
 }
 
-onBeforeUnmount(() => clearInterval(interval))
+defineExpose({ reset })
 </script>
 
 <template>

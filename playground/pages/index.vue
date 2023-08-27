@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NuxtLink id="home-link" to="/home">to /home</NuxtLink>
     <button @click="toggle = !toggle">Load Turnstiles</button>
     <form @submit.prevent="onSubmit">
       <h2>Using vue model</h2>
@@ -13,7 +14,7 @@
       <NuxtTurnstile v-if="toggle" ref="turnstile" :options="{ action: 'native' }" />
       <input type="submit" />
     </form>
-    <button @click="turnstile.reset()">Reset</button>
+    <button :disabled="!turnstile" @click="turnstile.reset()">Reset</button>
     <pre>{{ response2 }}</pre>
   </div>
 </template>
