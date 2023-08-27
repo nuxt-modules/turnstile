@@ -43,9 +43,6 @@ importers:
       bumpp:
         specifier: 9.2.0
         version: 9.2.0
-      conventional-changelog-conventionalcommits:
-        specifier: 6.1.0
-        version: 6.1.0
       eslint:
         specifier: 8.47.0
         version: 8.47.0
@@ -2117,10 +2114,6 @@ packages:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
     dev: true
 
-  /array-ify@1.0.0:
-    resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
-    dev: true
-
   /array-union@2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
@@ -2507,13 +2500,6 @@ packages:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
     dev: true
 
-  /compare-func@2.0.0:
-    resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
-    dependencies:
-      array-ify: 1.0.0
-      dot-prop: 5.3.0
-    dev: true
-
   /compress-commons@4.1.1:
     resolution: {integrity: sha512-QLdDLCKNV2dtoTorqgxngQCMA+gWXkM/Nwu7FpeBhk/RdkzimqC3jueb/FDmaZeXh+uby1jkBqE3xArsLBE5wQ==}
     engines: {node: '>= 10'}
@@ -2534,13 +2520,6 @@ packages:
 
   /console-control-strings@1.1.0:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}
-    dev: true
-
-  /conventional-changelog-conventionalcommits@6.1.0:
-    resolution: {integrity: sha512-3cS3GEtR78zTfMzk0AizXKKIdN4OvSh7ibNz6/DPbhWWQu7LqE/8+/GqSodV+sywUR2gpJAdP/1JFf4XtN7Zpw==}
-    engines: {node: '>=14'}
-    dependencies:
-      compare-func: 2.0.0
     dev: true
 
   /convert-source-map@1.9.0:
@@ -2857,13 +2836,6 @@ packages:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
-    dev: true
-
-  /dot-prop@5.3.0:
-    resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
-    engines: {node: '>=8'}
-    dependencies:
-      is-obj: 2.0.0
     dev: true
 
   /dot-prop@7.2.0:
@@ -3782,11 +3754,6 @@ packages:
   /is-number@7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
-
-  /is-obj@2.0.0:
-    resolution: {integrity: sha512-drqDG3cbczxxEJRoOXcOjtdp1J/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMnbfDzvnEMEtqDEJEo8w==}
-    engines: {node: '>=8'}
-    dev: true
 
   /is-path-inside@3.0.3:
     resolution: {integrity: sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==}
