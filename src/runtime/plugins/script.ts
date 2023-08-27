@@ -22,8 +22,8 @@ const turnstileScript = {
 type TurnstileInjection = {
   loadTurnstile: () => Promise<void>
   render(element: string | HTMLElement, options: TurnstileRenderOptions): Promise<string>
-  reset(element: string | HTMLElement): Promise<any>
-  remove(element: string | HTMLElement): Promise<any>
+  reset(id: string): Promise<any>
+  remove(id: string): Promise<any>
 }
 
 export default defineNuxtPlugin(nuxtApp => {
@@ -36,7 +36,7 @@ export default defineNuxtPlugin(nuxtApp => {
       if (process.server) return
       ;(await (window as any).loadTurnstile) as Promise<void>
     },
-    async render(element: string | HTMLElement, options: TurnstileRenderOptions) {
+    async render(element, options) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.render(element, {
@@ -44,12 +44,12 @@ export default defineNuxtPlugin(nuxtApp => {
         ...options,
       })
     },
-    async reset(element: string | HTMLElement) {
+    async reset(element) {
       if (process.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
     },
-    async remove(element: string | HTMLElement) {
+    async remove(element) {
       if (process.server) return
 
       if (addTurnstileScript.value) {

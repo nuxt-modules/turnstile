@@ -33,18 +33,25 @@ const nuxtApp = useNuxtApp()
 
 const el = ref()
 const unmountStarted = ref(false)
-
+let id: string | undefined = undefined
 let interval: NodeJS.Timeout
 
-const reset = () => nuxtApp.$turnstile.reset(el.value)
+const reset = () => {
+  if (id) {
+    nuxtApp.$turnstile.reset(id)
+  }
+}
 const unmount = () => {
   unmountStarted.value = true
   clearInterval(interval)
-  nuxtApp.$turnstile.remove(el.value)
+
+  if (id) {
+    nuxtApp.$turnstile.remove(id)
+  }
 }
 
 onMounted(async () => {
-  await nuxtApp.$turnstile.render(el.value, {
+  id = await nuxtApp.$turnstile.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
     callback: (token: string) => emit('update:modelValue', token),
