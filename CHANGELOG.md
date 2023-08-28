@@ -1,3 +1,10 @@
+## [0.6.2](https://github.com/nuxt-modules/turnstile/compare/v0.6.1...v0.6.2) (2023-08-28)
+
+
+### Bug Fixes
+
+* **chore:** test ci ([3592178](https://github.com/nuxt-modules/turnstile/commit/3592178bcafce8ec6baeee03dcaeb5069de526e7))
+
 ## [0.6.1](https://github.com/nuxt-modules/turnstile/compare/v0.6.0...0.6.1) (2023-08-28)
 
 
