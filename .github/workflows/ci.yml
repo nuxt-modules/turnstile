@@ -70,6 +70,7 @@ jobs:
         uses: codecov/codecov-action@v3
 
       - name: 🌍 Release
+        id: semantic
         uses: cycjimmy/semantic-release-action@8e58d20d0f6c8773181f43eb74d6a05e3099571d # v3.4.2
         with:
           extra_plugins: |
