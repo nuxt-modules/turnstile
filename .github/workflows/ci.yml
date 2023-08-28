@@ -10,27 +10,7 @@ on:
       - 'renovate/**'
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - run: corepack enable
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "pnpm"
-
-      - name: 📦 Install dependencies
-        run: pnpm install
-
-      - name: 🚧 Set up project
-        run: pnpm dev:prepare
-
-      - name: 🔠 Lint project
-        run: pnpm run lint
-
-  test:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -68,6 +48,9 @@ jobs:
       - name: 🚧 Set up project
         run: pnpm dev:prepare
 
+      - name: 🔠 Lint project
+        run: pnpm run lint
+
       - name: 🧪 Test project
         run: pnpm test -- --coverage
 
@@ -79,3 +62,13 @@ jobs:
 
       - name: 🟩 Coverage
         uses: codecov/codecov-action@v3
+
+      - name: Release
+        uses: cycjimmy/semantic-release-action@8e58d20d0f6c8773181f43eb74d6a05e3099571d # v3.4.2
+        with:
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+        env:
+          # GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to create releases & comments on behalf of a custom user
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
