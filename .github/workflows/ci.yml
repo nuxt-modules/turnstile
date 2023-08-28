@@ -19,6 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          fetch-depth: 0 # fetch complete history for proper release detection
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches
       - run: corepack enable
       - uses: actions/setup-node@v3
