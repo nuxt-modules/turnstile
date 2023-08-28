@@ -1,3 +1,10 @@
+## [0.6.3](https://github.com/nuxt-modules/turnstile/compare/v0.6.2...v0.6.3) (2023-08-28)
+
+
+### Bug Fixes
+
+* **ci:** add missing step id ([f0c1033](https://github.com/nuxt-modules/turnstile/commit/f0c1033f723c70ca8750aa20455f3c2feb7d552e))
+
 ## [0.6.2](https://github.com/nuxt-modules/turnstile/compare/v0.6.1...v0.6.2) (2023-08-28)
 
 
