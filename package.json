@@ -70,7 +70,7 @@
     "lint-staged": "14.0.1",
     "nuxt": "3.7.0",
     "playwright": "1.37.1",
-    "prettier": "3.0.2",
+    "prettier": "3.0.3",
     "typescript": "5.1.6",
     "vitest": "0.34.3",
     "vue": "3.3.4",
