@@ -67,7 +67,7 @@
     "expect-type": "0.16.0",
     "get-port-please": "3.0.2",
     "husky": "8.0.3",
-    "lint-staged": "15.0.1",
+    "lint-staged": "15.0.2",
     "nuxt": "3.7.4",
     "playwright": "1.37.1",
     "prettier": "3.0.3",
