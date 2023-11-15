@@ -1,3 +1,10 @@
+## [0.7.0](https://github.com/nuxt-modules/turnstile/compare/v0.6.3...v0.7.0) (2023-11-15)
+
+
+### Features
+
+* Internationalize turnstile widget ([#286](https://github.com/nuxt-modules/turnstile/issues/286)) ([497d7b6](https://github.com/nuxt-modules/turnstile/commit/497d7b67a8752832939f3622d871b362495a6caa))
+
 ## [0.6.3](https://github.com/nuxt-modules/turnstile/compare/v0.6.2...v0.6.3) (2023-08-28)
 
 
