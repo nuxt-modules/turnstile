@@ -23,6 +23,11 @@ export interface TurnstileRenderOptions {
    */
   cData?: any
   /**
+   * A custom language setting. Use 'auto' (default) for the visitor's chosen language, ISO 639-1 two-letter language code (e.g., en), or language and country code (e.g., en-US).
+   * Consult the list of supported languages: https://developers.cloudflare.com/turnstile/reference/supported-languages/
+   */
+  language?: string
+  /**
    * A JavaScript callback that is invoked upon success of the challenge. The callback is passed a token that can be validated.
    */
   callback?: (token: string) => void
