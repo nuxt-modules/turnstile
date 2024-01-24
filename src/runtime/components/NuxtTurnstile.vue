@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TurnstileRenderOptions } from '../types'
 
-import { nextTick, useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount } from '#imports'
+import { useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount } from '#imports'
 
 const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
@@ -55,8 +55,6 @@ const unmount = () => {
 }
 
 onMounted(async () => {
-  await nextTick() // TODO: remove once upstream vue bug is fixed (https://github.com/vuejs/core/issues/5844, https://github.com/nuxt/nuxt/issues/13471)
-
   id = await nuxtApp.$turnstile.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
