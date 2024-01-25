@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 import {
@@ -8,7 +7,7 @@ import {
   addServerHandler,
   useLogger,
 } from '@nuxt/kit'
-import { join, resolve } from 'pathe'
+import { join } from 'pathe'
 import { defu } from 'defu'
 
 export interface ModuleOptions {
@@ -37,18 +36,15 @@ export default defineNuxtModule<ModuleOptions>({
   }),
   setup(options, nuxt) {
     const logger = useLogger('turnstile')
-    const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
 
+    const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
       logger.warn(
         'No site key was provided. Make sure you pass one at runtime by setting NUXT_PUBLIC_TURNSTILE_SITE_KEY.'
       )
     }
 
-    const secretKey = options.secretKeyPath
-      ? fs.readFileSync(resolve(nuxt.options.rootDir, options.secretKeyPath), 'utf-8')
-      : options.secretKey || nuxt.options.runtimeConfig.turnstile?.secretKey
-
+    const secretKey = options.secretKey || nuxt.options.runtimeConfig.turnstile?.secretKey
     if (!secretKey) {
       logger.warn(
         'No secret key was provided. Make sure you pass one at runtime by setting NUXT_TURNSTILE_SECRET_KEY.'
