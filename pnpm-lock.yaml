@@ -61,9 +61,6 @@ importers:
       get-port-please:
         specifier: 3.0.2
         version: 3.0.2
-      husky:
-        specifier: 9.0.10
-        version: 9.0.10
       lint-staged:
         specifier: 15.0.2
         version: 15.0.2
@@ -4785,12 +4782,6 @@ packages:
   /human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
-    dev: true
-
-  /husky@9.0.10:
-    resolution: {integrity: sha512-TQGNknoiy6bURzIO77pPRu+XHi6zI7T93rX+QnJsoYFf3xdjKOur+IlfqzJGMHIK/wXrLg+GsvMs8Op7vI2jVA==}
-    engines: {node: '>=18'}
-    hasBin: true
     dev: true
 
   /iconv-lite@0.6.3:
