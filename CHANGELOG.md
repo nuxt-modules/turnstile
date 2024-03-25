@@ -1,3 +1,10 @@
+## [0.7.1](https://github.com/nuxt-modules/turnstile/compare/v0.7.0...v0.7.1) (2024-03-25)
+
+
+### Bug Fixes
+
+* opt in to `import.meta.*` properties ([#303](https://github.com/nuxt-modules/turnstile/issues/303)) ([82c4051](https://github.com/nuxt-modules/turnstile/commit/82c4051707efc8e10c9830670dbdddf9818b5a91))
+
 ## [0.7.0](https://github.com/nuxt-modules/turnstile/compare/v0.6.3...v0.7.0) (2023-11-15)
 
 
