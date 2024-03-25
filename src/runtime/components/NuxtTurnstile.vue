@@ -72,7 +72,7 @@ onMounted(async () => {
 onBeforeUnmount(unmount)
 
 // This means we will have CF script server-rendered in our HTML
-if (process.server) {
+if (import.meta.server) {
   nuxtApp.$turnstile.loadTurnstile()
 }
 
