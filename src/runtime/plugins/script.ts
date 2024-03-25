@@ -33,11 +33,11 @@ export default defineNuxtPlugin(nuxtApp => {
   const turnstile = {
     loadTurnstile: async () => {
       addTurnstileScript.value = true
-      if (process.server) return
+      if (import.meta.server) return
       ;(await (window as any).loadTurnstile) as Promise<void>
     },
     async render(element, options) {
-      if (process.server) return
+      if (import.meta.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.render(element, {
         sitekey: config.public.turnstile.siteKey,
@@ -45,12 +45,12 @@ export default defineNuxtPlugin(nuxtApp => {
       })
     },
     async reset(element) {
-      if (process.server) return
+      if (import.meta.server) return
       await this.loadTurnstile()
       return (window as any).turnstile.reset(element)
     },
     async remove(element) {
-      if (process.server) return
+      if (import.meta.server) return
 
       if (addTurnstileScript.value) {
         return (window as any).turnstile.remove(element)
