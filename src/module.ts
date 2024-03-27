@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 import {
@@ -8,11 +7,11 @@ import {
   addServerHandler,
   useLogger,
 } from '@nuxt/kit'
-import { join, resolve } from 'pathe'
+import { join } from 'pathe'
 import { defu } from 'defu'
 
 export interface ModuleOptions {
-  /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRETKEY */
+  /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRET_KEY */
   secretKey?: string
   /** Path to a file containing the secret key. */
   secretKeyPath?: string
@@ -37,6 +36,7 @@ export default defineNuxtModule<ModuleOptions>({
   }),
   setup(options, nuxt) {
     const logger = useLogger('turnstile')
+
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
       logger.warn(
@@ -44,17 +44,11 @@ export default defineNuxtModule<ModuleOptions>({
       )
     }
 
-    if (options.secretKeyPath) {
-      try {
-        options.secretKey = fs.readFileSync(
-          resolve(nuxt.options.rootDir, options.secretKeyPath),
-          'utf-8'
-        )
-      } catch {}
-
-      if (!options.secretKey) {
-        logger.warn(`No secret key present in \`${options.secretKeyPath}\`.`)
-      }
+    const secretKey = options.secretKey || nuxt.options.runtimeConfig.turnstile?.secretKey
+    if (!secretKey) {
+      logger.warn(
+        'No secret key was provided. Make sure you pass one at runtime by setting NUXT_TURNSTILE_SECRET_KEY.'
+      )
     }
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
@@ -63,7 +57,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Set up configuration
     nuxt.options.runtimeConfig = defu(nuxt.options.runtimeConfig, {
       turnstile: {
-        secretKey: options.secretKey,
+        secretKey,
       },
       public: {
         turnstile: {
