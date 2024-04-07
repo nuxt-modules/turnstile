@@ -21,6 +21,10 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
+    },
+    "./runtime/*": {
+      "import": "./dist/runtime/*",
+      "require": "./dist/runtime/*"
     }
   },
   "main": "./dist/module.cjs",
@@ -54,8 +58,10 @@
   "devDependencies": {
     "@nuxt/eslint-config": "0.2.0",
     "@nuxt/module-builder": "0.5.4",
-    "@nuxt/schema": "3.8.2",
-    "@nuxt/test-utils": "3.8.1",
+    "@nuxt/schema": "3.11.1",
+    "@nuxt/scripts": "^0.1.12",
+    "@nuxt/test-utils": "3.12.0",
+    "@types/cloudflare-turnstile": "^0.1.4",
     "@types/node": "20.11.30",
     "@vitest/coverage-v8": "1.0.1",
     "bumpp": "9.4.0",
@@ -66,17 +72,18 @@
     "expect-type": "0.17.3",
     "get-port-please": "3.0.2",
     "lint-staged": "15.0.2",
-    "nuxt": "3.8.2",
+    "nuxt": "3.11.1",
     "playwright": "1.37.1",
     "prettier": "3.2.5",
+    "semver": "^7.6.0",
     "typescript": "5.1.6",
     "vitest": "1.0.1",
-    "vue": "3.3.12",
+    "vue": "3.4.21",
     "vue-tsc": "1.8.27"
   },
   "resolutions": {
     "@nuxtjs/turnstile": "link:.",
-    "@nuxt/kit": "3.8.2"
+    "@nuxt/kit": "3.11.1"
   },
   "packageManager": "pnpm@8.6.12"
 }

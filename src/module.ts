@@ -3,13 +3,16 @@ import { fileURLToPath } from 'node:url'
 
 import {
   defineNuxtModule,
-  addComponentsDir,
   addPlugin,
   addServerHandler,
   useLogger,
+  installModule,
+  addImports,
+  addComponent,
 } from '@nuxt/kit'
 import { join, resolve } from 'pathe'
 import { defu } from 'defu'
+import semver from "semver"
 
 export interface ModuleOptions {
   /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRETKEY */
@@ -35,7 +38,12 @@ export default defineNuxtModule<ModuleOptions>({
     siteKey: nuxt.options.dev ? '1x00000000000000000000AA' : undefined,
     addValidateEndpoint: false,
   }),
-  setup(options, nuxt) {
+  async setup(options, nuxt) {
+    const shouldUseNuxtScripts = semver.gte(nuxt._version, '3.11.1')
+    if (shouldUseNuxtScripts) {
+      await installModule('@nuxt/scripts')
+    }
+
     const logger = useLogger('turnstile')
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
@@ -72,11 +80,24 @@ export default defineNuxtModule<ModuleOptions>({
       },
     })
 
-    // Add plugin to load turnstile script
-    addPlugin({ src: join(runtimeDir, 'plugins/script') })
 
-    // Add <NuxtTurnstile> component
-    addComponentsDir({ path: join(runtimeDir, 'components') })
+    if (shouldUseNuxtScripts) {
+      addImports({
+        from: join(runtimeDir, 'composables/turnstile'),
+        name: 'useScriptCloudflareTurnstile'
+      })
+      addComponent({
+        name: 'NuxtTurnstile',
+        filePath:  join(runtimeDir, 'components', 'NuxtTurnstileNuxtScript')
+      })
+    } else {
+      // Add plugin to load turnstile script
+      addPlugin({ src: join(runtimeDir, 'plugins/script') })
+      addComponent({
+        name: "NuxtTurnstile",
+        filePath: join(runtimeDir, 'components', 'NuxtTurnstile')
+      })
+    }
 
     if (options.addValidateEndpoint) {
       // Add nitro route for verifying cloudflare token
