@@ -30,7 +30,8 @@ describe('turnstile', async () => {
       urls
         .map(url => url.toString())
         .includes(
-          'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback'
+          // look for the challenge platform iframe
+          'https://challenges.cloudflare.com/cdn-cgi/challenge-platform'
         )
     )
   })
