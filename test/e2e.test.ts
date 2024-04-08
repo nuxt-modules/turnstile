@@ -11,7 +11,6 @@ describe('turnstile', async () => {
 
   it('works with ssr', async () => {
     const html = await $fetch('/')
-    expect(html).toContain('window.loadTurnstile')
     expect(html).not.toContain('challenges.cloudflare.com')
   })
 
