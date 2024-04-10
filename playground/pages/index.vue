@@ -1,28 +1,57 @@
 <template>
   <div>
-    <NuxtLink id="home-link" to="/home">to /home</NuxtLink>
+    <NuxtLink
+      id="home-link"
+      to="/home"
+    >
+      to /home
+    </NuxtLink>
     <div>
       <label for="language">Select Turnstile Language : </label>
-      <select id="language" v-model="selectedLanguage">
-        <option v-for="lang in languages" :key="lang" :value="lang">{{ lang }}</option>
+      <select
+        id="language"
+        v-model="selectedLanguage"
+      >
+        <option
+          v-for="lang in languages"
+          :key="lang"
+          :value="lang"
+        >
+          {{ lang }}
+        </option>
       </select>
     </div>
-    <button @click="toggle = !toggle">Load Turnstiles</button>
+    <button @click="toggle = !toggle">
+      Load Turnstiles
+    </button>
     <form @submit.prevent="onSubmit">
       <h2>Using vue model</h2>
-      <NuxtTurnstile v-if="toggle" :key="selectedLanguage" v-model="token"
-        :options="{ action: 'vue', language: selectedLanguage }" />
-      <input type="submit" />
+      <NuxtTurnstile
+        v-if="toggle"
+        :key="selectedLanguage"
+        v-model="token"
+        :options="{ action: 'vue', language: selectedLanguage }"
+      />
+      <input type="submit">
     </form>
     <pre>{{ response1 }}</pre>
-    <hr />
+    <hr>
     <form @submit.prevent="onNativeSubmit">
       <h2>Using native form</h2>
-      <NuxtTurnstile v-if="toggle" :key="selectedLanguage" ref="turnstile"
-        :options="{ action: 'native', language: selectedLanguage }" />
-      <input type="submit" />
+      <NuxtTurnstile
+        v-if="toggle"
+        :key="selectedLanguage"
+        ref="turnstile"
+        :options="{ action: 'native', language: selectedLanguage }"
+      />
+      <input type="submit">
     </form>
-    <button :disabled="!turnstile" @click="turnstile.reset()">Reset</button>
+    <button
+      :disabled="!turnstile"
+      @click="turnstile.reset()"
+    >
+      Reset
+    </button>
     <pre>{{ response2 }}</pre>
   </div>
 </template>

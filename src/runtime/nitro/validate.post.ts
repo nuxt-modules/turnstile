@@ -1,7 +1,7 @@
 import { defineEventHandler, readBody, createError } from 'h3'
 import { verifyTurnstileToken } from './utils/verify'
 
-export default defineEventHandler(async event => {
+export default defineEventHandler(async (event) => {
   const { token } = await readBody(event)
 
   if (!token) {
