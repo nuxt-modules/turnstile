@@ -22,7 +22,9 @@ const turnstileScript = {
 type TurnstileInjection = {
   loadTurnstile: () => Promise<void>
   render(element: string | HTMLElement, options: TurnstileRenderOptions): Promise<string>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   reset(id: string): Promise<any>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   remove(id: string): Promise<any>
 }
 
@@ -34,11 +36,13 @@ export default defineNuxtPlugin((nuxtApp) => {
     loadTurnstile: async () => {
       addTurnstileScript.value = true
       if (import.meta.server) return
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ;(await (window as any).loadTurnstile) as Promise<void>
     },
     async render(element, options) {
       if (import.meta.server) return
       await this.loadTurnstile()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return (window as any).turnstile.render(element, {
         sitekey: config.public.turnstile.siteKey,
         ...options,
@@ -47,12 +51,14 @@ export default defineNuxtPlugin((nuxtApp) => {
     async reset(element) {
       if (import.meta.server) return
       await this.loadTurnstile()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return (window as any).turnstile.reset(element)
     },
     async remove(element) {
       if (import.meta.server) return
 
       if (addTurnstileScript.value) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return (window as any).turnstile.remove(element)
       }
       else {

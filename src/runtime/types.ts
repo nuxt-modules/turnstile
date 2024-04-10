@@ -21,6 +21,7 @@ export interface TurnstileRenderOptions {
   /**
    * A customer payload that can be used to attach customer data to the challenge throughout its issuance and which is returned upon validation.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   'cData'?: any
   /**
    * A custom language setting. Use 'auto' (default) for the visitor's chosen language, ISO 639-1 two-letter language code (e.g., en), or language and country code (e.g., en-US).
@@ -42,19 +43,19 @@ export interface TurnstileRenderOptions {
 }
 
 export type TurnstileValidationErrorCode =
-  /** 	The secret parameter was not passed. */
+  /** The secret parameter was not passed. */
   | 'missing-input-secret'
-  /** 	The secret parameter was invalid or did not exist. */
+  /** The secret parameter was invalid or did not exist. */
   | 'invalid-input-secret'
-  /** 	The response parameter was not passed. */
+  /** The response parameter was not passed. */
   | 'missing-input-response'
-  /** 	The response parameter is invalid or has expired. */
+  /** The response parameter is invalid or has expired. */
   | 'invalid-input-response'
-  /** 	The request was rejected because it was malformed. */
+  /** The request was rejected because it was malformed. */
   | 'bad-request'
-  /** 	The response parameter has already been validated before. */
+  /** The response parameter has already been validated before. */
   | 'timeout-or-duplicate'
-  /** 	An internal error happened while validating the response. The request can be retried. */
+  /** An internal error happened while validating the response. The request can be retried. */
   | 'internal-error'
 
 export interface TurnstileValidationResponse {

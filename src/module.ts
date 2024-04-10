@@ -51,7 +51,9 @@ export default defineNuxtModule<ModuleOptions>({
           'utf-8',
         )
       }
-      catch {}
+      catch {
+        // we can ignore this error, as we'll log a warning if the secret key is missing
+      }
 
       if (!options.secretKey) {
         logger.warn(`No secret key present in \`${options.secretKeyPath}\`.`)
