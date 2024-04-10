@@ -40,7 +40,7 @@ export default defineNuxtModule<ModuleOptions>({
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
       logger.warn(
-        'No site key was provided. Make sure you pass one at runtime by setting NUXT_PUBLIC_TURNSTILE_SITE_KEY.'
+        'No site key was provided. Make sure you pass one at runtime by setting NUXT_PUBLIC_TURNSTILE_SITE_KEY.',
       )
     }
 
@@ -48,9 +48,10 @@ export default defineNuxtModule<ModuleOptions>({
       try {
         options.secretKey = fs.readFileSync(
           resolve(nuxt.options.rootDir, options.secretKeyPath),
-          'utf-8'
+          'utf-8',
         )
-      } catch {}
+      }
+      catch {}
 
       if (!options.secretKey) {
         logger.warn(`No secret key present in \`${options.secretKeyPath}\`.`)
@@ -87,7 +88,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // Add nitro composable for verifying token in server routes
-    nuxt.hook('nitro:config', config => {
+    nuxt.hook('nitro:config', (config) => {
       config.externals = defu(config.externals, {
         inline: [runtimeDir],
       })
