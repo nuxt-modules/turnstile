@@ -38,11 +38,11 @@ const el = ref()
 const unmountStarted = ref(false)
 let id: string | undefined = undefined
 let interval: NodeJS.Timeout
-const { render } = useScriptCloudflareTurnstile()
+const { render, reset: _reset, remove } = useScriptCloudflareTurnstile()
 
 const reset = () => {
   if (id) {
-    nuxtApp.$turnstile.reset(id)
+    _reset(id)
   }
 }
 const unmount = () => {
@@ -50,7 +50,7 @@ const unmount = () => {
   clearInterval(interval)
 
   if (id) {
-    nuxtApp.$turnstile.remove(id)
+    remove(id)
   }
 }
 
