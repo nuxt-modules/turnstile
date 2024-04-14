@@ -38,7 +38,7 @@ const el = ref()
 const unmountStarted = ref(false)
 let id: string | undefined = undefined
 let interval: NodeJS.Timeout
-const { $script } = useScriptCloudflareTurnstile()
+const { render } = useScriptCloudflareTurnstile()
 
 const reset = () => {
   if (id) {
@@ -57,12 +57,10 @@ const unmount = () => {
 onMounted(async () => {
   await nextTick() // TODO: remove once upstream vue bug is fixed (https://github.com/vuejs/core/issues/5844, https://github.com/nuxt/nuxt/issues/13471)
 
-  id = await $script.load().then(e => {
-    e.render(el.value, {
+  id = await render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     ...props.options,
     callback: (token: string) => emit('update:modelValue', token),
-  })
   })
   interval = setInterval(reset, props.resetInterval)
 
