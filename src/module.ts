@@ -58,7 +58,7 @@ export default defineNuxtModule<ModuleOptions>({
           resolve(nuxt.options.rootDir, options.secretKeyPath),
           'utf-8'
         )
-      } catch {}
+      } catch { }
 
       if (!options.secretKey) {
         logger.warn(`No secret key present in \`${options.secretKeyPath}\`.`)
@@ -82,13 +82,21 @@ export default defineNuxtModule<ModuleOptions>({
 
 
     if (shouldUseNuxtScripts) {
-      addImports({
-        from: join(runtimeDir, 'composables/turnstile'),
-        name: 'useScriptCloudflareTurnstile'
+      nuxt.hook('scripts:registry', (registry) => {
+        const cloudflareScriptRegistry = registry.find((r) => r.key === 'cloudflareTurnstile')
+
+        if (cloudflareScriptRegistry) {
+          const composableImport = {
+            from: join(runtimeDir, 'composables/turnstile'),
+            name: 'useScriptCloudflareTurnstile'
+          }
+          Object.assign(cloudflareScriptRegistry, composableImport)
+          addImports(composableImport)
+        }
       })
       addComponent({
         name: 'NuxtTurnstile',
-        filePath:  join(runtimeDir, 'components', 'NuxtTurnstileNuxtScript')
+        filePath: join(runtimeDir, 'components', 'NuxtTurnstileNuxtScript')
       })
     } else {
       // Add plugin to load turnstile script
