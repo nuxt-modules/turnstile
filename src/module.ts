@@ -6,13 +6,13 @@ import {
   addPlugin,
   addServerHandler,
   useLogger,
-  installModule,
   addImports,
   addComponent,
+  isNuxt3,
+  installModule,
 } from '@nuxt/kit'
 import { join, resolve } from 'pathe'
 import { defu } from 'defu'
-import semver from "semver"
 
 export interface ModuleOptions {
   /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRETKEY */
@@ -39,10 +39,6 @@ export default defineNuxtModule<ModuleOptions>({
     addValidateEndpoint: false,
   }),
   async setup(options, nuxt) {
-    const shouldUseNuxtScripts = semver.gte(nuxt._version, '3.11.1')
-    if (shouldUseNuxtScripts) {
-      await installModule('@nuxt/scripts')
-    }
 
     const logger = useLogger('turnstile')
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
@@ -84,7 +80,8 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
 
-    if (shouldUseNuxtScripts) {
+    if (isNuxt3(nuxt)) {
+      await installModule('@nuxt/scripts')
       nuxt.hook('scripts:registry', (registry) => {
         const cloudflareScriptRegistry = registry.find((r) => r.key === 'cloudflareTurnstile')
 

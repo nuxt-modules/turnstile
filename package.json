@@ -71,7 +71,6 @@
     "nuxt": "3.11.1",
     "playwright": "1.37.1",
     "prettier": "3.2.5",
-    "semver": "^7.6.0",
     "typescript": "5.1.6",
     "vitest": "1.0.1",
     "vue": "3.4.21",
