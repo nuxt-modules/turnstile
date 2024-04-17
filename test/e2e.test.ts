@@ -18,7 +18,7 @@ describe('turnstile', async () => {
     const page = await createPage()
     const urls: URL[] = []
 
-    page.on('request', res => {
+    page.on('request', (res) => {
       urls.push(new URL(res.url()))
     })
 
@@ -40,7 +40,7 @@ describe('turnstile', async () => {
     const page = await createPage()
     const logs: string[] = []
 
-    page.on('console', event => {
+    page.on('console', (event) => {
       logs.push(event.text())
     })
 

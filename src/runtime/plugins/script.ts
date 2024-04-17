@@ -22,11 +22,13 @@ const turnstileScript = {
 type TurnstileInjection = {
   loadTurnstile: () => Promise<void>
   render(element: string | HTMLElement, options: TurnstileRenderOptions): Promise<string>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   reset(id: string): Promise<any>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   remove(id: string): Promise<any>
 }
 
-export default defineNuxtPlugin(nuxtApp => {
+export default defineNuxtPlugin((nuxtApp) => {
   const addTurnstileScript = ref(false)
   const config = useRuntimeConfig()
 
@@ -34,11 +36,13 @@ export default defineNuxtPlugin(nuxtApp => {
     loadTurnstile: async () => {
       addTurnstileScript.value = true
       if (import.meta.server) return
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ;(await (window as any).loadTurnstile) as Promise<void>
     },
     async render(element, options) {
       if (import.meta.server) return
       await this.loadTurnstile()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return (window as any).turnstile.render(element, {
         sitekey: config.public.turnstile.siteKey,
         ...options,
@@ -47,14 +51,17 @@ export default defineNuxtPlugin(nuxtApp => {
     async reset(element) {
       if (import.meta.server) return
       await this.loadTurnstile()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return (window as any).turnstile.reset(element)
     },
     async remove(element) {
       if (import.meta.server) return
 
       if (addTurnstileScript.value) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return (window as any).turnstile.remove(element)
-      } else {
+      }
+      else {
         console.warn('Cannot remove a Turnstile widget without enabling Turnstile.')
       }
     },
@@ -65,8 +72,8 @@ export default defineNuxtPlugin(nuxtApp => {
     const app = nuxtApp.nuxt2Context.app
     const originalHead = app.head
     app.head = function () {
-      const head =
-        (typeof originalHead === 'function' ? originalHead.call(this) : originalHead) || {}
+      const head
+        = (typeof originalHead === 'function' ? originalHead.call(this) : originalHead) || {}
 
       head.__dangerouslyDisableSanitizersByTagID = head.__dangerouslyDisableSanitizersByTagID || {}
       head.__dangerouslyDisableSanitizersByTagID['cf-configure'] = ['innerHTML']
@@ -76,14 +83,15 @@ export default defineNuxtPlugin(nuxtApp => {
         ...[
           { hid: 'cf-configure', innerHTML: configure },
           addTurnstileScript.value && turnstileScript,
-        ].filter(Boolean)
+        ].filter(Boolean),
       )
       return head
     }
-  } else {
+  }
+  else {
     const script = () =>
       [{ children: configure }, addTurnstileScript.value && turnstileScript].filter(
-        (s): s is typeof turnstileScript => !!s
+        (s): s is typeof turnstileScript => !!s,
       )
 
     const head = useHead({ script: script() })

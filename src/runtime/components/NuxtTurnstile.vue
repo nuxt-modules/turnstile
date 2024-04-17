@@ -4,7 +4,7 @@ import type { TurnstileRenderOptions } from '../types'
 import { nextTick, useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount } from '#imports'
 
 const props = defineProps({
-  // eslint-disable-next-line vue/require-default-prop
+
   modelValue: {
     type: String,
     required: false,
@@ -13,7 +13,7 @@ const props = defineProps({
     type: String,
     default: 'div',
   },
-  // eslint-disable-next-line vue/require-default-prop
+
   siteKey: {
     type: String,
     required: false,
@@ -80,5 +80,8 @@ defineExpose({ reset })
 </script>
 
 <template>
-  <component :is="element" ref="el" />
+  <component
+    :is="element"
+    ref="el"
+  />
 </template>
