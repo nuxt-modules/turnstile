@@ -58,7 +58,7 @@
     "@vitest/coverage-v8": "1.0.1",
     "bumpp": "9.4.0",
     "conventional-changelog-conventionalcommits": "7.0.2",
-    "eslint": "9.0.0",
+    "eslint": "9.1.1",
     "expect-type": "0.17.3",
     "get-port-please": "3.0.2",
     "lint-staged": "15.0.2",
