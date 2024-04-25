@@ -40,6 +40,12 @@ export interface TurnstileRenderOptions {
    * A JavaScript callback that is invoked when there is a network error.
    */
   'error-callback'?: () => void
+  /**
+   * Appearance controls when the widget is visible. It can be always (default), execute, or interaction-only.
+   *
+   * @default {`always`}
+   */
+  appearance?: 'always' | 'execute' | 'interaction-only';
 }
 
 export type TurnstileValidationErrorCode =
