@@ -1,3 +1,10 @@
+## [0.8.0](https://github.com/nuxt-modules/turnstile/compare/v0.7.1...v0.8.0) (2024-04-25)
+
+
+### Features
+
+* Added appearance to options ([#308](https://github.com/nuxt-modules/turnstile/issues/308)) ([5307fc3](https://github.com/nuxt-modules/turnstile/commit/5307fc34c0cae43849098f6977fa76d95c022254))
+
 ## [0.7.1](https://github.com/nuxt-modules/turnstile/compare/v0.7.0...v0.7.1) (2024-03-25)
 
 
