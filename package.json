@@ -3,7 +3,10 @@
   "version": "0.8.0",
   "license": "MIT",
   "description": "Cloudflare Turnstile integration for Nuxt",
-  "repository": "nuxt-modules/turnstile",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxt-modules/turnstile.git"
+  },
   "keywords": [
     "nuxt",
     "module",
