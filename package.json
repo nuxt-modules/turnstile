@@ -1,9 +1,12 @@
 {
   "name": "@nuxtjs/turnstile",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "license": "MIT",
   "description": "Cloudflare Turnstile integration for Nuxt",
-  "repository": "nuxt-modules/turnstile",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxt-modules/turnstile.git"
+  },
   "keywords": [
     "nuxt",
     "module",
@@ -54,17 +57,17 @@
     "pathe": "^1.1.1"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "0.3.6",
-    "@nuxt/module-builder": "0.5.4",
-    "@nuxt/schema": "3.11.2",
+    "@nuxt/eslint-config": "0.3.10",
+    "@nuxt/module-builder": "0.6.0",
+    "@nuxt/schema": "3.8.2",
     "@nuxt/scripts": "^0.4.1",
-    "@nuxt/test-utils": "3.12.0",
-    "@types/cloudflare-turnstile": "0.1.5",
-    "@types/node": "20.12.5",
+    "@nuxt/test-utils": "3.8.1",
+    "@types/cloudflare-turnstile": "^0.1.5",
+    "@types/node": "20.12.8",
     "@vitest/coverage-v8": "1.0.1",
-    "bumpp": "9.4.0",
+    "bumpp": "9.4.1",
     "conventional-changelog-conventionalcommits": "7.0.2",
-    "eslint": "9.0.0",
+    "eslint": "9.1.1",
     "expect-type": "0.17.3",
     "get-port-please": "3.0.2",
     "lint-staged": "15.0.2",
