@@ -1,4 +1,5 @@
-import { useScript } from '#imports'
+import { useRegistryScript } from '#nuxt-scripts-utils'
+import type { RegistryScriptInput } from '#nuxt-scripts'
 
 declare global {
   interface Window {
@@ -7,10 +8,14 @@ declare global {
   }
 }
 
-export function useScriptCloudflareTurnstile() {
-  return useScript<Turnstile.Turnstile>({
-    src: 'https://challenges.cloudflare.com/turnstile/v0/api.js',
-  }, {
-    use: () => window.turnstile,
-  })
+export function useScriptCloudflareTurnstile(userOptions?: RegistryScriptInput) {
+  return useRegistryScript('cloudflareTurnstile', () => ({
+    scriptInput: {
+      src: 'https://challenges.cloudflare.com/turnstile/v0/api.js',
+    },
+    scriptOptions: {
+      use: () => window.turnstile,
+      trigger: 'manual',
+    },
+  }), userOptions)
 }
