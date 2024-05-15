@@ -39,7 +39,7 @@
     "build": "pnpm dev:prepare && nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "pnpm nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "pnpm nuxt-module-build --stub && nuxi prepare",
     "docs:dev": "nuxi dev docs",
     "docs:build": "nuxi generate docs",
     "lint": "pnpm lint:all:eslint",
