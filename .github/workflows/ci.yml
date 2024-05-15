@@ -54,6 +54,10 @@ jobs:
       - name: 🚧 Set up project
         run: pnpm dev:prepare
 
+      - name: 🚧 Prepare playground
+        # prepare the playground for tests
+        run: pnpm playground:prepare
+
       - name: 🔠 Lint project
         run: pnpm run lint
 
