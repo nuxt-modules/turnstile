@@ -1,9 +1,8 @@
 <script setup lang="ts">
-
-import { nextTick, useScriptCloudflareTurnstile, useRuntimeConfig, useNuxtApp, ref, onMounted, onBeforeUnmount } from '#imports'
+import { useScriptCloudflareTurnstile } from './../composables/turnstile'
+import { nextTick, useRuntimeConfig, ref, onMounted, onBeforeUnmount } from '#imports'
 
 const props = defineProps({
-  // eslint-disable-next-line vue/require-default-prop
   modelValue: {
     type: String,
     required: false,
@@ -12,7 +11,6 @@ const props = defineProps({
     type: String,
     default: 'div',
   },
-  // eslint-disable-next-line vue/require-default-prop
   siteKey: {
     type: String,
     required: false,
@@ -32,11 +30,10 @@ const emit = defineEmits<{
 }>()
 
 const config = useRuntimeConfig().public.turnstile
-const nuxtApp = useNuxtApp()
 
 const el = ref()
 const unmountStarted = ref(false)
-let id: string | undefined = undefined
+let id: string | undefined | null = undefined
 let interval: NodeJS.Timeout
 const { render, reset: _reset, remove } = useScriptCloudflareTurnstile()
 
@@ -75,5 +72,8 @@ defineExpose({ reset })
 </script>
 
 <template>
-  <component :is="element" ref="el" />
+  <component
+    :is="element"
+    ref="el"
+  />
 </template>

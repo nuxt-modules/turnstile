@@ -1,17 +1,16 @@
-import { useScript } from "#imports"
+import { useScript } from '#imports'
 
 declare global {
-    interface Window {
-        turnstile: Turnstile.Turnstile
-    }
+  interface Window {
+    // @types/cloudflare-turnsile doesn't provide full api
+    turnstile: Turnstile.Turnstile
+  }
 }
 
 export function useScriptCloudflareTurnstile() {
-    return useScript<Turnstile.Turnstile>({
-        src: 'https://challenges.cloudflare.com/turnstile/v0/api.js',
-    }, {
-        // do not bundle. Turnstile must have it's own script tag.
-        assetStrategy: null,
-        use: () => window.turnstile,
-    })
+  return useScript<Turnstile.Turnstile>({
+    src: 'https://challenges.cloudflare.com/turnstile/v0/api.js',
+  }, {
+    use: () => window.turnstile,
+  })
 }

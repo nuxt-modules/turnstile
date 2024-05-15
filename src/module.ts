@@ -1,6 +1,5 @@
 import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
-
 import {
   defineNuxtModule,
   addPlugin,
@@ -39,7 +38,6 @@ export default defineNuxtModule<ModuleOptions>({
     addValidateEndpoint: false,
   }),
   async setup(options, nuxt) {
-
     const logger = useLogger('turnstile')
     const siteKey = options.siteKey || nuxt.options.runtimeConfig.public?.turnstile?.siteKey
     if (!siteKey) {
@@ -79,31 +77,32 @@ export default defineNuxtModule<ModuleOptions>({
       },
     })
 
-
     if (isNuxt3(nuxt)) {
       await installModule('@nuxt/scripts')
       nuxt.hook('scripts:registry', (registry) => {
-        const cloudflareScriptRegistry = registry.find((r) => r.key === 'cloudflareTurnstile')
-
-        if (cloudflareScriptRegistry) {
-          const composableImport = {
+        const cloudflareScriptRegistry = registry.find(r => r.label === 'cloudflareTurnstile')
+        const turnstileReg = {
+          import: {
             from: join(runtimeDir, 'composables/turnstile'),
-            name: 'useScriptCloudflareTurnstile'
-          }
-          Object.assign(cloudflareScriptRegistry, composableImport)
-          addImports(composableImport)
+            name: 'useScriptCloudflareTurnstile',
+          },
         }
+        if (cloudflareScriptRegistry) {
+          Object.assign(cloudflareScriptRegistry, turnstileReg)
+        }
+        addImports(turnstileReg.import)
       })
       addComponent({
         name: 'NuxtTurnstile',
-        filePath: join(runtimeDir, 'components', 'NuxtTurnstileNuxtScript')
+        filePath: join(runtimeDir, 'components', 'NuxtTurnstileNuxtScript'),
       })
-    } else {
+    }
+    else {
       // Add plugin to load turnstile script
       addPlugin({ src: join(runtimeDir, 'plugins/script') })
       addComponent({
-        name: "NuxtTurnstile",
-        filePath: join(runtimeDir, 'components', 'NuxtTurnstile')
+        name: 'NuxtTurnstile',
+        filePath: join(runtimeDir, 'components', 'NuxtTurnstile'),
       })
     }
 
