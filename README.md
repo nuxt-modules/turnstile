@@ -24,10 +24,7 @@
 2. Install and add `@nuxtjs/turnstile` to your `nuxt.config`.
 
    ```bash
-   # Whichever matches your package manager
-   pnpm add -D @nuxtjs/turnstile
-   npm install -D @nuxtjs/turnstile
-   yarn add -D @nuxtjs/turnstile
+   npx nuxi@latest module add turnstile
    ```
 
    ```js
