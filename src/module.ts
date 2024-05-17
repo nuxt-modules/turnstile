@@ -41,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (!siteKey) {
       logger.warn(
-        'No site key was provided. Make sure you pass one at runtime by setting NUXT_PUBLIC_TURNSTILE_SITE_KEY.'
+        'No site key was provided. Make sure you pass one at runtime by setting NUXT_PUBLIC_TURNSTILE_SITE_KEY.',
       )
     }
 
@@ -51,7 +51,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (!secretKey) {
       logger.warn(
-        'No secret key was provided. Make sure you pass one at runtime by setting NUXT_TURNSTILE_SECRET_KEY.'
+        'No secret key was provided. Make sure you pass one at runtime by setting NUXT_TURNSTILE_SECRET_KEY.',
       )
     }
 
@@ -85,7 +85,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // Add nitro composable for verifying token in server routes
-    nuxt.hook('nitro:config', config => {
+    nuxt.hook('nitro:config', (config) => {
       config.externals = defu(config.externals, {
         inline: [runtimeDir],
       })
