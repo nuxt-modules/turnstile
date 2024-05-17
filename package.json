@@ -35,7 +35,7 @@
     "build": "pnpm dev:prepare && nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "pnpm nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "pnpm nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "docs:dev": "nuxi dev docs",
     "docs:build": "nuxi generate docs",
     "lint": "pnpm lint:all:eslint",
@@ -45,7 +45,7 @@
     "prepublishOnly": "pnpm lint && pnpm test",
     "release": "bumpp && npm publish",
     "test": "vitest run",
-    "test:types": "tsc --noEmit && nuxt typecheck"
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
     "@nuxt/kit": "^3.7.0",
