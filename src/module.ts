@@ -110,7 +110,7 @@ export default defineNuxtModule<ModuleOptions>({
       // Add nitro route for verifying cloudflare token
       addServerHandler({
         route: '/_turnstile/validate',
-        handler: join(runtimeDir, 'nitro/validate.post'),
+        handler: join(runtimeDir, 'server/validate.post'),
       })
     }
 
@@ -122,7 +122,7 @@ export default defineNuxtModule<ModuleOptions>({
       config.imports = defu(config.imports, {
         presets: [
           {
-            from: join(runtimeDir, 'nitro/utils/verify'),
+            from: join(runtimeDir, 'server/utils/verify'),
             imports: ['verifyTurnstileToken'],
           },
         ],
