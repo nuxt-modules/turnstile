@@ -30,8 +30,8 @@ importers:
         specifier: 0.6.0
         version: 0.6.0(@nuxt/kit@3.11.2)(nuxi@3.11.1)(typescript@5.1.6)(vue-tsc@1.8.27)
       '@nuxt/schema':
-        specifier: 3.8.2
-        version: 3.8.2(rollup@3.29.4)
+        specifier: 3.11.2
+        version: 3.11.2(rollup@3.29.4)
       '@nuxt/scripts':
         specifier: ^0.4.7
         version: 0.4.7(@nuxt/devtools@1.3.3)(@vue/compiler-core@3.4.27)(nuxt@3.11.2)(postcss@8.4.38)(rollup@3.29.4)(vite@5.2.13)(vue@3.4.27)(webpack@5.91.0)
@@ -1571,26 +1571,6 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/schema@3.8.2(rollup@3.29.4):
-    resolution: {integrity: sha512-AMpysQ/wHK2sOujLShqYdC4OSj/S3fFJGjhYXqA2g6dgmz+FNQWJRG/ie5sI9r2EX9Ela1wt0GN1jZR3wYNE8Q==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-    dependencies:
-      '@nuxt/ui-templates': 1.3.4
-      consola: 3.2.3
-      defu: 6.1.4
-      hookable: 5.5.3
-      pathe: 1.1.1
-      pkg-types: 1.1.1
-      scule: 1.3.0
-      std-env: 3.7.0
-      ufo: 1.5.3
-      unimport: 3.7.2(rollup@3.29.4)
-      untyped: 1.4.2
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    dev: true
-
   /@nuxt/scripts@0.4.7(@nuxt/devtools@1.3.3)(@vue/compiler-core@3.4.27)(nuxt@3.11.2)(postcss@8.4.38)(rollup@3.29.4)(vite@5.2.13)(vue@3.4.27)(webpack@5.91.0):
     resolution: {integrity: sha512-zVP7tF3rmO2ZqQW5Hmmy0NQ4WYH+8ye1QBseSJZ0Ab1pDQEpWX+CI7tVak7Fw7IWVnrAcjIMh6TJFt0zQ/ARjg==}
     dependencies:
@@ -2016,6 +1996,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.7
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -6718,6 +6699,10 @@ packages:
     hasBin: true
     dev: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: true
+
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
@@ -9874,7 +9859,7 @@ packages:
     resolution: {integrity: sha512-WesKCAZCRAbmmhuGl3+VrdWItEvfoFIPXOvUJkjULi+x+6G/Dy69yO3TBRJDr9eUlmsNAwVmxsNZxvHKzbkKdg==}
     hasBin: true
     peerDependencies:
-      typescript: 5.2.2
+      typescript: '*'
     dependencies:
       '@volar/typescript': 1.11.1
       '@vue/language-core': 1.8.27(typescript@5.1.6)

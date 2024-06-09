@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/turnstile'],
+  modules: ['../src/module.ts'],
   runtimeConfig: {
     turnstile: {
       secretKey: '1x0000000000000000000000000000000AA',

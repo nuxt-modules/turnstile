@@ -45,7 +45,7 @@ export interface TurnstileRenderOptions {
    *
    * @default {`always`}
    */
-  appearance?: 'always' | 'execute' | 'interaction-only';
+  'appearance'?: 'always' | 'execute' | 'interaction-only'
 }
 
 export type TurnstileValidationErrorCode =

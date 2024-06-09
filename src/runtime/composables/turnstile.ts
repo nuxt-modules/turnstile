@@ -1,3 +1,4 @@
+/// <reference types="@types/cloudflare-turnstile" />
 import { useRegistryScript } from '#nuxt-scripts-utils'
 import type { RegistryScriptInput } from '#nuxt-scripts'
 
@@ -8,8 +9,8 @@ declare global {
   }
 }
 
-export function useScriptCloudflareTurnstile(userOptions?: RegistryScriptInput) {
-  return useRegistryScript('cloudflareTurnstile', () => ({
+export function useScriptCloudflareTurnstile(userOptions?: RegistryScriptInput): ReturnType<typeof useRegistryScript<Turnstile.Turnstile>> {
+  return useRegistryScript<Turnstile.Turnstile>('cloudflareTurnstile', () => ({
     scriptInput: {
       src: 'https://challenges.cloudflare.com/turnstile/v0/api.js',
     },

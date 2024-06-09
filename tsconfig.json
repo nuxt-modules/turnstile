@@ -1,6 +1,4 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "types": ["@types/cloudflare-turnstile", "@nuxt/scripts"]
-  }
+  "extends": "./.nuxt/tsconfig.json"
+ 
 }
