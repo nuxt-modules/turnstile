@@ -81,7 +81,7 @@
   },
   "resolutions": {
     "@nuxtjs/turnstile": "link:.",
-    "@nuxt/scripts": "^0.4.1",
+    "@nuxt/scripts": "^0.4.7",
     "@nuxt/kit": "3.11.2"
   }
 }
