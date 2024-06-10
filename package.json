@@ -62,7 +62,7 @@
     "bumpp": "9.4.1",
     "conventional-changelog-conventionalcommits": "7.0.2",
     "eslint": "9.4.0",
-    "expect-type": "0.17.3",
+    "expect-type": "0.19.0",
     "get-port-please": "3.0.2",
     "lint-staged": "15.0.2",
     "nuxt": "3.8.2",
