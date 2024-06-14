@@ -64,16 +64,18 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push(runtimeDir)
 
     // Set up configuration
-    nuxt.options.runtimeConfig = defu(nuxt.options.runtimeConfig, {
-      turnstile: {
+    nuxt.options.runtimeConfig.turnstile = defu(
+      nuxt.options.runtimeConfig.turnstile,
+      {
         secretKey: options.secretKey,
       },
-      public: {
-        turnstile: {
-          siteKey,
-        },
+    )
+    nuxt.options.runtimeConfig.public.turnstile = defu(
+      nuxt.options.runtimeConfig.public.turnstile,
+      {
+        siteKey,
       },
-    })
+    )
 
     // Add plugin to load turnstile script
     addPlugin({ src: join(runtimeDir, 'plugins/script') })
