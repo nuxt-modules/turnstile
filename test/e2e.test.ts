@@ -27,12 +27,7 @@ describe('turnstile', async () => {
 
     await page.click('button')
     expect(
-      urls
-        .map(url => url.toString())
-        .includes(
-          // look for the challenge platform iframe
-          'https://challenges.cloudflare.com/cdn-cgi/challenge-platform'
-        )
+      urls.map(url => new URL(url.toString())).some(url => url.hostname === 'challenges.cloudflare.com' && url.pathname === '/cdn-cgi/challenge-platform'),
     )
   })
 
