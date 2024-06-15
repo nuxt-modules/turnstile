@@ -64,7 +64,7 @@
     "@nuxt/scripts": "^0.5.2",
     "@nuxt/test-utils": "3.8.1",
     "@types/cloudflare-turnstile": "^0.1.5",
-    "@types/node": "20.12.12",
+    "@types/node": "20.14.2",
     "@vitest/coverage-v8": "1.0.1",
     "bumpp": "9.4.1",
     "conventional-changelog-conventionalcommits": "7.0.2",
