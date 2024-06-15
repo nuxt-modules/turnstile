@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { useScriptCloudflareTurnstile } from './../composables/turnstile'
 import { nextTick, useRuntimeConfig, ref, onMounted, onBeforeUnmount } from '#imports'
+import type { ElementScriptTrigger } from '#nuxt-scripts'
 
 const props = defineProps({
   modelValue: {
     type: String,
     required: false,
+  },
+  trigger: {
+    type: Object as () => ElementScriptTrigger,
   },
   element: {
     type: String,
@@ -35,7 +39,11 @@ const el = ref()
 const unmountStarted = ref(false)
 let id: string | undefined | null = undefined
 let interval: NodeJS.Timeout
-const { render, reset: _reset, remove } = useScriptCloudflareTurnstile()
+const { render, reset: _reset, remove } = useScriptCloudflareTurnstile({
+  scriptOptions: {
+    trigger: useElementScriptTrigger({ trigger: props.trigger, el }),
+  },
+})
 
 const reset = () => {
   if (id) {
