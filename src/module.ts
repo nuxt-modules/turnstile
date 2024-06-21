@@ -2,12 +2,10 @@ import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import {
   defineNuxtModule,
-  addPlugin,
   addServerHandler,
   useLogger,
   addImports,
   addComponent,
-  isNuxt3,
   installModule,
 } from '@nuxt/kit'
 import { join, resolve } from 'pathe'
@@ -31,6 +29,10 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     configKey: 'turnstile',
     name: '@nuxtjs/turnstile',
+    compatibility: {
+      bridge: false,
+      nuxt: '>=3',
+    },
   },
   defaults: nuxt => ({
     secretKey: nuxt.options.dev ? '1x0000000000000000000000000000000AA' : undefined,
@@ -77,34 +79,26 @@ export default defineNuxtModule<ModuleOptions>({
       },
     })
 
-    if (isNuxt3(nuxt)) {
-      await installModule('@nuxt/scripts')
-      nuxt.hook('scripts:registry', (registry) => {
-        const cloudflareScriptRegistry = registry.find(r => r.label === 'cloudflareTurnstile')
-        const turnstileReg = {
-          import: {
-            from: join(runtimeDir, 'composables/turnstile'),
-            name: 'useScriptCloudflareTurnstile',
-          },
-        }
-        if (cloudflareScriptRegistry) {
-          Object.assign(cloudflareScriptRegistry, turnstileReg)
-        }
-        addImports(turnstileReg.import)
-      })
-      addComponent({
-        name: 'NuxtTurnstile',
-        filePath: join(runtimeDir, 'components', 'NuxtTurnstileNuxtScript'),
-      })
-    }
-    else {
-      // Add plugin to load turnstile script
-      addPlugin({ src: join(runtimeDir, 'plugins/script') })
-      addComponent({
-        name: 'NuxtTurnstile',
-        filePath: join(runtimeDir, 'components', 'NuxtTurnstile'),
-      })
-    }
+    await installModule('@nuxt/scripts')
+
+    nuxt.hook('scripts:registry', (registry) => {
+      const cloudflareScriptRegistry = registry.find(r => r.label === 'cloudflareTurnstile')
+      const turnstileReg = {
+        import: {
+          from: join(runtimeDir, 'composables/turnstile'),
+          name: 'useScriptCloudflareTurnstile',
+        },
+      }
+      if (cloudflareScriptRegistry) {
+        Object.assign(cloudflareScriptRegistry, turnstileReg)
+      }
+      addImports(turnstileReg.import)
+    })
+
+    addComponent({
+      name: 'NuxtTurnstile',
+      filePath: join(runtimeDir, 'components', 'NuxtTurnstile'),
+    })
 
     if (options.addValidateEndpoint) {
       // Add nitro route for verifying cloudflare token
