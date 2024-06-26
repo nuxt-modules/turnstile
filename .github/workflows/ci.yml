@@ -76,6 +76,8 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
+            conventional-changelog-conventionalcommits
+          semantic_version: 24.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to be owned by a custom user to create releases & comments on protected branches
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
