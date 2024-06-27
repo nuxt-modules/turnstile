@@ -80,7 +80,8 @@
     "vue-tsc": "2.0.22"
   },
   "resolutions": {
-    "@nuxtjs/turnstile": "link:."
+    "@nuxtjs/turnstile": "link:.",
+    "@nuxt/kit": "^3.11.2"
   },
   "packageManager": "pnpm@9.4.0"
 }
