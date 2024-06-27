@@ -21,7 +21,9 @@
 
 1. First, [follow these steps](https://developers.cloudflare.com/turnstile/get-started/) to obtain a free sitekey and secret key from Cloudflare.
 
-2. Install and add `@nuxtjs/turnstile` to your `nuxt.config`.
+1. Install `@nuxt/scripts` as a dependency - see [docs](https://scripts.nuxt.com/) for more info if you're interested.
+
+1. Install and add `@nuxtjs/turnstile` to your `nuxt.config`.
 
    ```bash
    npx nuxi@latest module add turnstile
