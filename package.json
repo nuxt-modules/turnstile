@@ -79,6 +79,9 @@
     "vue": "3.4.30",
     "vue-tsc": "2.0.22"
   },
+  "peerDependencies": {
+    "@nuxt/scripts": ">=0.5.1"
+  },
   "resolutions": {
     "@nuxt/kit": "^3.11.2",
     "@nuxtjs/turnstile": "link:."
