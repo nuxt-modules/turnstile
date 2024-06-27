@@ -16,7 +16,6 @@ export function useScriptCloudflareTurnstile(userOptions?: RegistryScriptInput):
     },
     scriptOptions: {
       use: () => window.turnstile,
-      trigger: 'manual',
     },
   }), userOptions)
 }

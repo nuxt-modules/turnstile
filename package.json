@@ -77,7 +77,6 @@
     "prettier": "3.2.5",
     "typescript": "5.1.6",
     "vitest": "1.0.1",
-    "vue": "3.3.12",
     "vue-tsc": "2.0.22"
   },
   "resolutions": {

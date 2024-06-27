@@ -3,30 +3,17 @@ import { useScriptCloudflareTurnstile } from '../composables/turnstile'
 import { nextTick, useRuntimeConfig, ref, onMounted, onBeforeUnmount } from '#imports'
 import type { ElementScriptTrigger } from '#nuxt-scripts'
 
-const props = defineProps({
-  modelValue: {
-    type: String,
-    required: false,
-  },
-  trigger: {
-    type: Object as () => ElementScriptTrigger,
-  },
-  element: {
-    type: String,
-    default: 'div',
-  },
-  siteKey: {
-    type: String,
-    required: false,
-  },
-  options: {
-    type: Object as () => Omit<Partial<Turnstile.RenderParameters>, 'callback'>,
-    default: () => ({}),
-  },
-  resetInterval: {
-    type: Number,
-    default: 1000 * 250,
-  },
+const props = withDefaults(defineProps<{
+  modelValue?: string
+  trigger?: ElementScriptTrigger
+  element?: string
+  siteKey?: string
+  options?: Omit<Partial<Turnstile.RenderParameters>, 'callback'>
+  resetInterval?: number
+}>(), {
+  element: 'div',
+  options: () => ({}),
+  resetInterval: 1000 * 250
 })
 
 const emit = defineEmits<{
