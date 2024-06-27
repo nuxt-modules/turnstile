@@ -76,12 +76,12 @@
     "playwright": "1.37.1",
     "typescript": "5.1.6",
     "vitest": "1.0.1",
-    "vue": "3.3.12",
+    "vue": "3.4.30",
     "vue-tsc": "2.0.22"
   },
   "resolutions": {
-    "@nuxtjs/turnstile": "link:.",
-    "@nuxt/kit": "^3.11.2"
+    "@nuxt/kit": "^3.11.2",
+    "@nuxtjs/turnstile": "link:."
   },
   "packageManager": "pnpm@9.4.0"
 }
