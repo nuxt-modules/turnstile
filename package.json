@@ -64,11 +64,11 @@
     "@nuxt/scripts": "^0.5.1",
     "@nuxt/test-utils": "3.8.1",
     "@types/cloudflare-turnstile": "^0.1.5",
-    "@types/node": "20.14.2",
+    "@types/node": "20.14.8",
     "@vitest/coverage-v8": "1.0.1",
     "bumpp": "9.4.1",
-    "conventional-changelog-conventionalcommits": "7.0.2",
-    "eslint": "9.4.0",
+    "conventional-changelog-conventionalcommits": "8.0.0",
+    "eslint": "9.5.0",
     "expect-type": "0.19.0",
     "get-port-please": "3.0.2",
     "lint-staged": "15.0.2",
@@ -77,10 +77,11 @@
     "prettier": "3.2.5",
     "typescript": "5.1.6",
     "vitest": "1.0.1",
-    "vue-tsc": "1.8.27"
+    "vue": "3.3.12",
+    "vue-tsc": "2.0.22"
   },
   "resolutions": {
     "@nuxtjs/turnstile": "link:."
   },
-  "packageManager": "pnpm@8.6.12"
+  "packageManager": "pnpm@9.4.0"
 }
