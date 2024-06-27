@@ -81,18 +81,19 @@ export default defineNuxtModule<ModuleOptions>({
 
     await installModule('@nuxt/scripts')
 
+    const turnstileReg = {
+      import: {
+        from: join(runtimeDir, 'composables/turnstile'),
+        name: 'useScriptCloudflareTurnstile',
+      },
+    }
+
+    addImports(turnstileReg.import)
     nuxt.hook('scripts:registry', (registry) => {
       const cloudflareScriptRegistry = registry.find(r => r.label === 'cloudflareTurnstile')
-      const turnstileReg = {
-        import: {
-          from: join(runtimeDir, 'composables/turnstile'),
-          name: 'useScriptCloudflareTurnstile',
-        },
-      }
       if (cloudflareScriptRegistry) {
         Object.assign(cloudflareScriptRegistry, turnstileReg)
       }
-      addImports(turnstileReg.import)
     })
 
     addComponent({

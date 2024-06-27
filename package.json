@@ -74,12 +74,15 @@
     "lint-staged": "15.0.2",
     "nuxt": "3.11.2",
     "playwright": "1.37.1",
-    "prettier": "3.2.5",
     "typescript": "5.1.6",
     "vitest": "1.0.1",
     "vue-tsc": "2.0.22"
   },
+  "peerDependencies": {
+    "@nuxt/scripts": ">=0.5.1"
+  },
   "resolutions": {
+    "@nuxt/kit": "^3.11.2",
     "@nuxtjs/turnstile": "link:."
   },
   "packageManager": "pnpm@9.4.0"
