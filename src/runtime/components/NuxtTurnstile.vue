@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useScriptCloudflareTurnstile } from '../composables/turnstile'
-import { nextTick, useRuntimeConfig, ref, onMounted, onBeforeUnmount } from '#imports'
+import { nextTick, useRuntimeConfig, ref, onMounted, onBeforeUnmount, useElementScriptTrigger } from '#imports'
 import type { ElementScriptTrigger } from '#nuxt-scripts'
 
 const props = withDefaults(defineProps<{
@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   element: 'div',
   options: () => ({}),
-  resetInterval: 1000 * 250
+  resetInterval: 1000 * 250,
 })
 
 const emit = defineEmits<{
