@@ -11,7 +11,6 @@ describe('turnstile', async () => {
 
   it('works with ssr', async () => {
     const html = await $fetch('/')
-    expect(html).toContain('window.loadTurnstile')
     expect(html).not.toContain('challenges.cloudflare.com')
   })
 
@@ -28,11 +27,7 @@ describe('turnstile', async () => {
 
     await page.click('button')
     expect(
-      urls
-        .map(url => url.toString())
-        .includes(
-          'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback',
-        ),
+      urls.map(url => new URL(url.toString())).some(url => url.hostname === 'challenges.cloudflare.com' && url.pathname === '/cdn-cgi/challenge-platform'),
     )
   })
 

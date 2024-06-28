@@ -24,6 +24,10 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
+    },
+    "./runtime/*": {
+      "import": "./dist/runtime/*",
+      "require": "./dist/runtime/*"
     }
   },
   "main": "./dist/module.cjs",
@@ -35,7 +39,8 @@
     "build": "pnpm dev:prepare && nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "pnpm nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "dev:prepare": "pnpm nuxt-module-build --stub && nuxi prepare",
+    "playground:prepare": "nuxi prepare playground",
     "docs:dev": "nuxi dev docs",
     "docs:build": "nuxi generate docs",
     "lint": "pnpm lint:all:eslint",
@@ -48,33 +53,37 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.7.0",
+    "@nuxt/kit": "^3.11.2",
     "defu": "^6.1.2",
     "pathe": "^1.1.1"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "0.3.13",
-    "@nuxt/module-builder": "0.6.0",
-    "@nuxt/schema": "3.8.2",
-    "@nuxt/test-utils": "3.8.1",
-    "@types/node": "20.14.8",
-    "@vitest/coverage-v8": "1.0.1",
+    "@nuxt/module-builder": "0.8.0",
+    "@nuxt/schema": "3.12.2",
+    "@nuxt/scripts": "0.5.1",
+    "@nuxt/test-utils": "3.13.1",
+    "@types/cloudflare-turnstile": "0.1.5",
+    "@types/node": "20.14.9",
+    "@vitest/coverage-v8": "1.6.0",
     "bumpp": "9.4.1",
     "conventional-changelog-conventionalcommits": "8.0.0",
     "eslint": "9.5.0",
     "expect-type": "0.19.0",
-    "get-port-please": "3.0.2",
-    "lint-staged": "15.0.2",
-    "nuxt": "3.8.2",
-    "playwright": "1.37.1",
-    "typescript": "5.1.6",
-    "vitest": "1.0.1",
-    "vue": "3.3.12",
+    "get-port-please": "3.1.2",
+    "lint-staged": "15.2.7",
+    "nuxt": "3.12.2",
+    "playwright": "1.45.0",
+    "typescript": "5.5.2",
+    "vitest": "1.6.0",
     "vue-tsc": "2.0.22"
   },
+  "peerDependencies": {
+    "@nuxt/scripts": ">=0.5.1"
+  },
   "resolutions": {
-    "@nuxtjs/turnstile": "link:.",
-    "@nuxt/kit": "3.8.2"
+    "@nuxt/kit": "^3.11.2",
+    "@nuxtjs/turnstile": "link:."
   },
   "packageManager": "pnpm@9.4.0"
 }
