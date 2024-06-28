@@ -1,3 +1,9 @@
+## [0.9.0](https://github.com/nuxt-modules/turnstile/compare/v0.8.0...v0.9.0) (2024-06-28)
+
+### Features
+
+* nuxt-scripts integration ([#306](https://github.com/nuxt-modules/turnstile/issues/306)) ([44cb64c](https://github.com/nuxt-modules/turnstile/commit/44cb64cd1f3f9dcf0da10c7168a80e0d337b4297))
+
 ## [0.8.0](https://github.com/nuxt-modules/turnstile/compare/v0.7.1...v0.8.0) (2024-04-25)
 
 
