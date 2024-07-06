@@ -1,3 +1,9 @@
+## [0.9.1](https://github.com/nuxt-modules/turnstile/compare/v0.9.0...v0.9.1) (2024-07-06)
+
+### Bug Fixes
+
+* **deps:** limit @nuxt/scripts range ([a9de1c5](https://github.com/nuxt-modules/turnstile/commit/a9de1c50833109a6dc058b4ba641440242bb55fe))
+
 ## [0.9.0](https://github.com/nuxt-modules/turnstile/compare/v0.8.0...v0.9.0) (2024-06-28)
 
 ### Features
