@@ -53,33 +53,33 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.11.2",
-    "defu": "^6.1.2",
-    "pathe": "^1.1.1"
+    "@nuxt/kit": "^3.12.3",
+    "defu": "^6.1.4",
+    "pathe": "^1.1.2"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "0.3.13",
     "@nuxt/module-builder": "0.8.1",
-    "@nuxt/schema": "3.12.2",
-    "@nuxt/scripts": "0.5.1",
+    "@nuxt/schema": "3.12.3",
+    "@nuxt/scripts": "0.6.4",
     "@nuxt/test-utils": "3.13.1",
-    "@types/cloudflare-turnstile": "0.1.5",
+    "@types/cloudflare-turnstile": "0.2.0",
     "@types/node": "20.14.10",
-    "@vitest/coverage-v8": "2.0.1",
+    "@vitest/coverage-v8": "2.0.3",
     "bumpp": "9.4.1",
     "conventional-changelog-conventionalcommits": "8.0.0",
-    "eslint": "9.5.0",
+    "eslint": "9.7.0",
     "expect-type": "0.19.0",
     "get-port-please": "3.1.2",
     "lint-staged": "15.2.7",
-    "nuxt": "3.12.2",
+    "nuxt": "3.12.3",
     "playwright": "1.45.1",
     "typescript": "5.5.3",
-    "vitest": "2.0.1",
-    "vue-tsc": "2.0.24"
+    "vitest": "2.0.3",
+    "vue-tsc": "2.0.26"
   },
   "peerDependencies": {
-    "@nuxt/scripts": "^0.5.0"
+    "@nuxt/scripts": "^0.6.0"
   },
   "resolutions": {
     "@nuxt/kit": "^3.11.2",
