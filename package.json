@@ -73,7 +73,7 @@
     "get-port-please": "3.1.2",
     "lint-staged": "15.2.7",
     "nuxt": "3.12.3",
-    "playwright": "1.45.1",
+    "playwright": "1.46.0",
     "typescript": "5.5.3",
     "vitest": "2.0.3",
     "vue-tsc": "2.0.26"
