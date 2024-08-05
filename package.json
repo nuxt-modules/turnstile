@@ -76,7 +76,7 @@
     "playwright": "1.45.1",
     "typescript": "5.5.3",
     "vitest": "2.0.3",
-    "vue-tsc": "2.0.26"
+    "vue-tsc": "2.0.29"
   },
   "peerDependencies": {
     "@nuxt/scripts": "^0.6.0"
