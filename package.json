@@ -63,7 +63,7 @@
     "@nuxt/schema": "3.12.3",
     "@nuxt/scripts": "0.6.6",
     "@nuxt/test-utils": "3.13.1",
-    "@types/cloudflare-turnstile": "0.2.0",
+    "@types/cloudflare-turnstile": "0.2.1",
     "@types/node": "20.14.15",
     "@vitest/coverage-v8": "2.0.3",
     "bumpp": "9.4.1",

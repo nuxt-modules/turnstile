@@ -38,8 +38,8 @@ importers:
         specifier: 3.13.1
         version: 3.13.1(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(playwright-core@1.45.1)(rollup@3.29.4)(vite@5.3.3(@types/node@20.14.15)(terser@5.31.2))(vitest@2.0.3(@types/node@20.14.15)(terser@5.31.2))(vue-router@4.4.0(vue@3.4.31(typescript@5.5.3)))(vue@3.4.31(typescript@5.5.3))
       '@types/cloudflare-turnstile':
-        specifier: 0.2.0
-        version: 0.2.0
+        specifier: 0.2.1
+        version: 0.2.1
       '@types/node':
         specifier: 20.14.15
         version: 20.14.15
@@ -1370,8 +1370,8 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
 
-  '@types/cloudflare-turnstile@0.2.0':
-    resolution: {integrity: sha512-bK6xLXYLfjijy/VpkFilnEpKEbLPfLJEFSmIKvZGN/tCbb/fD5l2VGfEEt12Tk9ZE+p7xVCwlzq9h73LNTXV3g==}
+  '@types/cloudflare-turnstile@0.2.1':
+    resolution: {integrity: sha512-4eIcnVF/7jo/isH/KgNd2i9KRHdKhhr0hafp1p2uaXITFGKjLKCoOjDTD/+gAQTri/bL4lgT5NFLpKaM9T4x8Q==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -6494,7 +6494,7 @@ snapshots:
 
   '@trysound/sax@0.2.0': {}
 
-  '@types/cloudflare-turnstile@0.2.0': {}
+  '@types/cloudflare-turnstile@0.2.1': {}
 
   '@types/eslint-scope@3.7.7':
     dependencies:
