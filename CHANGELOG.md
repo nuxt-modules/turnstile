@@ -1,3 +1,9 @@
+## [0.9.4](https://github.com/nuxt-modules/turnstile/compare/v0.9.3...v0.9.4) (2024-09-04)
+
+### Bug Fixes
+
+* **deps:** update peerDep for `@nuxt/scripts` ([#328](https://github.com/nuxt-modules/turnstile/issues/328)) ([5380b3a](https://github.com/nuxt-modules/turnstile/commit/5380b3a71bafa57dbda757be6c6f405932b887a5))
+
 ## [0.9.3](https://github.com/nuxt-modules/turnstile/compare/v0.9.2...v0.9.3) (2024-07-15)
 
 ### Bug Fixes
