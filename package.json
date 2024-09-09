@@ -61,7 +61,7 @@
     "@nuxt/eslint-config": "0.5.6",
     "@nuxt/module-builder": "0.8.3",
     "@nuxt/schema": "3.13.1",
-    "@nuxt/scripts": "0.8.0",
+    "@nuxt/scripts": "0.8.5",
     "@nuxt/test-utils": "3.14.1",
     "@types/cloudflare-turnstile": "0.2.1",
     "@types/node": "20.16.5",

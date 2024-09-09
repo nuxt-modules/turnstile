@@ -32,8 +32,8 @@ importers:
         specifier: 3.13.1
         version: 3.13.1(rollup@3.29.4)(webpack-sources@3.2.3)
       '@nuxt/scripts':
-        specifier: 0.8.0
-        version: 0.8.0(@nuxt/devtools@1.4.1(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(webpack-sources@3.2.3))(@unocss/webpack@0.62.3(rollup@3.29.4)(webpack@5.93.0(esbuild@0.23.1)))(@vue/compiler-core@3.5.0)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.13.1(@parcel/watcher@2.4.1)(@types/node@20.16.5)(eslint@9.9.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(terser@5.31.2)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue-tsc@2.1.4(typescript@5.5.4))(webpack-sources@3.2.3))(postcss@8.4.45)(rollup@3.29.4)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue@3.5.0(typescript@5.5.4))(webpack-sources@3.2.3)(webpack@5.93.0(esbuild@0.23.1))
+        specifier: 0.8.5
+        version: 0.8.5(@nuxt/devtools@1.4.1(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(webpack-sources@3.2.3))(@unocss/webpack@0.62.3(rollup@3.29.4)(webpack@5.93.0(esbuild@0.23.1)))(@vue/compiler-core@3.5.0)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.13.1(@parcel/watcher@2.4.1)(@types/node@20.16.5)(eslint@9.9.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(terser@5.31.2)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue-tsc@2.1.4(typescript@5.5.4))(webpack-sources@3.2.3))(postcss@8.4.45)(rollup@3.29.4)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue@3.5.0(typescript@5.5.4))(webpack-sources@3.2.3)(webpack@5.93.0(esbuild@0.23.1))
       '@nuxt/test-utils':
         specifier: 3.14.1
         version: 3.14.1(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4)(webpack-sources@3.2.3))(playwright-core@1.46.1)(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vitest@2.0.5(@types/node@20.16.5)(terser@5.31.2))(vue-router@4.4.3(vue@3.5.0(typescript@5.5.4)))(vue@3.5.0(typescript@5.5.4))(webpack-sources@3.2.3)
@@ -1024,8 +1024,8 @@ packages:
     resolution: {integrity: sha512-ishbhzVGspjshG9AG0hYnKYY6LWXzCtua7OXV7C/DQ2yA7rRcy1xHpzKZUDbIRyxCHHCAcBd8jfHEUmEuhEPrA==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
-  '@nuxt/scripts@0.8.0':
-    resolution: {integrity: sha512-XodZ/6pSkqsZXGBwp5+LFQgOb0mhOstNzgyjr3OVxpwt6eC1OHEa2vENuLy5URnPkOPgq383zPopyn2kt6N0Vw==}
+  '@nuxt/scripts@0.8.5':
+    resolution: {integrity: sha512-J1qpdig4bRdTsLveQ/HtD1LHcAnLAgsRNTzTR5Y20OmvYk8dJNt+dS31VoN70PnfOnAYvDDDxvn3bLlXm8RGJg==}
 
   '@nuxt/telemetry@2.5.4':
     resolution: {integrity: sha512-KH6wxzsNys69daSO0xUv0LEBAfhwwjK1M+0Cdi1/vxmifCslMIY7lN11B4eywSfscbyVPAYJvANyc7XiVPImBQ==}
@@ -1327,8 +1327,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@1.16.1':
-    resolution: {integrity: sha512-aI0hBtw+a6KsJp2jcD4YuQqKpeCbURMZbhHVozDknJpm+KJqeMRkEnfBC8BaKE/5XC+uofPgCLsa/TkTk0Ba0w==}
+  '@shikijs/core@1.16.2':
+    resolution: {integrity: sha512-XSVH5OZCvE4WLMgdoBqfPMYmGHGmCC3OgZhw0S7KcSi2XKZ+5oHGe71GFnTljgdOxvxx5WrRks6QoTLKrl1eAA==}
 
   '@shikijs/vscode-textmate@9.2.0':
     resolution: {integrity: sha512-5FinaOp6Vdh/dl4/yaOTh0ZeKch+rYS8DUb38V3GMKYVkdqzxw53lViRKUYkVILRiVQT7dcPC7VvAKOR73zVtQ==}
@@ -1359,8 +1359,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  '@types/google.maps@3.57.0':
-    resolution: {integrity: sha512-8X/HqaUXob25aVslslO84p9ESInpOQd3lMxW085IxqZZ1opRuFfwx2/c1JIUFVvCkkK+sCQHFDJ+Kw60Gsi1qA==}
+  '@types/google.maps@3.58.0':
+    resolution: {integrity: sha512-rZPrbNHoGxeY70uuQYFLGQqcz5mLd3pZy0u286GSugvN7PLFsHNRF2wN2QXtUgNiC33IC0LX+MD3LGAC3wN7Eg==}
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
@@ -1455,17 +1455,31 @@ packages:
   '@unhead/dom@1.10.4':
     resolution: {integrity: sha512-ehMy9k6efo4GTLmiP27wCtywWYdiggrP3m7h6kD/d1uhfORH3yCgsd4yXQnmDoSbsMyX6GlY5DBzy5bnYPp/Xw==}
 
+  '@unhead/dom@1.11.1':
+    resolution: {integrity: sha512-lyqegiA35OzcvsaP9gQpAPWv5LmZpP9D/55xkFVTnaXfd1kl1TCxBkioAzv3lxtaYsu6CLSqH/jRxO+fB3Q2kQ==}
+
   '@unhead/schema@1.10.4':
     resolution: {integrity: sha512-nX9sJgKPy2t4GHB9ky/vkMLbYqXl9Num5NZToTr0rKrIGkshzHhUrbn/EiHreIjcGI1eIpu+edniCDIwGTJgmw==}
 
+  '@unhead/schema@1.11.1':
+    resolution: {integrity: sha512-oEl5vV3+zZyY1Y3PVE1+gWNMj2wJczP6w0gscp8RnFRSik9p94XqYzBnzeb0tezIyVJWKWycGne9ocV0uGHbzw==}
+
   '@unhead/shared@1.10.4':
     resolution: {integrity: sha512-C5wsps9i/XCBObMVQUrbXPvZG17a/e5yL0IsxpICaT4QSiZAj9v7JrNQ5WpM5JOZVMKRI5MYRdafNDw3iSmqZg==}
+
+  '@unhead/shared@1.11.1':
+    resolution: {integrity: sha512-05hd92qxAwkndMU8Ftklf4/97GuRVYHM0XzMz3ioENxJl8NfFGAyV48H/idt8WFv8JIkY9d7KgJDBmxG+CHi9Q==}
 
   '@unhead/ssr@1.10.4':
     resolution: {integrity: sha512-2nDG08q9bTvMB24YGNJCXimAs1vuG9yVa01i/Et1B2y4P8qhweXOxnialGmt5j8xeXwPFUBCe36tC5kLCSuJoQ==}
 
   '@unhead/vue@1.10.4':
     resolution: {integrity: sha512-Q45F/KOvDeitc8GkfkPY45V8Dmw1m1b9A/aHM5A2BwRV8GyoRV+HRWVw5h02e0AO1TsICvcW8tI90qeCM2oGSA==}
+    peerDependencies:
+      vue: '>=2.7 || >=3'
+
+  '@unhead/vue@1.11.1':
+    resolution: {integrity: sha512-MSeFsRr0Pco96bjoY8bijV5su+xw7joqv1LUJQxcDVIp51M1cfrutzMIBTGne30/0K43aIvshCGbmyuW8jouxw==}
     peerDependencies:
       vue: '>=2.7 || >=3'
 
@@ -4063,8 +4077,8 @@ packages:
   shell-quote@1.8.1:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
 
-  shiki@1.16.1:
-    resolution: {integrity: sha512-tCJIMaxDVB1mEIJ5TvfZU7kCPB5eo9fli5+21Olc/bmyv+w8kye3JOp+LZRmGkAyT71hrkefQhTiY+o9mBikRQ==}
+  shiki@1.16.2:
+    resolution: {integrity: sha512-gSym0hZf5a1U0iDPsdoOAZbvoi+e0c6c3NKAi03FoSLTm7oG20tum29+gk0wzzivOasn3loxfGUPT+jZXIUbWg==}
 
   siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
@@ -4444,6 +4458,9 @@ packages:
   unhead@1.10.4:
     resolution: {integrity: sha512-qKiYhgZ4IuDbylP409cdwK/8WEIi5cOSIBei/OXzxFs4uxiTZHSSa8NC1qPu2kooxHqxyoXGBw8ARms9zOsbxw==}
 
+  unhead@1.11.1:
+    resolution: {integrity: sha512-2BqoGPtor6eR427J2m6+Qhxwpi+6Uea0Dok+gGn8v+LOzOxQG/fNR6m7qw+7a0uB2PlR3ImvoAvWQ/LiNevymg==}
+
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
     engines: {node: '>=18'}
@@ -4484,6 +4501,15 @@ packages:
       webpack-sources:
         optional: true
 
+  unplugin@1.14.0:
+    resolution: {integrity: sha512-cfkZeALGyW7tKYjZbi0G+pn0XnUFa0QvLIeLJEUUlnU0R8YYsBQnt5+h9Eu1B7AB7KETld+UBFI5lOeBL+msoQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      webpack-sources: ^3
+    peerDependenciesMeta:
+      webpack-sources:
+        optional: true
+
   unstorage@1.10.2:
     resolution: {integrity: sha512-cULBcwDqrS8UhlIysUJs2Dk0Mmt8h7B0E6mtR+relW9nZvsf/u4SkAYyNliPiPW7XtFNb5u3IUMkxGxFTTRTgQ==}
     peerDependencies:
@@ -4500,6 +4526,50 @@ packages:
       '@vercel/kv': ^1.0.1
       idb-keyval: ^6.2.1
       ioredis: ^5.3.2
+    peerDependenciesMeta:
+      '@azure/app-configuration':
+        optional: true
+      '@azure/cosmos':
+        optional: true
+      '@azure/data-tables':
+        optional: true
+      '@azure/identity':
+        optional: true
+      '@azure/keyvault-secrets':
+        optional: true
+      '@azure/storage-blob':
+        optional: true
+      '@capacitor/preferences':
+        optional: true
+      '@netlify/blobs':
+        optional: true
+      '@planetscale/database':
+        optional: true
+      '@upstash/redis':
+        optional: true
+      '@vercel/kv':
+        optional: true
+      idb-keyval:
+        optional: true
+      ioredis:
+        optional: true
+
+  unstorage@1.12.0:
+    resolution: {integrity: sha512-ARZYTXiC+e8z3lRM7/qY9oyaOkaozCeNd2xoz7sYK9fv7OLGhVsf+BZbmASqiK/HTZ7T6eAlnVq9JynZppyk3w==}
+    peerDependencies:
+      '@azure/app-configuration': ^1.7.0
+      '@azure/cosmos': ^4.1.1
+      '@azure/data-tables': ^13.2.2
+      '@azure/identity': ^4.4.1
+      '@azure/keyvault-secrets': ^4.8.0
+      '@azure/storage-blob': ^12.24.0
+      '@capacitor/preferences': ^6.0.2
+      '@netlify/blobs': ^6.5.0 || ^7.0.0
+      '@planetscale/database': ^1.19.0
+      '@upstash/redis': ^1.34.0
+      '@vercel/kv': ^1.0.1
+      idb-keyval: ^6.2.1
+      ioredis: ^5.4.1
     peerDependenciesMeta:
       '@azure/app-configuration':
         optional: true
@@ -5905,16 +5975,16 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  '@nuxt/scripts@0.8.0(@nuxt/devtools@1.4.1(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(webpack-sources@3.2.3))(@unocss/webpack@0.62.3(rollup@3.29.4)(webpack@5.93.0(esbuild@0.23.1)))(@vue/compiler-core@3.5.0)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.13.1(@parcel/watcher@2.4.1)(@types/node@20.16.5)(eslint@9.9.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(terser@5.31.2)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue-tsc@2.1.4(typescript@5.5.4))(webpack-sources@3.2.3))(postcss@8.4.45)(rollup@3.29.4)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue@3.5.0(typescript@5.5.4))(webpack-sources@3.2.3)(webpack@5.93.0(esbuild@0.23.1))':
+  '@nuxt/scripts@0.8.5(@nuxt/devtools@1.4.1(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(webpack-sources@3.2.3))(@unocss/webpack@0.62.3(rollup@3.29.4)(webpack@5.93.0(esbuild@0.23.1)))(@vue/compiler-core@3.5.0)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.13.1(@parcel/watcher@2.4.1)(@types/node@20.16.5)(eslint@9.9.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(terser@5.31.2)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue-tsc@2.1.4(typescript@5.5.4))(webpack-sources@3.2.3))(postcss@8.4.45)(rollup@3.29.4)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue@3.5.0(typescript@5.5.4))(webpack-sources@3.2.3)(webpack@5.93.0(esbuild@0.23.1))':
     dependencies:
       '@nuxt/devtools-kit': 1.4.1(magicast@0.3.4)(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(webpack-sources@3.2.3)
       '@nuxt/devtools-ui-kit': 1.4.1(@nuxt/devtools@1.4.1(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(webpack-sources@3.2.3))(@unocss/webpack@0.62.3(rollup@3.29.4)(webpack@5.93.0(esbuild@0.23.1)))(@vue/compiler-core@3.5.0)(magicast@0.3.4)(nuxt@3.13.1(@parcel/watcher@2.4.1)(@types/node@20.16.5)(eslint@9.9.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(terser@5.31.2)(typescript@5.5.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue-tsc@2.1.4(typescript@5.5.4))(webpack-sources@3.2.3))(postcss@8.4.45)(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))(vue@3.5.0(typescript@5.5.4))(webpack-sources@3.2.3)(webpack@5.93.0(esbuild@0.23.1))
       '@nuxt/kit': 3.13.1(magicast@0.3.4)(rollup@3.29.4)(webpack-sources@3.2.3)
-      '@types/google.maps': 3.57.0
+      '@types/google.maps': 3.58.0
       '@types/stripe-v3': 3.1.33
       '@types/vimeo__player': 2.18.3
       '@types/youtube': 0.1.0
-      '@unhead/vue': 1.10.4(vue@3.5.0(typescript@5.5.4))
+      '@unhead/vue': 1.11.1(vue@3.5.0(typescript@5.5.4))
       '@vueuse/core': 11.0.3(vue@3.5.0(typescript@5.5.4))
       consola: 3.2.3
       defu: 6.1.4
@@ -5926,14 +5996,14 @@ snapshots:
       pathe: 1.1.2
       pkg-types: 1.2.0
       semver: 7.6.3
-      shiki: 1.16.1
+      shiki: 1.16.2
       sirv: 2.0.4
       std-env: 3.7.0
       third-party-capital: 2.3.0
       ufo: 1.5.4
       unimport: 3.11.1(rollup@3.29.4)(webpack-sources@3.2.3)
-      unplugin: 1.13.0(webpack-sources@3.2.3)
-      unstorage: 1.10.2(ioredis@5.4.1)
+      unplugin: 1.14.0(webpack-sources@3.2.3)
+      unstorage: 1.12.0(ioredis@5.4.1)
       valibot: 0.41.0(typescript@5.5.4)
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -6419,7 +6489,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.2':
     optional: true
 
-  '@shikijs/core@1.16.1':
+  '@shikijs/core@1.16.2':
     dependencies:
       '@shikijs/vscode-textmate': 9.2.0
       '@types/hast': 3.0.4
@@ -6457,7 +6527,7 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/google.maps@3.57.0': {}
+  '@types/google.maps@3.58.0': {}
 
   '@types/hast@3.0.4':
     dependencies:
@@ -6573,7 +6643,17 @@ snapshots:
       '@unhead/schema': 1.10.4
       '@unhead/shared': 1.10.4
 
+  '@unhead/dom@1.11.1':
+    dependencies:
+      '@unhead/schema': 1.11.1
+      '@unhead/shared': 1.11.1
+
   '@unhead/schema@1.10.4':
+    dependencies:
+      hookable: 5.5.3
+      zhead: 2.2.4
+
+  '@unhead/schema@1.11.1':
     dependencies:
       hookable: 5.5.3
       zhead: 2.2.4
@@ -6581,6 +6661,10 @@ snapshots:
   '@unhead/shared@1.10.4':
     dependencies:
       '@unhead/schema': 1.10.4
+
+  '@unhead/shared@1.11.1':
+    dependencies:
+      '@unhead/schema': 1.11.1
 
   '@unhead/ssr@1.10.4':
     dependencies:
@@ -6593,6 +6677,15 @@ snapshots:
       '@unhead/shared': 1.10.4
       hookable: 5.5.3
       unhead: 1.10.4
+      vue: 3.5.0(typescript@5.5.4)
+
+  '@unhead/vue@1.11.1(vue@3.5.0(typescript@5.5.4))':
+    dependencies:
+      '@unhead/schema': 1.11.1
+      '@unhead/shared': 1.11.1
+      defu: 6.1.4
+      hookable: 5.5.3
+      unhead: 1.11.1
       vue: 3.5.0(typescript@5.5.4)
 
   '@unocss/astro@0.62.3(rollup@3.29.4)(vite@5.4.3(@types/node@20.16.5)(terser@5.31.2))':
@@ -6789,7 +6882,7 @@ snapshots:
       chokidar: 3.6.0
       magic-string: 0.30.11
       tinyglobby: 0.2.5
-      unplugin: 1.13.0(webpack-sources@3.2.3)
+      unplugin: 1.14.0(webpack-sources@3.2.3)
       webpack: 5.93.0(esbuild@0.23.1)
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -9848,9 +9941,9 @@ snapshots:
 
   shell-quote@1.8.1: {}
 
-  shiki@1.16.1:
+  shiki@1.16.2:
     dependencies:
-      '@shikijs/core': 1.16.1
+      '@shikijs/core': 1.16.2
       '@shikijs/vscode-textmate': 9.2.0
       '@types/hast': 3.0.4
 
@@ -10235,6 +10328,13 @@ snapshots:
       '@unhead/shared': 1.10.4
       hookable: 5.5.3
 
+  unhead@1.11.1:
+    dependencies:
+      '@unhead/dom': 1.11.1
+      '@unhead/schema': 1.11.1
+      '@unhead/shared': 1.11.1
+      hookable: 5.5.3
+
   unicorn-magic@0.1.0: {}
 
   unimport@3.11.1(rollup@3.29.4)(webpack-sources@3.2.3):
@@ -10360,7 +10460,31 @@ snapshots:
     optionalDependencies:
       webpack-sources: 3.2.3
 
+  unplugin@1.14.0(webpack-sources@3.2.3):
+    dependencies:
+      acorn: 8.12.1
+      webpack-virtual-modules: 0.6.2
+    optionalDependencies:
+      webpack-sources: 3.2.3
+
   unstorage@1.10.2(ioredis@5.4.1):
+    dependencies:
+      anymatch: 3.1.3
+      chokidar: 3.6.0
+      destr: 2.0.3
+      h3: 1.12.0
+      listhen: 1.7.2
+      lru-cache: 10.4.3
+      mri: 1.2.0
+      node-fetch-native: 1.6.4
+      ofetch: 1.3.4
+      ufo: 1.5.4
+    optionalDependencies:
+      ioredis: 5.4.1
+    transitivePeerDependencies:
+      - uWebSockets.js
+
+  unstorage@1.12.0(ioredis@5.4.1):
     dependencies:
       anymatch: 3.1.3
       chokidar: 3.6.0
