@@ -1,3 +1,9 @@
+## [0.9.5](https://github.com/nuxt-modules/turnstile/compare/v0.9.4...v0.9.5) (2024-09-17)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([f7dd263](https://github.com/nuxt-modules/turnstile/commit/f7dd263914c5895dad52fe5ce6fa8aa181aa5810))
+
 ## [0.9.4](https://github.com/nuxt-modules/turnstile/compare/v0.9.3...v0.9.4) (2024-09-04)
 
 ### Bug Fixes
