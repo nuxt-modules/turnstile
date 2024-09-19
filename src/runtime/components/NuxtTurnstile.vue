@@ -51,8 +51,8 @@ onMounted(async () => {
 
   id = await render(el.value, {
     sitekey: props.siteKey || config.siteKey,
-    ...props.options,
     callback: (token: string) => emit('update:modelValue', token),
+    ...props.options,
   })
   interval = setInterval(reset, props.resetInterval)
 
