@@ -1,3 +1,9 @@
+## [0.9.6](https://github.com/nuxt-modules/turnstile/compare/v0.9.5...v0.9.6) (2024-09-19)
+
+### Bug Fixes
+
+* **component:** don't override user's callback ([ffe9ab2](https://github.com/nuxt-modules/turnstile/commit/ffe9ab2831725a0145fe4002e67c6bdd1eef1311))
+
 ## [0.9.5](https://github.com/nuxt-modules/turnstile/compare/v0.9.4...v0.9.5) (2024-09-17)
 
 ### Bug Fixes
