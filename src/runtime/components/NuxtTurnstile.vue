@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useScriptCloudflareTurnstile } from '../composables/turnstile'
-import { nextTick, useRuntimeConfig, ref, onMounted, onBeforeUnmount, useScriptTriggerElement } from '#imports'
+import { useRuntimeConfig, ref, onMounted, onBeforeUnmount, useScriptTriggerElement } from '#imports'
 import type { ElementScriptTrigger } from '#nuxt-scripts'
 
 const props = withDefaults(defineProps<{
@@ -47,8 +47,6 @@ const unmount = () => {
 }
 
 onMounted(async () => {
-  await nextTick() // TODO: remove once upstream vue bug is fixed (https://github.com/vuejs/core/issues/5844, https://github.com/nuxt/nuxt/issues/13471)
-
   id = await render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     callback: (token: string) => emit('update:modelValue', token),
