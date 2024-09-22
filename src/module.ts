@@ -125,9 +125,9 @@ export default defineNuxtModule<ModuleOptions>({
       })
     })
 
-    addTypeTemplate({
-      filename: 'types/cloudflare-turnstile.d.ts',
-      getContents: () => `/// <reference types="@types/cloudflare-turnstile" />`,
+    nuxt.hook('prepare:types', ({ references }) => {
+      references.push({ types: '@types/cloudflare-turnstile' })
     })
+    nuxt.options.typescript.hoist.push('@types/cloudflare-turnstile')
   },
 })
