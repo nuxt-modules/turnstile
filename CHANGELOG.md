@@ -1,3 +1,9 @@
+## [0.9.7](https://github.com/nuxt-modules/turnstile/compare/v0.9.6...v0.9.7) (2024-09-22)
+
+### Bug Fixes
+
+* **types:** ensure `Turnstile` type namespace is registered ([#339](https://github.com/nuxt-modules/turnstile/issues/339)) ([2017d46](https://github.com/nuxt-modules/turnstile/commit/2017d46e8978a3064c6097e0f97ceeaa5f6a56f9))
+
 ## [0.9.6](https://github.com/nuxt-modules/turnstile/compare/v0.9.5...v0.9.6) (2024-09-19)
 
 ### Bug Fixes
