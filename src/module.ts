@@ -7,6 +7,7 @@ import {
   addImports,
   addComponent,
   installModule,
+  addTypeTemplate
 } from '@nuxt/kit'
 import { join, resolve } from 'pathe'
 import { defu } from 'defu'
@@ -122,6 +123,11 @@ export default defineNuxtModule<ModuleOptions>({
           },
         ],
       })
+    })
+
+    addTypeTemplate({
+      filename: 'types/cloudflare-turnstile.d.ts',
+      getContents: () => `/// <reference types="@types/cloudflare-turnstile" />`,
     })
   },
 })
