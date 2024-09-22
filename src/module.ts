@@ -7,7 +7,7 @@ import {
   addImports,
   addComponent,
   installModule,
-  addTypeTemplate
+  addTypeTemplate,
 } from '@nuxt/kit'
 import { join, resolve } from 'pathe'
 import { defu } from 'defu'
