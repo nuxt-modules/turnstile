@@ -1,3 +1,9 @@
+## [0.9.10](https://github.com/nuxt-modules/turnstile/compare/v0.9.9...v0.9.10) (2024-09-23)
+
+### Bug Fixes
+
+* add type reference to `<NuxtTurnstile>` component ([839cbfc](https://github.com/nuxt-modules/turnstile/commit/839cbfcfa912beadfc3927381a507752bfbdda9f))
+
 ## [0.9.9](https://github.com/nuxt-modules/turnstile/compare/v0.9.8...v0.9.9) (2024-09-23)
 
 ### Bug Fixes
