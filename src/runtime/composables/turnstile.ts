@@ -3,7 +3,7 @@ import type { RegistryScriptInput } from '#nuxt-scripts'
 
 declare global {
   interface Window {
-    // @types/cloudflare-turnsile doesn't provide full api
+    // @types/cloudflare-turnstile doesn't provide full api
     turnstile: Turnstile.Turnstile
   }
 }
