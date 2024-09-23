@@ -1,4 +1,5 @@
 <script setup lang="ts">
+/// <reference types="@types/cloudflare-turnstile" />
 import { useScriptCloudflareTurnstile } from '../composables/turnstile'
 import { useRuntimeConfig, ref, onBeforeUnmount, useScriptTriggerElement } from '#imports'
 import type { ElementScriptTrigger } from '#nuxt-scripts'
