@@ -1,3 +1,9 @@
+## [0.9.9](https://github.com/nuxt-modules/turnstile/compare/v0.9.8...v0.9.9) (2024-09-23)
+
+### Bug Fixes
+
+* add back global namespace type reference 🤔 ([3e578f9](https://github.com/nuxt-modules/turnstile/commit/3e578f9e2d5423695a0d2d13fcbbd6eca4f30953))
+
 ## [0.9.8](https://github.com/nuxt-modules/turnstile/compare/v0.9.7...v0.9.8) (2024-09-23)
 
 ### Bug Fixes
