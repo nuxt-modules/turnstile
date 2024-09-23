@@ -46,7 +46,7 @@ const unmount = () => {
   }
 }
 
-onLoaded((instance) => {
+onLoaded((instance: Turnstile.Turnstile) => {
   id = instance.render(el.value, {
     sitekey: props.siteKey || config.siteKey,
     callback: (token: string) => emit('update:modelValue', token),
