@@ -1,3 +1,9 @@
+## [0.9.8](https://github.com/nuxt-modules/turnstile/compare/v0.9.7...v0.9.8) (2024-09-23)
+
+### Bug Fixes
+
+* add back internal type reference only ([582bc3b](https://github.com/nuxt-modules/turnstile/commit/582bc3b4fae88ce9dc5f24a82d556d5e6db49982))
+
 ## [0.9.7](https://github.com/nuxt-modules/turnstile/compare/v0.9.6...v0.9.7) (2024-09-22)
 
 ### Bug Fixes
