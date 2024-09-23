@@ -123,10 +123,5 @@ export default defineNuxtModule<ModuleOptions>({
         ],
       })
     })
-
-    nuxt.hook('prepare:types', ({ references }) => {
-      references.push({ types: '@types/cloudflare-turnstile' })
-    })
-    nuxt.options.typescript.hoist.push('@types/cloudflare-turnstile')
   },
 })
