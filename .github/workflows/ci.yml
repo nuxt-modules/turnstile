@@ -11,6 +11,7 @@ on:
     branches:
       - main
       - renovate/*
+      - renovate/*
       - 'renovate/**'
 
 jobs:
