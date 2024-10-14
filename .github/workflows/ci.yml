@@ -50,7 +50,7 @@ jobs:
         run: pnpm run lint
 
       - name: 🧪 Test project
-        run: pnpm test -- --coverage
+        run: pnpm test
 
       - name: 🛠 Build project
         run: pnpm build

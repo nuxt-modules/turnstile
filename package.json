@@ -49,7 +49,7 @@
     "prepack": "pnpm build",
     "prepublishOnly": "pnpm lint && pnpm test",
     "release": "bumpp && npm publish",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
