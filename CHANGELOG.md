@@ -1,3 +1,9 @@
+## [0.9.11-beta.1](https://github.com/nuxt-modules/turnstile/compare/v0.9.10...v0.9.11-beta.1) (2024-10-14)
+
+### Bug Fixes
+
+* **script:** wait for mount again ([628381d](https://github.com/nuxt-modules/turnstile/commit/628381d7211e93eb97392c902176f9a6882175d5))
+
 ## [0.9.10](https://github.com/nuxt-modules/turnstile/compare/v0.9.9...v0.9.10) (2024-09-23)
 
 ### Bug Fixes
