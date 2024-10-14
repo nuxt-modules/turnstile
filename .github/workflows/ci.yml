@@ -9,10 +9,10 @@ on:
       - main
   push:
     branches:
+      - alpha
+      - beta
       - main
-      - renovate/*
-      - renovate/*
-      - 'renovate/**'
+      - renovate/**
 
 jobs:
   ci:
