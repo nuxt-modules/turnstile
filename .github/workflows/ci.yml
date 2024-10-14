@@ -16,7 +16,10 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
@@ -47,7 +50,7 @@ jobs:
         run: pnpm run lint
 
       - name: 🧪 Test project
-        run: pnpm test -- --coverage
+        run: pnpm test
 
       - name: 🛠 Build project
         run: pnpm build
