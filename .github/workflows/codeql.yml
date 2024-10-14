@@ -11,10 +11,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
