@@ -1,3 +1,9 @@
+## [0.9.11](https://github.com/nuxt-modules/turnstile/compare/v0.9.10...v0.9.11) (2024-11-05)
+
+### Bug Fixes
+
+* wait to load script until component mounts ([#344](https://github.com/nuxt-modules/turnstile/issues/344)) ([59ab2c4](https://github.com/nuxt-modules/turnstile/commit/59ab2c460031680baa02b18d813d68e98c98adaf))
+
 ## [0.9.10](https://github.com/nuxt-modules/turnstile/compare/v0.9.9...v0.9.10) (2024-09-23)
 
 ### Bug Fixes
