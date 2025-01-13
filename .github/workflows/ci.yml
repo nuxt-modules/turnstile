@@ -12,7 +12,6 @@ on:
       - alpha
       - beta
       - main
-      - renovate/**
 
 jobs:
   ci:
