@@ -58,6 +58,7 @@ jobs:
         run: pnpm test:types
 
       - name: 🟩 Coverage
+        if: matrix.os != 'windows-latest'
         uses: codecov/codecov-action@v4
 
       - name: 🌍 Release
