@@ -59,7 +59,7 @@
     "pathe": "^2.0.0"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "0.7.6",
+    "@nuxt/eslint-config": "1.0.0",
     "@nuxt/module-builder": "0.8.4",
     "@nuxt/schema": "3.15.2",
     "@nuxt/scripts": "0.9.5",
