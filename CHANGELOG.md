@@ -1,3 +1,9 @@
+## [0.9.12](https://github.com/nuxt-modules/turnstile/compare/v0.9.11...v0.9.12) (2025-02-08)
+
+### Bug Fixes
+
+* **deps:** update `@nuxt/scripts` to v0.10.1 ([#373](https://github.com/nuxt-modules/turnstile/issues/373)) ([1ffe504](https://github.com/nuxt-modules/turnstile/commit/1ffe504a28c15a851cb3b311f99b5324f775ec5c))
+
 ## [0.9.11](https://github.com/nuxt-modules/turnstile/compare/v0.9.10...v0.9.11) (2024-11-05)
 
 ### Bug Fixes
