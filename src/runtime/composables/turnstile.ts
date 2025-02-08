@@ -1,6 +1,6 @@
 /// <reference types="@types/cloudflare-turnstile" />
-import { useRegistryScript } from '#nuxt-scripts-utils'
-import type { RegistryScriptInput } from '#nuxt-scripts'
+import { useRegistryScript } from '#nuxt-scripts/utils'
+import type { RegistryScriptInput } from '#nuxt-scripts/types'
 
 declare global {
   interface Window {
