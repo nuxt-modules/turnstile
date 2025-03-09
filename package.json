@@ -74,6 +74,7 @@
     "lint-staged": "15.4.3",
     "nuxt": "3.16.0",
     "playwright": "1.51.0",
+    "temp-scripts-fix": "./temp-scripts-fix",
     "typescript": "5.8.2",
     "vitest": "3.0.8",
     "vue-tsc": "2.2.8"
