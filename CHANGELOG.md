@@ -1,3 +1,9 @@
+## [0.9.15](https://github.com/nuxt-modules/turnstile/compare/v0.9.14...v0.9.15) (2025-03-09)
+
+### Bug Fixes
+
+* update to latest `@nuxt/scripts` implementation ([#391](https://github.com/nuxt-modules/turnstile/issues/391)) ([94deb2c](https://github.com/nuxt-modules/turnstile/commit/94deb2c84c0031ff1c5a651df252de78a665fcd5))
+
 ## [0.9.14](https://github.com/nuxt-modules/turnstile/compare/v0.9.13...v0.9.14) (2025-03-09)
 
 ### Bug Fixes
