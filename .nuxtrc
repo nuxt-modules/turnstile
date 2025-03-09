@@ -1,3 +1,4 @@
 typescript.includeWorkspace=true
 modules[]=@nuxt/scripts
 modules[]=@nuxtjs/turnstile
+modules[]=temp-scripts-fix
