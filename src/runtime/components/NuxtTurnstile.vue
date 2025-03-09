@@ -33,8 +33,8 @@ const { onLoaded } = useScriptCloudflareTurnstile({
   },
 })
 
-let _reset: (id: string) => void
-let remove: (id: string) => void
+let _reset: Turnstile.Turnstile['reset']
+let remove: Turnstile.Turnstile['remove']
 
 const reset = () => {
   if (id) {
