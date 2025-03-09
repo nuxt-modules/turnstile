@@ -44,4 +44,17 @@ describe('turnstile', async () => {
     await page.click('#home-link')
     await page.waitForEvent('console')
   })
+
+  it('elements are rendered', async () => {
+    const page = await createPage()
+
+    await page.goto(url('/'))
+    await page.click('button')
+
+    await page.waitForTimeout(1000) // wait 1 second for the element to be rendered
+
+    const inputExists = (await page.locator('input[name="cf-turnstile-response"]').all()).length > 0
+
+    expect(inputExists).toBe(true)
+  })
 })

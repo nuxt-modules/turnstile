@@ -27,17 +27,21 @@ const el = ref()
 const unmountStarted = ref(false)
 let id: string | undefined | null = undefined
 let interval: NodeJS.Timeout
-const { render, reset: _reset, remove } = useScriptCloudflareTurnstile({
+const { onLoaded } = useScriptCloudflareTurnstile({
   scriptOptions: {
     trigger: useScriptTriggerElement({ trigger: props.trigger, el }),
   },
 })
+
+let _reset: Turnstile.Turnstile['reset']
+let remove: Turnstile.Turnstile['remove']
 
 const reset = () => {
   if (id) {
     _reset(id)
   }
 }
+
 const unmount = () => {
   unmountStarted.value = true
   clearInterval(interval)
@@ -47,17 +51,22 @@ const unmount = () => {
   }
 }
 
-onMounted(async () => {
-  id = await render(el.value, {
-    sitekey: props.siteKey || config.siteKey,
-    callback: (token: string) => emit('update:modelValue', token),
-    ...props.options,
-  })
-  interval = setInterval(reset, props.resetInterval)
+onMounted(() => {
+  // @ts-expect-error types from nuxt/scripts seem to be wrong
+  onLoaded(async ({ render, reset: resetFn, remove: removeFn }) => {
+    _reset = resetFn
+    remove = removeFn
+    id = await render(el.value, {
+      sitekey: props.siteKey || config.siteKey,
+      callback: (token: string) => emit('update:modelValue', token),
+      ...props.options,
+    })
+    interval = setInterval(reset, props.resetInterval)
 
-  if (unmountStarted.value) {
-    unmount()
-  }
+    if (unmountStarted.value) {
+      unmount()
+    }
+  })
 })
 
 onBeforeUnmount(unmount)
