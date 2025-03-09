@@ -1,3 +1,9 @@
+## [0.9.14](https://github.com/nuxt-modules/turnstile/compare/v0.9.13...v0.9.14) (2025-03-09)
+
+### Bug Fixes
+
+* **deps:** bump peer dep ([3fb9e1a](https://github.com/nuxt-modules/turnstile/commit/3fb9e1a0417fdda24edc0f00ebddee012e0638aa))
+
 ## [0.9.13](https://github.com/nuxt-modules/turnstile/compare/v0.9.12...v0.9.13) (2025-03-09)
 
 ### Bug Fixes
