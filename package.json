@@ -80,7 +80,7 @@
     "vue-tsc": "2.2.8"
   },
   "peerDependencies": {
-    "@nuxt/scripts": "^0.10.0"
+    "@nuxt/scripts": "^0.11.0"
   },
   "resolutions": {
     "@nuxt/kit": "3.16.0",
