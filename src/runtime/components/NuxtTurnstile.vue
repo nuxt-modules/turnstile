@@ -52,8 +52,6 @@ const unmount = () => {
 }
 
 onMounted(() => {
-  // @ts-ignore
-  onLoaded(async ({ render, reset: resetFn, remove: removeFn }) => {
   onLoaded(async ({ render, reset: resetFn, remove: removeFn }) => {
     _reset = resetFn
     remove = removeFn
