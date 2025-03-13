@@ -52,7 +52,8 @@ const unmount = () => {
 }
 
 onMounted(() => {
-  // @ts-expect-error types from nuxt/scripts seem to be wrong
+  // @ts-ignore
+  onLoaded(async ({ render, reset: resetFn, remove: removeFn }) => {
   onLoaded(async ({ render, reset: resetFn, remove: removeFn }) => {
     _reset = resetFn
     remove = removeFn
