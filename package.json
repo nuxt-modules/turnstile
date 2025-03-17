@@ -73,7 +73,7 @@
     "get-port-please": "3.1.2",
     "lint-staged": "15.5.0",
     "nuxt": "3.16.0",
-    "playwright": "1.51.0",
+    "playwright": "1.51.1",
     "temp-scripts-fix": "./temp-scripts-fix",
     "typescript": "5.8.2",
     "vitest": "3.0.9",
