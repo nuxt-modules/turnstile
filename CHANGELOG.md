@@ -1,3 +1,9 @@
+## [0.9.16](https://github.com/nuxt-modules/turnstile/compare/v0.9.15...v0.9.16) (2025-03-17)
+
+### Bug Fixes
+
+* remove now-unused `[@ts-expect-error](https://github.com/ts-expect-error)` ([#396](https://github.com/nuxt-modules/turnstile/issues/396)) ([7dddeea](https://github.com/nuxt-modules/turnstile/commit/7dddeea5ca9131c5d9bdc4ad0436d62f9559256c))
+
 ## [0.9.15](https://github.com/nuxt-modules/turnstile/compare/v0.9.14...v0.9.15) (2025-03-09)
 
 ### Bug Fixes
