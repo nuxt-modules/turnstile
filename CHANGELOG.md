@@ -1,3 +1,13 @@
+## [1.0.0](https://github.com/nuxt-modules/turnstile/compare/v0.9.16...v1.0.0) (2025-04-05)
+
+### ⚠ BREAKING CHANGES
+
+* remove `.cjs` and update to latest module builder
+
+### Build System
+
+* remove `.cjs` and update to latest module builder ([9f94d42](https://github.com/nuxt-modules/turnstile/commit/9f94d4238df407f6f98467ae408b848f5e7b8373))
+
 ## [0.9.16](https://github.com/nuxt-modules/turnstile/compare/v0.9.15...v0.9.16) (2025-03-17)
 
 ### Bug Fixes
