@@ -64,7 +64,7 @@
   "devDependencies": {
     "@nuxt/eslint-config": "1.4.0",
     "@nuxt/module-builder": "1.0.1",
-    "@nuxt/schema": "3.17.3",
+    "@nuxt/schema": "3.17.4",
     "@nuxt/scripts": "0.11.7",
     "@nuxt/test-utils": "3.19.0",
     "@types/node": "22.15.19",
@@ -75,7 +75,7 @@
     "expect-type": "1.2.1",
     "get-port-please": "3.1.2",
     "lint-staged": "16.0.0",
-    "nuxt": "3.17.3",
+    "nuxt": "3.17.4",
     "playwright": "1.52.0",
     "typescript": "5.8.3",
     "vitest": "3.1.4",
@@ -85,7 +85,7 @@
     "@nuxt/scripts": "^0.11.0"
   },
   "resolutions": {
-    "@nuxt/kit": "3.17.3",
+    "@nuxt/kit": "3.17.4",
     "@nuxtjs/turnstile": "link:."
   },
   "packageManager": "pnpm@10.11.0"
