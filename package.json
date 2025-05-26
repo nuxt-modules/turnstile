@@ -62,12 +62,12 @@
     "pathe": "^2.0.3"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.4.0",
+    "@nuxt/eslint-config": "1.4.1",
     "@nuxt/module-builder": "1.0.1",
     "@nuxt/schema": "3.17.4",
     "@nuxt/scripts": "0.11.7",
     "@nuxt/test-utils": "3.19.1",
-    "@types/node": "22.15.19",
+    "@types/node": "22.15.21",
     "@vitest/coverage-v8": "3.1.4",
     "bumpp": "10.1.1",
     "conventional-changelog-conventionalcommits": "9.0.0",
