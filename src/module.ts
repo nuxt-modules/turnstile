@@ -12,7 +12,7 @@ import { join, resolve } from 'pathe'
 import { defu } from 'defu'
 
 export interface ModuleOptions {
-  /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRETKEY */
+  /** It is recommended you set the secret key via `runtimeConfig.turnstile.secretKey` or NUXT_TURNSTILE_SECRET_KEY */
   secretKey?: string
   /** Path to a file containing the secret key. */
   secretKeyPath?: string
