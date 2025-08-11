@@ -21,7 +21,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # fetch complete history for proper release detection
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches
