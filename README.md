@@ -102,7 +102,7 @@ The turnstile token is no longer valid after being processed with CloudFlare via
 
 ### Server
 
-You can either use the a generated validation endpoint, or use the imported helper method:
+You can either use the generated validation endpoint, or use the imported helper method:
 
 **Example with endpoint**:
 
