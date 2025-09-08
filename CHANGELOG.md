@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/nuxt-modules/turnstile/compare/v1.0.0...v1.1.0) (2025-09-08)
+
+### Features
+
+* support passing an abort signal to `verifyTurnstileToken` ([#481](https://github.com/nuxt-modules/turnstile/issues/481)) ([960a097](https://github.com/nuxt-modules/turnstile/commit/960a097c540b57d592aae02599fb97b947739fb9))
+
 ## [1.0.0](https://github.com/nuxt-modules/turnstile/compare/v0.9.16...v1.0.0) (2025-04-05)
 
 ### ⚠ BREAKING CHANGES
