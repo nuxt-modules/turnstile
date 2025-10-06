@@ -76,7 +76,7 @@
     "get-port-please": "3.2.0",
     "lint-staged": "16.2.3",
     "nuxt": "3.19.2",
-    "playwright": "1.55.1",
+    "playwright": "1.56.0",
     "typescript": "5.9.3",
     "vitest": "3.2.4",
     "vue-tsc": "3.1.0"
@@ -88,5 +88,5 @@
     "@nuxt/kit": "3.19.2",
     "@nuxtjs/turnstile": "link:."
   },
-  "packageManager": "pnpm@10.18.0"
+  "packageManager": "pnpm@10.18.1"
 }
