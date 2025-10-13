@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@nuxtjs/turnstile": "latest",
-    "nuxt": "3.19.3"
+    "nuxt": "4.1.3"
   }
 }
