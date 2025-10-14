@@ -30,7 +30,6 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'turnstile',
     name: '@nuxtjs/turnstile',
     compatibility: {
-      bridge: false,
       nuxt: '>=3',
     },
   },
