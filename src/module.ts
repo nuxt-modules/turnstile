@@ -98,7 +98,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addComponent({
       name: 'NuxtTurnstile',
-      filePath: join(runtimeDir, 'components', 'NuxtTurnstile'),
+      filePath: join(runtimeDir, 'components', 'NuxtTurnstile.vue'),
     })
 
     if (options.addValidateEndpoint) {
