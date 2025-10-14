@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/nuxt-modules/turnstile/compare/v1.1.0...v1.1.1) (2025-10-14)
+
+### Bug Fixes
+
+* add `.vue` extension for turnstile component ([#529](https://github.com/nuxt-modules/turnstile/issues/529)) ([5111717](https://github.com/nuxt-modules/turnstile/commit/5111717f844846a090ab3e52892c439c216d2012))
+
 ## [1.1.0](https://github.com/nuxt-modules/turnstile/compare/v1.0.0...v1.1.0) (2025-09-08)
 
 ### Features
