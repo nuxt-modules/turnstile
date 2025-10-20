@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0 # fetch complete history for proper release detection
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches
       - run: corepack enable
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: lts/-1
           cache: "pnpm"
