@@ -74,12 +74,12 @@
     "eslint": "9.38.0",
     "expect-type": "1.2.2",
     "get-port-please": "3.2.0",
-    "lint-staged": "16.2.5",
+    "lint-staged": "16.2.6",
     "nuxt": "3.19.3",
     "playwright": "1.56.1",
     "typescript": "5.9.3",
     "vitest": "3.2.4",
-    "vue-tsc": "3.1.1"
+    "vue-tsc": "3.1.2"
   },
   "peerDependencies": {
     "@nuxt/scripts": "^0.11.0 || ^0.12.0 || ^0.13.0"
@@ -88,5 +88,5 @@
     "@nuxt/kit": "3.19.3",
     "@nuxtjs/turnstile": "link:."
   },
-  "packageManager": "pnpm@10.18.3"
+  "packageManager": "pnpm@10.19.0"
 }
