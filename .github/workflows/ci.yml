@@ -35,7 +35,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: lts/-1
+          node-version: latest
           cache: pnpm
 
       - name: 📦 Install dependencies
