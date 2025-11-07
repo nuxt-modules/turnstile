@@ -1,7 +1,6 @@
 name: ci
 
-permissions:
-  contents: write
+permissions: {}
 
 on:
   pull_request:
@@ -19,17 +18,25 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-
+    permissions:
+      contents: write
+      id-token: write
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout git repository
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0 # fetch complete history for proper release detection
           persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches
-      - run: corepack enable
+
+      - name: Setup package manager
+        run: |
+          npm install -g corepack@latest
+          corepack enable
+
       - uses: actions/setup-node@v6
         with:
-          node-version: lts/-1
-          cache: "pnpm"
+          node-version: latest
+          cache: pnpm
 
       - name: 📦 Install dependencies
         run: pnpm install
@@ -69,10 +76,9 @@ jobs:
             @semantic-release/changelog
             @semantic-release/git
             conventional-changelog-conventionalcommits
-          semantic_version: 24.0.0
+          semantic_version: 25.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to be owned by a custom user to create releases & comments on protected branches
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: ✨ Beautify changelog
         if: steps.semantic.outputs.new_release_published == 'true'
