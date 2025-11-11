@@ -3,5 +3,4 @@ packages:
 ignoredBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
-trustPolicy: no-downgrade
 
