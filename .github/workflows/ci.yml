@@ -70,7 +70,7 @@ jobs:
 
       - name: 🌍 Release
         id: semantic
-        uses: cycjimmy/semantic-release-action@9cc899c47e6841430bbaedb43de1560a568dfd16 # v5.0.0
+        uses: cycjimmy/semantic-release-action@ba330626c4750c19d8299de843f05c7aa5574f62 # v5.0.2
         with:
           extra_plugins: |
             @semantic-release/changelog
