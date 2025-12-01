@@ -62,21 +62,21 @@
     "pathe": "^2.0.3"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.10.0",
+    "@nuxt/eslint-config": "1.11.0",
     "@nuxt/module-builder": "1.0.2",
     "@nuxt/schema": "3.20.1",
     "@nuxt/scripts": "0.13.0",
     "@nuxt/test-utils": "3.20.1",
     "@types/node": "24.10.1",
     "@vitest/coverage-v8": "4.0.13",
-    "bumpp": "10.3.1",
+    "bumpp": "10.3.2",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "eslint": "9.39.1",
     "expect-type": "1.2.2",
     "get-port-please": "3.2.0",
     "lint-staged": "16.2.7",
     "nuxt": "3.20.1",
-    "playwright": "1.56.1",
+    "playwright": "1.57.0",
     "typescript": "5.9.3",
     "vitest": "4.0.13",
     "vue-tsc": "3.1.5"
@@ -88,5 +88,5 @@
     "@nuxt/kit": "3.20.1",
     "@nuxtjs/turnstile": "link:."
   },
-  "packageManager": "pnpm@10.23.0"
+  "packageManager": "pnpm@10.24.0"
 }
