@@ -62,12 +62,12 @@
     "pathe": "^2.0.3"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.11.0",
+    "@nuxt/eslint-config": "1.12.1",
     "@nuxt/module-builder": "1.0.2",
     "@nuxt/schema": "3.20.2",
-    "@nuxt/scripts": "0.13.0",
+    "@nuxt/scripts": "0.13.1",
     "@nuxt/test-utils": "3.21.0",
-    "@types/node": "24.10.1",
+    "@types/node": "24.10.4",
     "@vitest/coverage-v8": "4.0.15",
     "bumpp": "10.3.2",
     "conventional-changelog-conventionalcommits": "9.1.0",
@@ -79,7 +79,7 @@
     "playwright": "1.57.0",
     "typescript": "5.9.3",
     "vitest": "4.0.15",
-    "vue-tsc": "3.1.7"
+    "vue-tsc": "3.1.8"
   },
   "peerDependencies": {
     "@nuxt/scripts": "^0.11.0 || ^0.12.0 || ^0.13.0"
