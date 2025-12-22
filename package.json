@@ -68,7 +68,7 @@
     "@nuxt/scripts": "0.13.2",
     "@nuxt/test-utils": "3.21.0",
     "@types/node": "24.10.4",
-    "@vitest/coverage-v8": "4.0.15",
+    "@vitest/coverage-v8": "4.0.16",
     "bumpp": "10.3.2",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "eslint": "9.39.2",
@@ -78,7 +78,7 @@
     "nuxt": "3.20.2",
     "playwright": "1.57.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.15",
+    "vitest": "4.0.16",
     "vue-tsc": "3.2.1"
   },
   "peerDependencies": {
