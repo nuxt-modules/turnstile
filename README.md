@@ -52,6 +52,14 @@
 
    **Tip**: At runtime you can override site and secret keys with the `NUXT_TURNSTILE_SECRET_KEY` and `NUXT_PUBLIC_TURNSTILE_SITE_KEY` environment variables.
 
+## Types
+
+For full TypeScript support, you will need to install the `@types/cloudflare-turnstile` dependency.
+
+```bash
+pnpm add -D @types/cloudflare-turnstile
+```
+
 ## Usage
 
 To use Turnstile, you will likely want to:
