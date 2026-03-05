@@ -160,9 +160,9 @@ Published under the [MIT License](./LICENCE).
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/turnstile?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/turnstile
-[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/turnstile?style=flat-square
+[npm-version-src]: https://npmx.dev/api/registry/badge/version/@nuxtjs/turnstile
+[npm-version-href]: https://npmx.dev/package/@nuxtjs/turnstile
+[npm-downloads-src]: https://npmx.dev/api/registry/badge/downloads/@nuxtjs/turnstile
 [npm-downloads-href]: https://npm.chart.dev/@nuxtjs/turnstile
 [github-actions-src]: https://img.shields.io/github/actions/workflow/status/nuxt-modules/turnstile/ci.yml?style=flat-square
 [github-actions-href]: https://github.com/nuxt-modules/turnstile/actions?query=workflow%3Aci
