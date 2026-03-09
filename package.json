@@ -67,14 +67,14 @@
     "@nuxt/schema": "3.21.1",
     "@nuxt/scripts": "0.13.2",
     "@nuxt/test-utils": "3.23.0",
-    "@types/node": "24.11.0",
+    "@types/node": "24.12.0",
     "@vitest/coverage-v8": "4.0.18",
     "bumpp": "10.4.1",
-    "conventional-changelog-conventionalcommits": "9.2.0",
+    "conventional-changelog-conventionalcommits": "9.3.0",
     "eslint": "10.0.2",
     "expect-type": "1.3.0",
     "get-port-please": "3.2.0",
-    "lint-staged": "16.3.1",
+    "lint-staged": "16.3.2",
     "nuxt": "3.21.1",
     "playwright": "1.58.2",
     "typescript": "5.9.3",
@@ -88,5 +88,5 @@
     "@nuxt/kit": "3.21.1",
     "@nuxtjs/turnstile": "link:."
   },
-  "packageManager": "pnpm@10.30.3"
+  "packageManager": "pnpm@10.31.0"
 }
