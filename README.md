@@ -54,7 +54,7 @@
 
 ## Types
 
-For full TypeScript support, you will need to install the `@types/cloudflare-turnstile` dependency.
+For full TypeScript support, you may need to install the `@types/cloudflare-turnstile` dependency.
 
 ```bash
 pnpm add -D @types/cloudflare-turnstile
