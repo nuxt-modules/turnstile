@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/nuxt-modules/turnstile/compare/v1.1.1...v1.1.2) (2026-03-13)
+
+### Bug Fixes
+
+* update peer dependencies ([b1b8bf3](https://github.com/nuxt-modules/turnstile/commit/b1b8bf3180991a3b9520867c8ddc16a7e27f3323))
+
 ## [1.1.1](https://github.com/nuxt-modules/turnstile/compare/v1.1.0...v1.1.1) (2025-10-14)
 
 ### Bug Fixes
