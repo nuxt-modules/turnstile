@@ -50,8 +50,8 @@ importers:
         specifier: 11.0.1
         version: 11.0.1
       conventional-changelog-conventionalcommits:
-        specifier: 9.3.0
-        version: 9.3.0
+        specifier: 9.3.1
+        version: 9.3.1
       eslint:
         specifier: 10.1.0
         version: 10.1.0(jiti@2.6.1)
@@ -2271,8 +2271,8 @@ packages:
     resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
-  conventional-changelog-conventionalcommits@9.3.0:
-    resolution: {integrity: sha512-kYFx6gAyjSIMwNtASkI3ZE99U1fuVDJr0yTYgVy+I2QG46zNZfl2her+0+eoviG82c5WQvW1jMt1eOQTeJLodA==}
+  conventional-changelog-conventionalcommits@9.3.1:
+    resolution: {integrity: sha512-dTYtpIacRpcZgrvBYvBfArMmK2xvIpv2TaxM0/ZI5CBtNUzvF2x0t15HsbRABWprS6UPmvj+PzHVjSx4qAVKyw==}
     engines: {node: '>=18'}
 
   convert-source-map@2.0.0:
@@ -6806,7 +6806,7 @@ snapshots:
 
   consola@3.4.2: {}
 
-  conventional-changelog-conventionalcommits@9.3.0:
+  conventional-changelog-conventionalcommits@9.3.1:
     dependencies:
       compare-func: 2.0.0
 
