@@ -4,3 +4,7 @@ ignoredBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
 
+
+overrides:
+  "@nuxt/kit": "3.21.2"
+  "@nuxtjs/turnstile": "link:."
