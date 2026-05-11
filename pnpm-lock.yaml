@@ -39,7 +39,7 @@ importers:
         version: 1.0.6(@googlemaps/markerclusterer@2.6.2)(@unhead/vue@2.1.13(vue@3.5.33(typescript@6.0.3)))(db0@0.3.4)(ioredis@5.10.1)(magicast@0.5.2)(typescript@6.0.3)(vite@7.3.2(@types/node@24.12.3)(jiti@2.7.0)(terser@5.44.0)(yaml@2.9.0))(vue@3.5.33(typescript@6.0.3))
       '@nuxt/test-utils':
         specifier: 3.23.0
-        version: 3.23.0(magicast@0.5.2)(playwright-core@1.59.1)(typescript@6.0.3)(vitest@4.1.6)
+        version: 3.23.0(magicast@0.5.2)(playwright-core@1.60.0)(typescript@6.0.3)(vitest@4.1.6)
       '@types/node':
         specifier: 24.12.3
         version: 24.12.3
@@ -68,8 +68,8 @@ importers:
         specifier: 3.21.5
         version: 3.21.5(@parcel/watcher@2.5.6)(@types/node@24.12.3)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(eslint@10.3.0(jiti@2.7.0))(ioredis@5.10.1)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.60.2))(rollup@4.60.2)(terser@5.44.0)(typescript@6.0.3)(vite@7.3.2(@types/node@24.12.3)(jiti@2.7.0)(terser@5.44.0)(yaml@2.9.0))(vue-tsc@3.2.8(typescript@6.0.3))(yaml@2.9.0)
       playwright:
-        specifier: 1.59.1
-        version: 1.59.1
+        specifier: 1.60.0
+        version: 1.60.0
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -3832,13 +3832,13 @@ packages:
   pkg-types@2.3.1:
     resolution: {integrity: sha512-y+ichcgc2LrADuhLNAx8DFjVfgz91pRxfZdI3UDhxHvcVEZsenLO+7XaU5vOp0u/7V/wZ+plyuQxtrDlZJ+yeg==}
 
-  playwright-core@1.59.1:
-    resolution: {integrity: sha512-HBV/RJg81z5BiiZ9yPzIiClYV/QMsDCKUyogwH9p3MCP6IYjUFu/MActgYAvK0oWyV9NlwM3GLBjADyWgydVyg==}
+  playwright-core@1.60.0:
+    resolution: {integrity: sha512-9bW6zvX/m0lEbgTKJ6YppOKx8H3VOPBMOCFh2irXFOT4BbHgrx5hPjwJYLT40Lu+4qtD36qKc/Hn56StUW57IA==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.59.1:
-    resolution: {integrity: sha512-C8oWjPR3F81yljW9o5OxcWzfh6avkVwDD2VYdwIGqTkl+OGFISgypqzfu7dOe4QNLL2aqcWBmI3PMtLIK233lw==}
+  playwright@1.60.0:
+    resolution: {integrity: sha512-hheHdokM8cdqCb0lcE3s+zT4t4W+vvjpGxsZlDnikarzx8tSzMebh3UiFtgqwFwnTnjYQcsyMF8ei2mCO/tpeA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -5924,7 +5924,7 @@ snapshots:
       rc9: 3.0.1
       std-env: 4.1.0
 
-  '@nuxt/test-utils@3.23.0(magicast@0.5.2)(playwright-core@1.59.1)(typescript@6.0.3)(vitest@4.1.6)':
+  '@nuxt/test-utils@3.23.0(magicast@0.5.2)(playwright-core@1.60.0)(typescript@6.0.3)(vitest@4.1.6)':
     dependencies:
       '@clack/prompts': 1.0.0-alpha.9
       '@nuxt/kit': 3.21.5(magicast@0.5.2)
@@ -5952,10 +5952,10 @@ snapshots:
       tinyexec: 1.1.2
       ufo: 1.6.4
       unplugin: 2.3.11
-      vitest-environment-nuxt: 1.0.1(magicast@0.5.2)(playwright-core@1.59.1)(typescript@6.0.3)(vitest@4.1.6)
+      vitest-environment-nuxt: 1.0.1(magicast@0.5.2)(playwright-core@1.60.0)(typescript@6.0.3)(vitest@4.1.6)
       vue: 3.5.33(typescript@6.0.3)
     optionalDependencies:
-      playwright-core: 1.59.1
+      playwright-core: 1.60.0
       vitest: 4.1.6(@types/node@24.12.3)(@vitest/coverage-v8@4.1.6)(vite@7.3.2(@types/node@24.12.3)(jiti@2.7.0)(terser@5.44.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - crossws
@@ -8847,11 +8847,11 @@ snapshots:
       exsolve: 1.0.8
       pathe: 2.0.3
 
-  playwright-core@1.59.1: {}
+  playwright-core@1.60.0: {}
 
-  playwright@1.59.1:
+  playwright@1.60.0:
     dependencies:
-      playwright-core: 1.59.1
+      playwright-core: 1.60.0
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -9799,9 +9799,9 @@ snapshots:
       terser: 5.44.0
       yaml: 2.9.0
 
-  vitest-environment-nuxt@1.0.1(magicast@0.5.2)(playwright-core@1.59.1)(typescript@6.0.3)(vitest@4.1.6):
+  vitest-environment-nuxt@1.0.1(magicast@0.5.2)(playwright-core@1.60.0)(typescript@6.0.3)(vitest@4.1.6):
     dependencies:
-      '@nuxt/test-utils': 3.23.0(magicast@0.5.2)(playwright-core@1.59.1)(typescript@6.0.3)(vitest@4.1.6)
+      '@nuxt/test-utils': 3.23.0(magicast@0.5.2)(playwright-core@1.60.0)(typescript@6.0.3)(vitest@4.1.6)
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
