@@ -1,10 +1,15 @@
 packages:
   - playground
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
-
 
 overrides:
   "@nuxt/kit": "3.21.5"
   "@nuxtjs/turnstile": "link:."
+
+shamefullyHoist: true
+
+strictPeerDependencies: false
+
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
+  unrs-resolver: false
