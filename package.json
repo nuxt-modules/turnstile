@@ -79,10 +79,10 @@
     "playwright": "1.60.0",
     "typescript": "6.0.3",
     "vitest": "4.1.6",
-    "vue-tsc": "3.2.9"
+    "vue-tsc": "3.3.0"
   },
   "peerDependencies": {
     "@nuxt/scripts": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^1.0.0"
   },
-  "packageManager": "pnpm@11.1.2"
+  "packageManager": "pnpm@11.1.3"
 }
