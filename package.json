@@ -70,7 +70,7 @@
     "@types/node": "24.13.2",
     "@vitest/coverage-v8": "4.1.9",
     "bumpp": "11.1.0",
-    "conventional-changelog-conventionalcommits": "10.2.0",
+    "conventional-changelog-conventionalcommits": "10.2.1",
     "eslint": "10.6.0",
     "expect-type": "1.4.0",
     "get-port-please": "3.2.0",
@@ -84,5 +84,5 @@
   "peerDependencies": {
     "@nuxt/scripts": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^1.0.0"
   },
-  "packageManager": "pnpm@11.9.0"
+  "packageManager": "pnpm@11.10.0"
 }
