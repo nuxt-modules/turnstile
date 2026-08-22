@@ -2,7 +2,7 @@ packages:
   - playground
 
 overrides:
-  "@nuxt/kit": "3.21.11"
+  "@nuxt/kit": "4.5.2"
   "@nuxtjs/turnstile": "link:."
 
 shamefullyHoist: true
