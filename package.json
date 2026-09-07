@@ -69,14 +69,14 @@
     "@nuxt/test-utils": "3.23.0",
     "@types/node": "24.13.3",
     "@vitest/coverage-v8": "4.1.11",
-    "bumpp": "12.2.2",
+    "bumpp": "12.3.0",
     "conventional-changelog-conventionalcommits": "10.4.0",
     "eslint": "10.9.1",
     "expect-type": "1.4.0",
     "get-port-please": "3.2.0",
-    "lint-staged": "17.4.1",
+    "lint-staged": "17.5.0",
     "nuxt": "3.21.11",
-    "playwright": "1.62.1",
+    "playwright": "1.63.0",
     "typescript": "6.0.3",
     "vitest": "4.1.11",
     "vue-tsc": "3.3.11"
@@ -84,5 +84,5 @@
   "peerDependencies": {
     "@nuxt/scripts": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^1.0.0"
   },
-  "packageManager": "pnpm@11.24.0"
+  "packageManager": "pnpm@11.25.0"
 }
