@@ -3,7 +3,7 @@ packages:
 
 overrides:
   "@nuxt/kit": "3.21.11"
-  "@nuxtjs/turnstile": "link:."
+  "@nuxtjs/turnstile": "workspace:*"
 
 shamefullyHoist: true
 
