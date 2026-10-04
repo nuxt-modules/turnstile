@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![nuxt.care health](https://img.shields.io/endpoint?url=https://nuxt.care/api/badge/turnstile)](https://nuxt.care/?search=turnstile)
 
-> [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) integration for [Nuxt 3](https://v3.nuxtjs.org)
+> [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) integration for [Nuxt](https://nuxt.com)
 
 - [✨ &nbsp;Changelog](https://github.com/nuxt-modules/turnstile/blob/main/CHANGELOG.md)
 - [▶️ &nbsp;Online playground](https://stackblitz.com/github/nuxt-modules/turnstile/tree/main/playground)
