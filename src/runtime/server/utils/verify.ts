@@ -9,7 +9,7 @@ const endpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
 export const verifyTurnstileToken = async (
   token: string,
   event?: H3Event,
-  signal?: AbortSignal
+  signal?: AbortSignal,
 ): Promise<TurnstileValidationResponse> => {
   const secretKey = useRuntimeConfig(event).turnstile.secretKey
   return await $fetch(endpoint, {
@@ -18,6 +18,6 @@ export const verifyTurnstileToken = async (
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
     },
-    signal
+    signal,
   })
 }
