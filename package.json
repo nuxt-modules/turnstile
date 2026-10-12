@@ -41,8 +41,9 @@
   "scripts": {
     "build": "pnpm dev:prepare && nuxt-module-build build",
     "dev": "nuxt dev playground",
+    "dev:v5": "pnpm --dir playground-v5 exec nuxt dev",
     "dev:build": "nuxt build playground",
-    "dev:prepare": "pnpm nuxt-module-build build --stub && nuxt prepare && nuxt prepare playground",
+    "dev:prepare": "pnpm nuxt-module-build build --stub && nuxt prepare && nuxt prepare playground && pnpm --dir playground-v5 exec nuxt prepare",
     "playground:prepare": "nuxt prepare playground",
     "docs:dev": "nuxt dev docs",
     "docs:build": "nuxt generate docs",
@@ -56,7 +57,7 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.5.2",
+    "@nuxt/kit": "^4.6.0",
     "@types/cloudflare-turnstile": "0.2.2",
     "defu": "^6.1.4",
     "pathe": "^2.0.3"

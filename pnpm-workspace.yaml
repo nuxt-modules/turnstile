@@ -1,9 +1,15 @@
 packages:
   - playground
+  - playground-v5
 
 overrides:
-  "@nuxt/kit": "4.6.1"
+  "@nuxt/kit@4": "4.6.1"
   "@nuxtjs/turnstile": "workspace:*"
+
+packageExtensions:
+  '@nuxt/scripts':
+    peerDependencies:
+      nuxt: '*'
 
 shamefullyHoist: true
 
@@ -13,3 +19,7 @@ allowBuilds:
   '@parcel/watcher': false
   esbuild: false
   unrs-resolver: false
+
+minimumReleaseAgeExclude:
+  - '@nuxt/*'
+  - nuxt-nightly
