@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import {
   defineNuxtModule,
   addServerHandler,
+  addServerImports,
   useLogger,
   addImports,
   addComponent,
@@ -104,23 +105,26 @@ export default defineNuxtModule<ModuleOptions>({
       // Add nitro route for verifying cloudflare token
       addServerHandler({
         route: '/_turnstile/validate',
-        handler: join(runtimeDir, 'server/validate.post'),
+        handler: {
+          nuxt: join(runtimeDir, 'server/portable/validate.post'),
+          nitro2: join(runtimeDir, 'server/validate.post'),
+        },
       })
     }
 
-    // Add nitro composable for verifying token in server routes
     nuxt.hook('nitro:config', (config) => {
       config.externals = defu(config.externals, {
         inline: [runtimeDir],
       })
-      config.imports = defu(config.imports, {
-        presets: [
-          {
-            from: join(runtimeDir, 'server/utils/verify'),
-            imports: ['verifyTurnstileToken'],
-          },
-        ],
-      })
+    })
+
+    // Add nitro composable for verifying token in server routes
+    addServerImports({
+      name: 'verifyTurnstileToken',
+      from: {
+        nuxt: join(runtimeDir, 'server/portable/utils/verify'),
+        nitro2: join(runtimeDir, 'server/utils/verify'),
+      },
     })
 
     nuxt.options.typescript.hoist.push('@types/cloudflare-turnstile')

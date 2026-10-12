@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "@nuxtjs/turnstile-playground-v5",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "devDependencies": {
+    "@nuxt/scripts": "1.3.12",
+    "@nuxtjs/turnstile": "latest",
+    "nuxt": "npm:nuxt-nightly@5x"
+  }
+}
