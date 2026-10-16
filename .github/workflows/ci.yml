@@ -19,14 +19,12 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     permissions:
-      contents: write
-      id-token: write
+      contents: read
     steps:
       - name: Checkout git repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          fetch-depth: 0 # fetch complete history for proper release detection
-          persist-credentials: false # to make `cycjimmy/semantic-release-action` work on protected branches
+          persist-credentials: false
 
       - name: Setup package manager
         run: |
@@ -67,21 +65,3 @@ jobs:
       - name: 🟩 Coverage
         if: matrix.os != 'windows-latest'
         uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7
-
-      - name: 🌍 Release
-        id: semantic
-        uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
-        with:
-          extra_plugins: |
-            @semantic-release/changelog
-            @semantic-release/git
-            conventional-changelog-conventionalcommits
-          semantic_version: 25.0.9
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # required to be owned by a custom user to create releases & comments on protected branches
-
-      - name: ✨ Beautify changelog
-        if: steps.semantic.outputs.new_release_published == 'true'
-        run: npx changelogithub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
