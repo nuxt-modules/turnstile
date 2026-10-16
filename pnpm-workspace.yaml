@@ -3,7 +3,7 @@ packages:
   - playground-v5
 
 overrides:
-  "@nuxt/kit@4": "4.6.1"
+  "@nuxt/kit@4": "4.6.2"
   "@nuxtjs/turnstile": "workspace:*"
 
 packageExtensions:
@@ -23,3 +23,4 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@nuxt/*'
   - nuxt-nightly
+  - nuxt@4.6.2
