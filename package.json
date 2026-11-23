@@ -71,7 +71,7 @@
     "eslint": "10.15.0",
     "expect-type": "1.4.0",
     "get-port-please": "3.2.0",
-    "lint-staged": "17.6.1",
+    "lint-staged": "17.6.2",
     "nuxt": "4.6.4",
     "playwright": "1.65.1",
     "typescript": "6.0.3",
@@ -89,7 +89,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "12.21.0",
+      "version": "12.22.0",
       "onFail": "download"
     }
   }
